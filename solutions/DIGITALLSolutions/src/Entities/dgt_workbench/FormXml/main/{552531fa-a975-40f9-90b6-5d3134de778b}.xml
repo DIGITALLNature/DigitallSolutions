@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{552531fa-a975-40f9-90b6-5d3134de778b}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{15454da2-5114-4d44-8d97-6c3715036c5d}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{6ea94db0-e613-454b-ad03-83d3d001c36a}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a275fb03-fd85-43f4-a3b6-b9c8df4c2ad7}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dgt_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e2078817-b938-44aa-81b0-1c2ebbd36abc}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nature" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_nature_set" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="dgt_nature_set" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ecc3852b-869f-4792-94ee-4bb68855178b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Target Carrier" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_target_carrier_id" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dgt_target_carrier_id" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9852c4e8-395d-41b6-8b27-0485b134e4d8}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Carrier (Handshake)" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_carrier_id" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dgt_carrier_id" disabled="true">
+                          <parameters>
+                            <DisableMru>true</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="solution" id="f3f0744e-9dae-42d3-b14f-d3ba28f74c45" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Solution" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{31bd47c4-eea8-479e-8c77-4f252443568b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Friendly Name" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_solutionfriendlyname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dgt_solutionfriendlyname" disabled="true" />
+                      </cell>
+                      <cell id="{03c83449-4fa7-42f7-9463-8e2d4ffeb0dd}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Unique Name" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_solutionuniquename" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dgt_solutionuniquename" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1928947f-8307-43e4-8182-46b854e8d8cb}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Version" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_solutionversion" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dgt_solutionversion" disabled="true" />
+                      </cell>
+                      <cell id="{fe3f384f-b238-41cc-a69c-39f8c8ab7e04}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Id" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_solutionid" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dgt_solutionid" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="history" id="19fc973a-0ecd-4723-960b-1493c69bded5" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="History" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{0b50ce8e-5dd8-4cb4-bc23-dc5a8f03e163}" rowspan="4" colspan="1" auto="true" showlabel="false">
+                        <labels>
+                          <label description="Workbench Histories" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="dgt_workbench_history_subgrid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>10</RecordsPerPage>
+                            <AutoExpand>Auto</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <TargetEntityType>dgt_workbench_history</TargetEntityType>
+                            <ViewId>{9AE9CE94-6CEA-ED11-8849-000D3A25BCEC}</ViewId>
+                            <ViewIds>{AAA547C5-CBF8-4872-AC34-1F9591622C97},{9AE9CE94-6CEA-ED11-8849-000D3A25BCEC}</ViewIds>
+                            <RelationshipName>dgt_workbench_to_workbench_history</RelationshipName>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{bfe13aab-d096-4c4c-bc04-ff5140f14078}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{b06cdd21-5eca-4a81-a061-e86038f3a644}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{1f9fb523-d58a-4378-8aa8-75912a3301f4}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{919d926c-09ae-44f5-a5ed-613d17750ef4}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{086a6239-a379-47d5-b2ba-dce47c6274b1}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{d99d258f-af13-49a9-ada5-7b227ee882b4}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Status" languagecode="1033" />
+              </labels>
+              <control id="header_statecode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="false" />
+            </cell>
+            <cell id="{4ba872be-a252-422b-a64b-2e763d4e4430}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Status Reason" languagecode="1033" />
+              </labels>
+              <control id="header_statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" />
+            </cell>
+            <cell locklevel="0" id="{45c6d757-1620-4909-b4d7-2e591234bcf9}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{e3c9f78f-9f66-4e45-bb0e-1858c7f4fcfd}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{6a3fca23-715f-49aa-a730-b54735a224ae}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{c25b5e59-2f69-465e-bb47-4d5c9f4ba32b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{b514e91d-3fb4-4377-b326-a9cb501cec31}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{676f0b3a-563a-4630-995b-593bc935e196}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

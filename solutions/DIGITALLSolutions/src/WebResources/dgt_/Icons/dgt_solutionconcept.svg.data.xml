@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{aae1a2aa-43ea-ed11-8849-000d3a25bcec}</WebResourceId>
+  <Name>dgt_/Icons/dgt_solutionconcept.svg</Name>
+  <DisplayName>dgt_solutionconcept.svg</DisplayName>
+  <Description>Upserted with DGTP: EFDACD709E62F6161DCDC1E8FC13A48174989F78644D740926D37C5B707667B9</Description>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/dgt_Iconsdgt_solutionconceptsvgAAE1A2AA-43EA-ED11-8849-000D3A25BCEC</FileName>
+</WebResource>

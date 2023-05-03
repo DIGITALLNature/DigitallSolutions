@@ -1,0 +1,8 @@
+<customapiresponseproperty uniquename="SolutionId">
+  <displayname default="Clone A Solution-Out-SolutionId">
+    <label description="Clone A Solution-Out-SolutionId" languagecode="1033" />
+  </displayname>
+  <iscustomizable>0</iscustomizable>
+  <name>Clone A Solution-Out-SolutionId</name>
+  <type>12</type>
+</customapiresponseproperty>

@@ -1,0 +1,9 @@
+<customapirequestparameter uniquename="Destination">
+  <displayname default="Synchronize Assemblies-In-Destination">
+    <label description="Synchronize Assemblies-In-Destination" languagecode="1033" />
+  </displayname>
+  <iscustomizable>0</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>Synchronize Assemblies-In-Destination</name>
+  <type>10</type>
+</customapirequestparameter>

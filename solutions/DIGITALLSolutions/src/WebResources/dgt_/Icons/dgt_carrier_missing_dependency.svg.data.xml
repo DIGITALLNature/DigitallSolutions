@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{5e78a3a4-43ea-ed11-8849-000d3a25bcec}</WebResourceId>
+  <Name>dgt_/Icons/dgt_carrier_missing_dependency.svg</Name>
+  <DisplayName>dgt_carrier_missing_dependency.svg</DisplayName>
+  <Description>Upserted with DGTP: 6294C72AE73566653E0B092C845FBD5026BE3EF9807DC29FF006DCDC5D837D1A</Description>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/dgt_Iconsdgt_carrier_missing_dependencysvg5E78A3A4-43EA-ED11-8849-000D3A25BCEC</FileName>
+</WebResource>

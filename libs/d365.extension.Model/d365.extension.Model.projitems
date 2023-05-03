@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>bfb60146-1801-43e5-86f1-2a8171387e3e</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>d365.extension.Model</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="C:\Users\ol_sr\Source\Repos\Union Investment Real Estate\d365.extension.Model\config.xaml.cs">
+      <DependentUpon>config.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\Actions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\Context.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\Dependency.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtCarrier.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtCarrierDependencyCheck.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtCarrierMissingDependency.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtWorkbench.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtWorkbenchHistory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\PluginAssembly.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\PluginType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\Publisher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\SavedQuery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\SdkMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\SdkMessageNames.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\SdkMessageProcessingStep.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\SdkMessageProcessingStepImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\ServiceEndpoint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\Solution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\SolutionComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\SystemForm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\WebResource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\Workflow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)model.json" />
+  </ItemGroup>
+</Project>

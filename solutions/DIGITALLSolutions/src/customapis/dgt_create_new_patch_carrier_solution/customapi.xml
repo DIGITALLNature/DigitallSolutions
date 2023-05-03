@@ -1,0 +1,19 @@
+<customapi uniquename="dgt_create_new_patch_carrier_solution">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>1</bindingtype>
+  <boundentitylogicalname>dgt_carrier</boundentitylogicalname>
+  <description default="Create New Patch Carrier Solution">
+    <label description="Create New Patch Carrier Solution" languagecode="1033" />
+  </description>
+  <displayname default="Create New Patch Carrier Solution">
+    <label description="Create New Patch Carrier Solution" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>Create New Patch Carrier Solution</name>
+  <plugintypeid>
+    <plugintypeexportkey>e272886b-22eb-ed11-8849-000d3a25bcec</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>1</workflowsdkstepenabled>
+</customapi>

@@ -1,0 +1,39 @@
+﻿{
+  "CustomAPIs": [
+    "dgt_clone_a_solution"
+  ],
+  "AdditionalSdkMessages": [
+    "dgt_add_component_to_carrier_solution",
+    "dgt_clone_a_solution",
+    "dgt_create_new_patch_carrier_solution",
+    "dgt_lookup_make_environment",
+    "dgt_merge_all_patch_carrier_solution",
+    "dgt_run_carrier_dependency_check",
+    "dgt_synchronize_assemblies",
+    "dgt_update_linked_carrier_solution",
+    "dgt_update_linked_workbench_solution"
+  ],
+  "Entities": [
+    "solution",
+    "solutioncomponent",
+    "workflow",
+    "serviceendpoint",
+    "dependency",
+    "publisher",
+    "webresource",
+    "savedquery",
+    "systemform",
+    "pluginassembly",
+    "plugintype",
+    "sdkmessage",
+    "sdkmessageprocessingstep",
+    "sdkmessageprocessingstepimage"
+  ],
+  "Solutions": [
+    "c81aa2bb-c4e9-ed11-8849-000d3a25bcec"
+  ],
+  "SuppressTypeScript": true,
+  "SuppressMetaData": true,
+  "UseBaseLanguage": true,
+  "SuppressNullableSupport": true
+}

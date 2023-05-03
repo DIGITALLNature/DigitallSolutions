@@ -1,0 +1,3 @@
+[submodule "libs/d365.extension"]
+	path = libs/d365.extension
+	url = https://ec4u@dev.azure.com/ec4u/Dynamics%20DevLab/_git/d365.extension

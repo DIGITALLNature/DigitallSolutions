@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{6478a3a4-43ea-ed11-8849-000d3a25bcec}</WebResourceId>
+  <Name>dgt_/Icons/dgt_workbench.svg</Name>
+  <DisplayName>dgt_workbench.svg</DisplayName>
+  <Description>Upserted with DGTP: E36FC0E79734965B79B9654B57580686CE2D60297C4B588F94784099ED2FDAA6</Description>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/dgt_Iconsdgt_workbenchsvg6478A3A4-43EA-ED11-8849-000D3A25BCEC</FileName>
+</WebResource>

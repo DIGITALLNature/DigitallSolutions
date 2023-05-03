@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{eb855840-a1a0-4af6-a46e-57c902f389db}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dgt_component" select="1" icon="1" preview="1">
+        <row name="result" id="dgt_carrier_missing_dependencyid">
+          <cell name="dgt_component" width="300" />
+          <cell name="dgt_carrier_id" width="200" />
+          <cell name="dgt_carrier_dependency_check_id" width="200" />
+          <cell name="dgt_required_component_objectid" width="200" />
+          <cell name="dgt_required_component_type_name" width="200" />
+          <cell name="dgt_required_component_type_no" width="200" />
+          <cell name="dgt_solution_component_recordid" width="200" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dgt_carrier_missing_dependency">
+          <attribute name="dgt_carrier_missing_dependencyid" />
+          <attribute name="dgt_component" />
+          <order attribute="dgt_component" descending="false" />
+          <attribute name="dgt_carrier_id" />
+          <attribute name="dgt_carrier_dependency_check_id" />
+          <attribute name="dgt_required_component_objectid" />
+          <attribute name="dgt_required_component_type_name" />
+          <attribute name="dgt_required_component_type_no" />
+          <attribute name="dgt_solution_component_recordid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Carrier Missing Dependency Advanced Find View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

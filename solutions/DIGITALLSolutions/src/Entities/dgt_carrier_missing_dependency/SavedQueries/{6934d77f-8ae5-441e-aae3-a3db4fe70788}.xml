@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{6934d77f-8ae5-441e-aae3-a3db4fe70788}</savedqueryid>
+    <layoutxml>
+      <grid name="dgt_carrier_missing_dependencies" jump="dgt_component" select="1" icon="1" preview="1">
+        <row name="dgt_carrier_missing_dependency" id="dgt_carrier_missing_dependencyid">
+          <cell name="dgt_component" width="300" />
+          <cell name="dgt_solution_component_recordid" width="200" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dgt_carrier_missing_dependency">
+          <attribute name="dgt_carrier_missing_dependencyid" />
+          <attribute name="dgt_component" />
+          <order attribute="dgt_component" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="dgt_solution_component_recordid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Carrier Missing Dependency Associated View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

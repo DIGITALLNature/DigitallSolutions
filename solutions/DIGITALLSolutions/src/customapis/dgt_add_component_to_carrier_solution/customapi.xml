@@ -1,0 +1,19 @@
+<customapi uniquename="dgt_add_component_to_carrier_solution">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>1</bindingtype>
+  <boundentitylogicalname>dgt_carrier_missing_dependency</boundentitylogicalname>
+  <description default="Add Component To Carrier Solution">
+    <label description="Add Component To Carrier Solution" languagecode="1033" />
+  </description>
+  <displayname default="Add Component To Carrier Solution">
+    <label description="Add Component To Carrier Solution" languagecode="1033" />
+  </displayname>
+  <iscustomizable>0</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>Add Component To Carrier Solution</name>
+  <plugintypeid>
+    <plugintypeexportkey>dc72886b-22eb-ed11-8849-000d3a25bcec</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>1</workflowsdkstepenabled>
+</customapi>

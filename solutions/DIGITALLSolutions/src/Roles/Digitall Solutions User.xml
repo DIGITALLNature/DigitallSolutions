@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Role id="{421ecd94-74ea-ed11-8849-000d3a25bcec}" name="Digitall Solutions User" isinherited="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsCustomizable>1</IsCustomizable>
+  <RolePrivileges>
+    <RolePrivilege name="prvAppenddgt_carrier" level="Global" />
+    <RolePrivilege name="prvAppenddgt_workbench" level="Global" />
+    <RolePrivilege name="prvAppendTodgt_carrier" level="Global" />
+    <RolePrivilege name="prvAppendTodgt_workbench" level="Global" />
+    <RolePrivilege name="prvAssigndgt_workbench" level="Global" />
+    <RolePrivilege name="prvCreatedgt_carrier" level="Global" />
+    <RolePrivilege name="prvCreatedgt_workbench" level="Basic" />
+    <RolePrivilege name="prvCreateSharePointData" level="Global" />
+    <RolePrivilege name="prvReaddgt_carrier" level="Global" />
+    <RolePrivilege name="prvReaddgt_carrier_dependency_check" level="Global" />
+    <RolePrivilege name="prvReaddgt_carrier_missing_dependency" level="Global" />
+    <RolePrivilege name="prvReaddgt_workbench" level="Global" />
+    <RolePrivilege name="prvReaddgt_workbench_history" level="Local" />
+    <RolePrivilege name="prvReadPluginAssembly" level="Global" />
+    <RolePrivilege name="prvReadPluginType" level="Global" />
+    <RolePrivilege name="prvReadSdkMessage" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStep" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStepImage" level="Global" />
+    <RolePrivilege name="prvReadSdkMessageProcessingStepSecureConfig" level="Global" />
+    <RolePrivilege name="prvReadSharePointData" level="Global" />
+    <RolePrivilege name="prvReadSharePointDocument" level="Global" />
+    <RolePrivilege name="prvSharedgt_workbench" level="Global" />
+    <RolePrivilege name="prvWritedgt_carrier" level="Global" />
+    <RolePrivilege name="prvWritedgt_workbench" level="Global" />
+    <RolePrivilege name="prvWriteSharePointData" level="Global" />
+  </RolePrivileges>
+</Role>

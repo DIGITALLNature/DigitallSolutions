@@ -1,0 +1,18 @@
+<customapi uniquename="dgt_synchronize_assemblies">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="Synchronize Assemblies">
+    <label description="Synchronize Assemblies" languagecode="1033" />
+  </description>
+  <displayname default="Synchronize Assemblies">
+    <label description="Synchronize Assemblies" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>Synchronize Assemblies</name>
+  <plugintypeid>
+    <plugintypeexportkey>ea72886b-22eb-ed11-8849-000d3a25bcec</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>1</workflowsdkstepenabled>
+</customapi>

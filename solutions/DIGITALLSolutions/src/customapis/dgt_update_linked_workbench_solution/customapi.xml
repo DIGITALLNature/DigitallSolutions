@@ -1,0 +1,19 @@
+<customapi uniquename="dgt_update_linked_workbench_solution">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>1</bindingtype>
+  <boundentitylogicalname>dgt_workbench</boundentitylogicalname>
+  <description default="Update Linked Workbench Solution">
+    <label description="Update Linked Workbench Solution" languagecode="1033" />
+  </description>
+  <displayname default="Update Linked Workbench Solution">
+    <label description="Update Linked Workbench Solution" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>Update Linked Workbench Solution</name>
+  <plugintypeid>
+    <plugintypeexportkey>ee72886b-22eb-ed11-8849-000d3a25bcec</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>1</workflowsdkstepenabled>
+</customapi>

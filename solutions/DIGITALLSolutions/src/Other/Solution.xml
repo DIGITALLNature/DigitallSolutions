@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.23041.232" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>DIGITALLSolutions</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="DIGITALL Solution Concept" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>3.0.0.0</Version>
+    <Managed>2</Managed>
+    <Publisher>
+      <UniqueName>digitall</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="DIGITALL" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="We are DIGITALL – a digital leader born from two technology and business driven consulting companies with more than 20 years of success and experiences on the global market. By joining forces, we deliver the next generation Digital Transformation &amp; Digital Cloud Experience to enterprises.&#xA;We digitalize and protect customers, employees and data. Our customers rely on us to transform their core business processes in a secure way in the digital world.&#xA;And we achieve this by leveraging best-in-class partner technologies and own innovative solutions, implemented by experienced teams. In this way, we empower our customers to be among the leaders in their industry and scale globally.&#xA;&#xA;visit us on: https://digitall.com&#xA;follow us on: https://www.linkedin.com/company/digitall-gmbh" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress>info@digitall.com</EMailAddress>
+      <SupportingWebsiteUrl>https://digitall.com</SupportingWebsiteUrl>
+      <CustomizationPrefix>dgt</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>28351</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City>Karlsruhe</City>
+          <County xsi:nil="true"></County>
+          <Country>Germany</Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1>Zur Giesserei 19-27B</Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode>76227</PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1>+49 721 46 476-100</Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="dgt_carrier" behavior="0" />
+      <RootComponent type="1" schemaName="dgt_carrier_dependency_check" behavior="0" />
+      <RootComponent type="1" schemaName="dgt_carrier_missing_dependency" behavior="0" />
+      <RootComponent type="1" schemaName="dgt_workbench" behavior="0" />
+      <RootComponent type="1" schemaName="dgt_workbench_history" behavior="0" />
+      <RootComponent type="20" id="{421ecd94-74ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{0386ac6d-84ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{19db52de-11eb-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{1b2d46b2-86ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{2ecdd524-85ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{5255ab1f-51ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{616e0e73-50ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{617300a2-11eb-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{777e66af-81ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{8e92861e-0eeb-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{a294d1f1-50ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{b2a5969d-51ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{bfc24859-11eb-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{c6822719-84ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{ca67bfb8-53ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{d5eb3f0b-10eb-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{e8d699c8-84ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{fd691ff0-10eb-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="29" id="{ffaeb64d-52ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="61" schemaName="dgt_/Icons/dgt_carrier_dependency_check.svg" behavior="0" />
+      <RootComponent type="61" schemaName="dgt_/Icons/dgt_carrier_missing_dependency.svg" behavior="0" />
+      <RootComponent type="61" schemaName="dgt_/Icons/dgt_carrier.svg" behavior="0" />
+      <RootComponent type="61" schemaName="dgt_/Icons/dgt_solutionconcept.svg" behavior="0" />
+      <RootComponent type="61" schemaName="dgt_/Icons/dgt_workbench_history.svg" behavior="0" />
+      <RootComponent type="61" schemaName="dgt_/Icons/dgt_workbench.svg" behavior="0" />
+      <RootComponent type="61" schemaName="dgt_/Ribbons/dgt_carrier.js" behavior="0" />
+      <RootComponent type="61" schemaName="dgt_/Ribbons/dgt_workbench.ribbon.js" behavior="0" />
+      <RootComponent type="62" schemaName="dgt_DigitallSolutions" behavior="0" />
+      <RootComponent type="9" schemaName="dgt_constraint_type_set" behavior="0" />
+      <RootComponent type="9" schemaName="dgt_workbench_nature_set" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="90" schemaName="dgt.solutions.Plugins.AddComponentToCarrierSolutionService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" displayName="dgt.solutions.Plugins.AddComponentToCarrierSolutionService" solution="Active" id="{dc72886b-22eb-ed11-8849-000d3a25bcec}" />
+        <Dependent type="CustomAPI" displayName="dgt_add_component_to_carrier_solution" id.uniquename="dgt_add_component_to_carrier_solution" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="90" schemaName="dgt.solutions.Plugins.CloneASolutionService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" displayName="dgt.solutions.Plugins.CloneASolutionService" solution="Active" id="{e072886b-22eb-ed11-8849-000d3a25bcec}" />
+        <Dependent type="CustomAPI" displayName="dgt_clone_a_solution" id.uniquename="dgt_clone_a_solution" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="90" schemaName="dgt.solutions.Plugins.CreateNewPatchCarrierSolutionService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" displayName="dgt.solutions.Plugins.CreateNewPatchCarrierSolutionService" solution="Active" id="{e272886b-22eb-ed11-8849-000d3a25bcec}" />
+        <Dependent type="CustomAPI" displayName="dgt_create_new_patch_carrier_solution" id.uniquename="dgt_create_new_patch_carrier_solution" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="90" schemaName="dgt.solutions.Plugins.LookupMakeEnvironment, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" displayName="dgt.solutions.Plugins.LookupMakeEnvironment" solution="Active" id="{e472886b-22eb-ed11-8849-000d3a25bcec}" />
+        <Dependent type="CustomAPI" displayName="dgt_lookup_make_environment" id.uniquename="dgt_lookup_make_environment" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="90" schemaName="dgt.solutions.Plugins.MergeAllPatchCarrierSolutionService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" displayName="dgt.solutions.Plugins.MergeAllPatchCarrierSolutionService" solution="Active" id="{e672886b-22eb-ed11-8849-000d3a25bcec}" />
+        <Dependent type="CustomAPI" displayName="dgt_merge_all_patch_carrier_solution" id.uniquename="dgt_merge_all_patch_carrier_solution" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="90" schemaName="dgt.solutions.Plugins.RunCarrierDependencyCheckService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" displayName="dgt.solutions.Plugins.RunCarrierDependencyCheckService" solution="Active" id="{e872886b-22eb-ed11-8849-000d3a25bcec}" />
+        <Dependent type="CustomAPI" displayName="dgt_run_carrier_dependency_check" id.uniquename="dgt_run_carrier_dependency_check" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="90" schemaName="dgt.solutions.Plugins.SynchronizeAssembliesService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" displayName="dgt.solutions.Plugins.SynchronizeAssembliesService" solution="Active" id="{ea72886b-22eb-ed11-8849-000d3a25bcec}" />
+        <Dependent type="CustomAPI" displayName="dgt_synchronize_assemblies" id.uniquename="dgt_synchronize_assemblies" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="90" schemaName="dgt.solutions.Plugins.UpdateLinkedCarrierSolutionService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" displayName="dgt.solutions.Plugins.UpdateLinkedCarrierSolutionService" solution="Active" id="{ec72886b-22eb-ed11-8849-000d3a25bcec}" />
+        <Dependent type="CustomAPI" displayName="dgt_update_linked_carrier_solution" id.uniquename="dgt_update_linked_carrier_solution" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="90" schemaName="dgt.solutions.Plugins.UpdateLinkedWorkbenchSolutionService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" displayName="dgt.solutions.Plugins.UpdateLinkedWorkbenchSolutionService" solution="Active" id="{ee72886b-22eb-ed11-8849-000d3a25bcec}" />
+        <Dependent type="CustomAPI" displayName="dgt_update_linked_workbench_solution" id.uniquename="dgt_update_linked_workbench_solution" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

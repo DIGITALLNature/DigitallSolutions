@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="dgt_workbench_nature_set" localizedName="Workbench Nature" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>3.0.0.0</IntroducedVersion>
+  <IsCustomizable>0</IsCustomizable>
+  <ExternalTypeName></ExternalTypeName>
+  <displaynames>
+    <displayname description="Workbench Nature" languagecode="1033" />
+  </displaynames>
+  <options>
+    <option value="283510000" ExternalValue="" Color="#1818bf">
+      <labels>
+        <label description="Workbench" languagecode="1033" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
+    </option>
+    <option value="283510001" ExternalValue="" Color="#1818bf">
+      <labels>
+        <label description="Assembly" languagecode="1033" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
+    </option>
+    <option value="283510002" ExternalValue="" Color="#1818bf">
+      <labels>
+        <label description="Environment Variable" languagecode="1033" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
+    </option>
+    <option value="283510003" ExternalValue="" Color="#1818bf">
+      <labels>
+        <label description="Connection Reference" languagecode="1033" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
+    </option>
+  </options>
+</optionset>

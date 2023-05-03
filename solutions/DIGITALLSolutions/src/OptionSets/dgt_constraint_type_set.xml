@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="dgt_constraint_type_set" localizedName="Constraint Type" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>3.0.0.0</IntroducedVersion>
+  <IsCustomizable>0</IsCustomizable>
+  <ExternalTypeName></ExternalTypeName>
+  <displaynames>
+    <displayname description="Constraint Type" languagecode="1033" />
+  </displaynames>
+  <options>
+    <option value="283510000" ExternalValue="" Color="#1818bf">
+      <labels>
+        <label description="Prevent Flows" languagecode="1033" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
+    </option>
+    <option value="283510001" ExternalValue="" Color="#1818bf">
+      <labels>
+        <label description="Prevent Managed Entities with all assets" languagecode="1033" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
+    </option>
+    <option value="283510002" ExternalValue="" Color="#1818bf">
+      <labels>
+        <label description="Prevent Items withouth active layer" languagecode="1033" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
+    </option>
+    <option value="283510003" ExternalValue="" Color="#1818bf">
+      <labels>
+        <label description="Prevent Plugin Assemblys" languagecode="1033" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
+    </option>
+  </options>
+</optionset>

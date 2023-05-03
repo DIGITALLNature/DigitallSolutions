@@ -1,0 +1,9 @@
+<customapirequestparameter uniquename="Origin">
+  <displayname default="Synchronize Assemblies-In-Origin">
+    <label description="Synchronize Assemblies-In-Origin" languagecode="1033" />
+  </displayname>
+  <iscustomizable>0</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>Synchronize Assemblies-In-Origin</name>
+  <type>10</type>
+</customapirequestparameter>

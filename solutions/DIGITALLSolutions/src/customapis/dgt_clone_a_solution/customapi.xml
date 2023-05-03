@@ -1,0 +1,19 @@
+<customapi uniquename="dgt_clone_a_solution">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>1</bindingtype>
+  <boundentitylogicalname>dgt_carrier</boundentitylogicalname>
+  <description default="Clone A Solution">
+    <label description="Clone A Solution" languagecode="1033" />
+  </description>
+  <displayname default="Clone A Solution">
+    <label description="Clone A Solution" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>Clone A Solution</name>
+  <plugintypeid>
+    <plugintypeexportkey>e072886b-22eb-ed11-8849-000d3a25bcec</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>1</workflowsdkstepenabled>
+</customapi>

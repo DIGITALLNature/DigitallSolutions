@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dgt.solutions.Plugins", "src\assemblies\dgt.solutions.Plugins\dgt.solutions.Plugins.csproj", "{30099324-5654-46FD-B166-3F4237B617C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{B6D8952C-0D1D-4A86-9FE1-97FBD6FAF1D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{39AD24C0-ECA2-4A07-A030-32F864F5F412}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Core", "libs\d365.extension\Core\Core.shproj", "{84D3D0F1-F511-4F3D-93B6-7FA908FFE703}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CoreService", "libs\d365.extension\CoreService\CoreService.shproj", "{4E94BFA4-9BA2-4381-809A-8E53281CF9EE}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PluginCore", "libs\d365.extension\PluginCore\PluginCore.shproj", "{BD9FEDC2-7D32-413D-80BD-A592D1F15706}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Registration", "libs\d365.extension\Registration\Registration.shproj", "{A98F3405-1282-4017-8EB0-1C7288E30441}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "d365.extension.Model", "libs\d365.extension.Model\d365.extension.Model.shproj", "{BFB60146-1801-43E5-86F1-2A8171387E3E}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CoreLogging.PluginTrace", "libs\d365.extension\CoreLogging\PluginTrace\CoreLogging.PluginTrace.shproj", "{8B4924B6-2CD0-418B-998E-26E5A473286D}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CoreConfig.Plugin", "libs\d365.extension\CoreConfig\Plugin\CoreConfig.Plugin.shproj", "{7A4D4FA0-835D-4C9E-8045-2A33DF4C7671}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30099324-5654-46FD-B166-3F4237B617C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30099324-5654-46FD-B166-3F4237B617C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30099324-5654-46FD-B166-3F4237B617C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30099324-5654-46FD-B166-3F4237B617C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30099324-5654-46FD-B166-3F4237B617C4} = {39AD24C0-ECA2-4A07-A030-32F864F5F412}
+		{84D3D0F1-F511-4F3D-93B6-7FA908FFE703} = {B6D8952C-0D1D-4A86-9FE1-97FBD6FAF1D6}
+		{4E94BFA4-9BA2-4381-809A-8E53281CF9EE} = {B6D8952C-0D1D-4A86-9FE1-97FBD6FAF1D6}
+		{BD9FEDC2-7D32-413D-80BD-A592D1F15706} = {B6D8952C-0D1D-4A86-9FE1-97FBD6FAF1D6}
+		{A98F3405-1282-4017-8EB0-1C7288E30441} = {B6D8952C-0D1D-4A86-9FE1-97FBD6FAF1D6}
+		{BFB60146-1801-43E5-86F1-2A8171387E3E} = {B6D8952C-0D1D-4A86-9FE1-97FBD6FAF1D6}
+		{8B4924B6-2CD0-418B-998E-26E5A473286D} = {B6D8952C-0D1D-4A86-9FE1-97FBD6FAF1D6}
+		{7A4D4FA0-835D-4C9E-8045-2A33DF4C7671} = {B6D8952C-0D1D-4A86-9FE1-97FBD6FAF1D6}
+	EndGlobalSection
+EndGlobal

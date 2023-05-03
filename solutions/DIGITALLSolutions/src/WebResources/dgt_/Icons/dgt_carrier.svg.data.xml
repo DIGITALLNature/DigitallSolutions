@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{a7e1a2aa-43ea-ed11-8849-000d3a25bcec}</WebResourceId>
+  <Name>dgt_/Icons/dgt_carrier.svg</Name>
+  <DisplayName>dgt_carrier.svg</DisplayName>
+  <Description>Upserted with DGTP: 720024BDAF70B3920025DA5CA240A84E39BFA4051B1DC345C637DE8839CE31B9</Description>
+  <LanguageCode>0</LanguageCode>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/dgt_Iconsdgt_carriersvgA7E1A2AA-43EA-ED11-8849-000D3A25BCEC</FileName>
+</WebResource>

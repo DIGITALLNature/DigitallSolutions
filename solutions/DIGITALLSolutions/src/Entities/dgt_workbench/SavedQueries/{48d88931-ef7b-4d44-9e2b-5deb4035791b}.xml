@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{48d88931-ef7b-4d44-9e2b-5deb4035791b}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dgt_name" select="1" icon="1" preview="1">
+        <row name="result" id="dgt_workbenchid">
+          <cell name="dgt_name" width="300" />
+          <cell name="dgt_solutionfriendlyname" width="200" />
+          <cell name="dgt_solutionuniquename" width="200" />
+          <cell name="dgt_solutionversion" width="75" />
+          <cell name="statecode" width="125" />
+          <cell name="statuscode" width="125" />
+          <cell name="dgt_solutionid" width="200" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dgt_workbench">
+          <attribute name="dgt_workbenchid" />
+          <attribute name="dgt_name" />
+          <order attribute="dgt_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="dgt_solutionfriendlyname" operator="like" value="{0}" />
+            <condition attribute="dgt_solutionuniquename" operator="like" value="{0}" />
+            <condition attribute="dgt_solutionversion" operator="like" value="{0}" />
+          </filter>
+          <attribute name="dgt_solutionfriendlyname" />
+          <attribute name="dgt_solutionuniquename" />
+          <attribute name="dgt_solutionversion" />
+          <attribute name="statecode" />
+          <attribute name="statuscode" />
+          <attribute name="dgt_solutionid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Quick Find Active Workbenches" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

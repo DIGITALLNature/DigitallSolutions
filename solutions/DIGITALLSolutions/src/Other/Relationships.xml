@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_dgt_workbench" />
+  <EntityRelationship Name="business_unit_dgt_workbench_history" />
+  <EntityRelationship Name="dgt_carrier_dependency_check_to_missing_check" />
+  <EntityRelationship Name="dgt_carrier_to_carrier_dependency_check" />
+  <EntityRelationship Name="dgt_carrier_to_carrier_missing_dependency" />
+  <EntityRelationship Name="dgt_carrier_to_workbench_history_on_carrier" />
+  <EntityRelationship Name="dgt_carrier_to_workbench_on_carrier" />
+  <EntityRelationship Name="dgt_carrier_to_workbench_on_target_carrier" />
+  <EntityRelationship Name="dgt_workbench_to_carrier_on_workbench" />
+  <EntityRelationship Name="dgt_workbench_to_workbench_history" />
+  <EntityRelationship Name="lk_dgt_carrier_createdby" />
+  <EntityRelationship Name="lk_dgt_carrier_dependency_check_createdby" />
+  <EntityRelationship Name="lk_dgt_carrier_dependency_check_modifiedby" />
+  <EntityRelationship Name="lk_dgt_carrier_missing_dependency_createdby" />
+  <EntityRelationship Name="lk_dgt_carrier_missing_dependency_modifiedby" />
+  <EntityRelationship Name="lk_dgt_carrier_modifiedby" />
+  <EntityRelationship Name="lk_dgt_workbench_createdby" />
+  <EntityRelationship Name="lk_dgt_workbench_history_createdby" />
+  <EntityRelationship Name="lk_dgt_workbench_history_modifiedby" />
+  <EntityRelationship Name="lk_dgt_workbench_modifiedby" />
+  <EntityRelationship Name="organization_dgt_carrier" />
+  <EntityRelationship Name="organization_dgt_carrier_dependency_check" />
+  <EntityRelationship Name="organization_dgt_carrier_missing_dependency" />
+  <EntityRelationship Name="owner_dgt_workbench" />
+  <EntityRelationship Name="owner_dgt_workbench_history" />
+  <EntityRelationship Name="team_dgt_workbench" />
+  <EntityRelationship Name="team_dgt_workbench_history" />
+  <EntityRelationship Name="user_dgt_workbench" />
+  <EntityRelationship Name="user_dgt_workbench_history" />
+</EntityRelationships>

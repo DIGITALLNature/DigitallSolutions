@@ -1,0 +1,9 @@
+<customapirequestparameter uniquename="UniqueName">
+  <displayname default="Clone A Solution-In-UniqueName">
+    <label description="Clone A Solution-In-UniqueName" languagecode="1033" />
+  </displayname>
+  <iscustomizable>0</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>Clone A Solution-In-UniqueName</name>
+  <type>10</type>
+</customapirequestparameter>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{22543697-6c18-479f-b01f-5e2e33ef377b}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{0ed48978-90f9-484e-a45d-6a31a0696565}" IsUserDefined="1">
+          <labels>
+            <label description="" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{f8981c20-d1e2-4449-9617-d2098d9c719a}">
+                  <labels>
+                    <label description="GENERAL" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c6137918-589f-4f1b-ba10-b8f4bca12fc8}">
+                        <labels>
+                          <label description="Entry" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_entry" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dgt_entry" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c6678ee1-9334-4ccf-95d0-f6af15eaaccc}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Workbench" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_workbench_id" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dgt_workbench_id" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1dcc1c5d-9374-4d1f-bd68-481fef71d393}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Workbench Version" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_workbench_version" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dgt_workbench_version" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8d6d8782-86b5-404d-a855-d2a54c8a50a5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Carrier" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_carrier_id" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dgt_carrier_id" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{20e112db-e847-4eda-a146-d11c5d015bd8}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Carrier Version" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_carrier_version" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dgt_carrier_version" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{17f57932-4de7-41a0-8b45-71335e10ce54}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Status" languagecode="1033" />
+                        </labels>
+                        <control id="statecode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a9694468-0e5c-4845-ae18-2ba19210113a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Status Reason" languagecode="1033" />
+                        </labels>
+                        <control id="statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5e496408-7f95-4311-9e7b-249c2894efd0}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

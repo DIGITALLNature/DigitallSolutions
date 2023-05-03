@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{e3891868-6cea-ed11-8849-000d3a25bcec}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dgt_entry" select="1" icon="1" preview="1">
+        <row name="result" id="dgt_workbench_historyid">
+          <cell name="dgt_entry" width="300" />
+          <cell name="dgt_workbench_id" width="300" />
+          <cell name="dgt_workbench_version" width="150" />
+          <cell name="statecode" width="125" />
+          <cell name="statuscode" width="125" />
+          <cell name="createdon" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="dgt_workbench_history">
+          <attribute name="dgt_entry" />
+          <attribute name="dgt_workbench_historyid" />
+          <attribute name="dgt_workbench_id" />
+          <attribute name="dgt_workbench_version" />
+          <attribute name="statecode" />
+          <attribute name="statuscode" />
+          <attribute name="createdon" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>3.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Workbench Histories (Carrier)" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

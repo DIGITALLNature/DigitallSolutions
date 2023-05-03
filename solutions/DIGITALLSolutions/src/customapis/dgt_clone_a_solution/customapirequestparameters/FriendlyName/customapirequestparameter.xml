@@ -1,0 +1,9 @@
+<customapirequestparameter uniquename="FriendlyName">
+  <displayname default="Clone A Solution-In-FriendlyName">
+    <label description="Clone A Solution-In-FriendlyName" languagecode="1033" />
+  </displayname>
+  <iscustomizable>0</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>Clone A Solution-In-FriendlyName</name>
+  <type>10</type>
+</customapirequestparameter>

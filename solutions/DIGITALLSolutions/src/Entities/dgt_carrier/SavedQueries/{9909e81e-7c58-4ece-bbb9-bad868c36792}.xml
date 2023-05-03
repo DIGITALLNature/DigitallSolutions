@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{9909e81e-7c58-4ece-bbb9-bad868c36792}</savedqueryid>
+    <layoutxml>
+      <grid name="dgt_carriers" jump="dgt_reference" select="1" icon="1" preview="0">
+        <row name="dgt_carrier" id="dgt_carrierid">
+          <cell name="dgt_reference" width="300" />
+          <cell name="dgt_solutionfriendlyname" width="300" />
+          <cell name="dgt_solutionuniquename" width="200" />
+          <cell name="dgt_solutionversion" width="150" />
+          <cell name="dgt_transport_order_no" width="50" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>64</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dgt_carrier">
+          <attribute name="dgt_carrierid" />
+          <attribute name="dgt_reference" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="dgt_solutionfriendlyname" />
+          <attribute name="dgt_solutionuniquename" />
+          <attribute name="dgt_solutionversion" />
+          <attribute name="dgt_transport_order_no" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Carrier Lookup View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

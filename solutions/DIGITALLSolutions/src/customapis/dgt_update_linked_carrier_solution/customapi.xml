@@ -1,0 +1,19 @@
+<customapi uniquename="dgt_update_linked_carrier_solution">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>1</bindingtype>
+  <boundentitylogicalname>dgt_carrier</boundentitylogicalname>
+  <description default="Update Linked Carrier Solution">
+    <label description="Update Linked Carrier Solution" languagecode="1033" />
+  </description>
+  <displayname default="Update Linked Carrier Solution">
+    <label description="Update Linked Carrier Solution" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>Update Linked Carrier Solution</name>
+  <plugintypeid>
+    <plugintypeexportkey>ec72886b-22eb-ed11-8849-000d3a25bcec</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>1</workflowsdkstepenabled>
+</customapi>

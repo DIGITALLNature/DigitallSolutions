@@ -1,0 +1,9 @@
+<customapirequestparameter uniquename="Version">
+  <displayname default="Clone A Solution-In-Version">
+    <label description="Clone A Solution-In-Version" languagecode="1033" />
+  </displayname>
+  <iscustomizable>0</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>Clone A Solution-In-Version</name>
+  <type>10</type>
+</customapirequestparameter>

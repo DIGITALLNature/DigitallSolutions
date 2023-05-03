@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{2d0b0543-e1ff-4acb-a4c5-8110e93be032}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{add53a4c-a00c-43fd-b577-780c7ede27e1}" IsUserDefined="1">
+          <labels>
+            <label description="" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{ca5fc927-9cc3-431e-b966-0c2aa4667ad9}">
+                  <labels>
+                    <label description="GENERAL" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{434e5e6b-bae6-438b-b4c2-52a86b5dfa0c}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dgt_name" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="solution" id="75731fbe-4d29-43c0-b6ca-f85cc54d6978" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Solution" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{97fecec7-6656-437a-8ed8-7ad9d06db0f1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Friendly Name" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_solutionfriendlyname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dgt_solutionfriendlyname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{28e394e8-34ee-470b-adf8-274bc724bb8a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Unique Name" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_solutionuniquename" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dgt_solutionuniquename" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{850b0616-c77a-4a43-8721-9afabb6f6419}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Version" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_solutionversion" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dgt_solutionversion" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{665e17dc-dcf6-4159-97df-db45c3cd155b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Id" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_solutionid" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="dgt_solutionid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{97bf2a0f-b5f1-4aac-bca2-ccdc5215ad3a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Target Carrier" languagecode="1033" />
+                        </labels>
+                        <control id="dgt_target_carrier_id" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="dgt_target_carrier_id" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="hidden" id="15f49a25-a0d5-4881-b5d3-7355297559bd" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" visible="false">
+                  <labels>
+                    <label description="Hidden" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{14a230ee-980e-469d-a498-72592ab803d2}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c8321ee8-b1c3-4192-8381-58675028c820}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Status" languagecode="1033" />
+                        </labels>
+                        <control id="statecode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

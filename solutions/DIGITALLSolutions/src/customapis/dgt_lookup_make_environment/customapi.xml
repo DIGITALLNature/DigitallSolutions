@@ -1,0 +1,18 @@
+<customapi uniquename="dgt_lookup_make_environment">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="Lookup Make Environment">
+    <label description="Lookup Make Environment" languagecode="1033" />
+  </description>
+  <displayname default="Lookup Make Environment">
+    <label description="Lookup Make Environment" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>1</isfunction>
+  <isprivate>0</isprivate>
+  <name>Lookup Make Environment</name>
+  <plugintypeid>
+    <plugintypeexportkey>e472886b-22eb-ed11-8849-000d3a25bcec</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>
