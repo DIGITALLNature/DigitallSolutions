@@ -110,7 +110,7 @@ namespace dgt.solutions.Plugins
             };
             executeMultipleRequest.Requests.Add(request);
             //clone as patch execute and response
-            //var response = (Ec4uCloneASolutionResponse)ElevatedOrganizationService.Execute(request);
+            //var response = (DgtCloneASolutionResponse)ElevatedOrganizationService.Execute(request);
             var executeMultipleResponse = (ExecuteMultipleResponse)ElevatedOrganizationService.Execute(executeMultipleRequest);
             if (executeMultipleResponse.IsFaulted)
             {

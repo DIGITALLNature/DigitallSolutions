@@ -29,7 +29,7 @@ namespace dgt.solutions.Plugins
             {
                 case SolutionConceptPublisher:
                     //null for default or { "Publisher": "mycustompublisher" }
-                    return string.IsNullOrWhiteSpace(SecureConfig) ? "ec4uexpertconsultingag" : SerializerService.JsonDeserialize<WorkbenchCreatorConfig>(SecureConfig).Publisher;
+                    return string.IsNullOrWhiteSpace(SecureConfig) ? "digitall" : SerializerService.JsonDeserialize<WorkbenchCreatorConfig>(SecureConfig).Publisher;
                 default:
                     return defaultValue;
             }
@@ -73,7 +73,7 @@ namespace dgt.solutions.Plugins
                     FriendlyName = $"{workbench.DgtName} - Workbench ({DateTime.UtcNow.Date:yyyy-MM-dd})",
                     PublisherId = publisher.ToEntityReference(),
                     Version = "0.0.0.1",
-                    Description = "created via ec4u WorkbenchCreator"
+                    Description = "created via Digitall WorkbenchCreator"
                 });
                 var solution = SecuredOrganizationService.Retrieve(
                       Solution.EntityLogicalName,

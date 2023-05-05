@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <WebResourceId>{1f15018f-47ea-ed11-8849-000d3a25bcec}</WebResourceId>
-  <Name>dgt_/Ribbons/dgt_workbench.ribbon.js</Name>
-  <DisplayName>dgt_workbench.ribbon.js</DisplayName>
-  <Description>Upserted with DGTP: 728BDFC7D8FA15CB562A4CC5248C99C49204BB6C33B377D4B4E0A23A2CBC4483</Description>
+  <WebResourceId>{62852620-29eb-ed11-8849-000d3a25bcec}</WebResourceId>
+  <Name>dgt_/Ribbons/dgt_workbench.js</Name>
+  <DisplayName>dgt_workbench.js</DisplayName>
+  <Description>Upserted with DGTP: 55B3532C1FDDDD48D96CEC90DD018D05D39A94FB419141D24D20132928224D05</Description>
   <WebResourceType>3</WebResourceType>
   <IntroducedVersion>1.0</IntroducedVersion>
   <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
@@ -11,5 +11,5 @@
   <IsCustomizable>1</IsCustomizable>
   <CanBeDeleted>1</CanBeDeleted>
   <IsHidden>0</IsHidden>
-  <FileName>/WebResources/dgt_Ribbonsdgt_workbenchribbonjs1F15018F-47EA-ED11-8849-000D3A25BCEC</FileName>
+  <FileName>/WebResources/dgt_Ribbonsdgt_workbenchjs62852620-29EB-ED11-8849-000D3A25BCEC</FileName>
 </WebResource>

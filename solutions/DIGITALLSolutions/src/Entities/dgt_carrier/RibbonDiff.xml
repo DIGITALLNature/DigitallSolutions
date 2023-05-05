@@ -1,14 +1,103 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <CustomActions />
+  <CustomActions>
+    <CustomAction Id="dgt.dgt_carrier.Button.OpenMakeSolution.CustomAction" Location="Mscrm.Form.dgt_carrier.MainTab.Save.Controls._children" Sequence="100">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dgt.dgt_carrier.Button.OpenMakeSolution.Alt" Command="dgt.dgt_carrier.Command.OpenMakeSolution" Id="dgt.dgt_carrier.Button.OpenMakeSolution" LabelText="$LocLabels:dgt.dgt_carrier.Button.OpenMakeSolution.LabelText" Sequence="100" TemplateAlias="o2" ToolTipTitle="$LocLabels:dgt.dgt_carrier.Button.OpenMakeSolution.ToolTipTitle" ToolTipDescription="$LocLabels:dgt.dgt_carrier.Button.OpenMakeSolution.ToolTipDescription" ModernImage="$webresource:dgt_/Icons/dgt_carrier.svg" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <CustomAction Id="dgt.dgt_carrier.Button.OpenSolutionEditor.CustomAction" Location="Mscrm.Form.dgt_carrier.MainTab.Save.Controls._children" Sequence="90">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dgt.dgt_carrier.Button.OpenSolutionEditor.Alt" Command="dgt.dgt_carrier.Command.OpenSolutionEditor" Id="dgt.dgt_carrier.Button.OpenSolutionEditor" LabelText="$LocLabels:dgt.dgt_carrier.Button.OpenSolutionEditor.LabelText" Sequence="90" TemplateAlias="o2" ToolTipTitle="$LocLabels:dgt.dgt_carrier.Button.OpenSolutionEditor.ToolTipTitle" ToolTipDescription="$LocLabels:dgt.dgt_carrier.Button.OpenSolutionEditor.ToolTipDescription" ModernImage="$webresource:dgt_/Icons/dgt_carrier.svg" />
+      </CommandUIDefinition>
+    </CustomAction>
+  </CustomActions>
   <Templates>
     <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
   </Templates>
-  <CommandDefinitions />
+  <CommandDefinitions>
+    <CommandDefinition Id="dgt.dgt_carrier.Command.OpenMakeSolution">
+      <EnableRules>
+        <EnableRule Id="dgt.dgt_carrier.EnableRule.OpenMakeSolution" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="dgt.dgt_carrier.DisplayRule.OpenMakeSolution" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="CarrierRibbon.CmdOpenMakeSolution" Library="$webresource:dgt_/Ribbons/dgt_carrier.js" />
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="dgt.dgt_carrier.Command.OpenSolutionEditor">
+      <EnableRules>
+        <EnableRule Id="dgt.dgt_carrier.EnableRule.OpenSolutionEditor" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="dgt.dgt_carrier.DisplayRule.OpenSolutionEditor" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="CarrierRibbon.CmdOpenSolutionEditor" Library="$webresource:dgt_/Ribbons/dgt_carrier.js" />
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
   <RuleDefinitions>
     <TabDisplayRules />
-    <DisplayRules />
-    <EnableRules />
+    <DisplayRules>
+      <DisplayRule Id="dgt.dgt_carrier.DisplayRule.OpenMakeSolution">
+        <FormStateRule State="Create" Default="false" InvertResult="true" />
+      </DisplayRule>
+      <DisplayRule Id="dgt.dgt_carrier.DisplayRule.OpenSolutionEditor">
+        <FormStateRule State="Create" Default="false" InvertResult="true" />
+      </DisplayRule>
+    </DisplayRules>
+    <EnableRules>
+      <EnableRule Id="dgt.dgt_carrier.EnableRule.OpenMakeSolution">
+        <ValueRule Field="dgt_solutionid" Value="" Default="true" InvertResult="true" />
+      </EnableRule>
+      <EnableRule Id="dgt.dgt_carrier.EnableRule.OpenSolutionEditor">
+        <ValueRule Field="dgt_solutionid" Value="" Default="true" InvertResult="true" />
+      </EnableRule>
+    </EnableRules>
   </RuleDefinitions>
-  <LocLabels />
+  <LocLabels>
+    <LocLabel Id="dgt.dgt_carrier.Button.OpenMakeSolution.Alt">
+      <Titles>
+        <Title description="Modern Make Solution" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_carrier.Button.OpenMakeSolution.LabelText">
+      <Titles>
+        <Title description="Modern Make Solution" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_carrier.Button.OpenMakeSolution.ToolTipDescription">
+      <Titles>
+        <Title description="Modern Make Solution" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_carrier.Button.OpenMakeSolution.ToolTipTitle">
+      <Titles>
+        <Title description="Modern Make Solution" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_carrier.Button.OpenSolutionEditor.Alt">
+      <Titles>
+        <Title description="Classic Solution Editor" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_carrier.Button.OpenSolutionEditor.LabelText">
+      <Titles>
+        <Title description="Classic Solution Editor" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_carrier.Button.OpenSolutionEditor.ToolTipDescription">
+      <Titles>
+        <Title description="Classic Solution Editor" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_carrier.Button.OpenSolutionEditor.ToolTipTitle">
+      <Titles>
+        <Title description="Classic Solution Editor" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
 </RibbonDiffXml>
