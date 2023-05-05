@@ -1,0 +1,14 @@
+<environmentvariabledefinition schemaname="dgt_solution_concept-patch_pattern">
+  <defaultvalue>build</defaultvalue>
+  <description default="[build|revision]">
+    <label description="[build|revision]" languagecode="1033" />
+  </description>
+  <displayname default="SolutionConcept - PatchPattern">
+    <label description="SolutionConcept - PatchPattern" languagecode="1033" />
+  </displayname>
+  <introducedversion>3.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

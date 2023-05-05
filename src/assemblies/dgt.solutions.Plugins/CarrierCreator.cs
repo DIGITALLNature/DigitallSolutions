@@ -24,10 +24,5 @@ namespace dgt.solutions.Plugins
             carrier.DgtSolutionid = solution.Id.ToString("D");
             return ExecutionResult.Ok;
         }
-
-        public override string GetConfig(string key, int lcid = 1033, string defaultValue = null)
-        {
-            return null;
-        }
     }
 }

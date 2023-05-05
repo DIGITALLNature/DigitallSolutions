@@ -18,7 +18,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "d365.extension.Model", "lib
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CoreLogging.PluginTrace", "libs\d365.extension\CoreLogging\PluginTrace\CoreLogging.PluginTrace.shproj", "{8B4924B6-2CD0-418B-998E-26E5A473286D}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CoreConfig.Plugin", "libs\d365.extension\CoreConfig\Plugin\CoreConfig.Plugin.shproj", "{7A4D4FA0-835D-4C9E-8045-2A33DF4C7671}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CoreConfig.EnvironmentVariables", "libs\d365.extension\CoreConfig\EnvironmentVariables\CoreConfig.EnvironmentVariables.shproj", "{F1D4E2EA-E745-4DF1-A304-A7D96B850077}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +39,6 @@ Global
 		{A98F3405-1282-4017-8EB0-1C7288E30441} = {B6D8952C-0D1D-4A86-9FE1-97FBD6FAF1D6}
 		{BFB60146-1801-43E5-86F1-2A8171387E3E} = {B6D8952C-0D1D-4A86-9FE1-97FBD6FAF1D6}
 		{8B4924B6-2CD0-418B-998E-26E5A473286D} = {B6D8952C-0D1D-4A86-9FE1-97FBD6FAF1D6}
-		{7A4D4FA0-835D-4C9E-8045-2A33DF4C7671} = {B6D8952C-0D1D-4A86-9FE1-97FBD6FAF1D6}
+		{F1D4E2EA-E745-4DF1-A304-A7D96B850077} = {B6D8952C-0D1D-4A86-9FE1-97FBD6FAF1D6}
 	EndGlobalSection
 EndGlobal

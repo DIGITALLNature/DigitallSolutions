@@ -15,23 +15,7 @@ namespace dgt.solutions.Plugins
     [CustomApiRegistration(SdkMessageNames.DgtMergeAllPatchCarrierSolution)]
     public class MergeAllPatchCarrierSolutionService : Executor
     {
-        private const string SolutionConceptPatchPattern = "SolutionConcept.PatchPattern";
-
-        public MergeAllPatchCarrierSolutionService(string unsecure, string secure) : base(unsecure, secure)
-        {
-        }
-
-        public override string GetConfig(string key, int lcid = 1033, string defaultValue = null)
-        {
-            switch (key)
-            {
-                case SolutionConceptPatchPattern:
-                    //null for default or { "PatchPattern": "[major|minor]" }
-                    return string.IsNullOrWhiteSpace(SecureConfig) ? "minor" : SerializerService.JsonDeserialize<MergeAllPatchCarrierSolutionConfig>(SecureConfig).PatchPattern?.ToLowerInvariant() == "major" ? "major" : "minor";
-                default:
-                    return defaultValue;
-            }
-        }
+        private const string SolutionConceptPatchPattern = "dgt_solution_concept-main_pattern";
 
         protected override ExecutionResult Execute()
         {
@@ -79,7 +63,7 @@ namespace dgt.solutions.Plugins
                 }
             }
             //get update pattern
-            var pattern = GetConfig(SolutionConceptPatchPattern);
+            var pattern = EnvironmentVariablesService.GetConfig(SolutionConceptPatchPattern);
             switch (pattern)
             {
                 //increment revision

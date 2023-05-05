@@ -14,24 +14,8 @@ namespace dgt.solutions.Plugins
     [CustomApiRegistration(SdkMessageNames.DgtCreateNewPatchCarrierSolution)]
     public class CreateNewPatchCarrierSolutionService : Executor
     {
-        private const string SolutionConceptPatchPattern = "SolutionConcept.PatchPattern";
-
-        public CreateNewPatchCarrierSolutionService(string unsecure, string secure) : base(unsecure, secure)
-        {
-        }
-
-        public override string GetConfig(string key, int lcid = 1033, string defaultValue = null)
-        {
-            switch (key)
-            {
-                case SolutionConceptPatchPattern:
-                    //null for default or { "PatchPattern": "[build|revision]" }
-                    return string.IsNullOrWhiteSpace(SecureConfig) ? "build" : SerializerService.JsonDeserialize<CreateNewPatchCarrierSolutionConfig>(SecureConfig).PatchPattern?.ToLowerInvariant() == "revision" ? "revision" : "build";
-                default:
-                    return defaultValue;
-            }
-        }
-
+        private const string SolutionConceptPatchPattern = "dgt_solution_concept-patch_pattern";
+        
         protected override ExecutionResult Execute()
         {
             var lookup = new SolutionLookup(this);
@@ -76,7 +60,7 @@ namespace dgt.solutions.Plugins
                 }
             }
             //get update pattern
-            var pattern = GetConfig(SolutionConceptPatchPattern);
+            var pattern = EnvironmentVariablesService.GetConfig(SolutionConceptPatchPattern);
             switch (pattern)
             {
                 //increment revision

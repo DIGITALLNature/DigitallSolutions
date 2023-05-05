@@ -1,0 +1,10 @@
+<environmentvariabledefinition schemaname="dgt_make_enviroment_id">
+  <displayname default="MakeEnvironmentId">
+    <label description="MakeEnvironmentId" languagecode="1033" />
+  </displayname>
+  <introducedversion>3.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

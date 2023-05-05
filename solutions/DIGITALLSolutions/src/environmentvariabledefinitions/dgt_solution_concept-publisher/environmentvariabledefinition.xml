@@ -1,0 +1,14 @@
+<environmentvariabledefinition schemaname="dgt_solution_concept-publisher">
+  <defaultvalue>digitall</defaultvalue>
+  <description default="uniquename of publisher to use">
+    <label description="uniquename of publisher to use" languagecode="1033" />
+  </description>
+  <displayname default="SolutionConcept - Publisher">
+    <label description="SolutionConcept - Publisher" languagecode="1033" />
+  </displayname>
+  <introducedversion>3.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>
