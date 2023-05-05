@@ -53,10 +53,5 @@ namespace dgt.solutions.Plugins
             Delegate.TracingService.Trace($"{response.id}");
             return response.id;
         }
-
-        public override string GetConfig(string key, int lcid = 1033, string defaultValue = null)
-        {
-            return null;
-        }
     }
 }

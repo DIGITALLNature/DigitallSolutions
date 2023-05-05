@@ -215,10 +215,5 @@ namespace dgt.solutions.Plugins
                                                  select new { rec, step }).FirstOrDefault();
             return $"{sdkMessageProcessingStepImage?.rec.Name} ({sdkMessageProcessingStepImage?.step.Name})";
         }
-
-        public override string GetConfig(string key, int lcid = 1033, string defaultValue = null)
-        {
-            return null;
-        }
     }
 }

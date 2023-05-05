@@ -27,7 +27,9 @@
     "plugintype",
     "sdkmessage",
     "sdkmessageprocessingstep",
-    "sdkmessageprocessingstepimage"
+    "sdkmessageprocessingstepimage",
+    "environmentvariabledefinition",
+    "environmentvariablevalue"
   ],
   "Solutions": [
     "c81aa2bb-c4e9-ed11-8849-000d3a25bcec"

@@ -1,51 +1,62 @@
 "use strict";
-class WorkbenchRibbon {
-    static CmdOpenSolutionEditor() {
-        var openUrlOptions = { height: 480, width: 640 };
-        var solutionid = Xrm.Page.getAttribute("dgt_solutionid").getValue();
-        Xrm.Navigation.openUrl(Xrm.Utility.getGlobalContext().getClientUrl() + "/tools/solution/edit.aspx?id={" + solutionid + "}#", openUrlOptions);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+var WorkbenchRibbon;
+(function (WorkbenchRibbon) {
+    function CmdOpenSolutionEditor() {
+        const openUrlOptions = { height: 480, width: 640 };
+        const solutionid = Xrm.Page.getAttribute('dgt_solutionid').getValue();
+        Xrm.Navigation.openUrl(Xrm.Utility.getGlobalContext().getClientUrl() + '/tools/solution/edit.aspx?id={' + solutionid + '}#', openUrlOptions);
     }
-    static CmdOpenMakeSolution() {
-        var openUrlOptions = { height: 480, width: 640 };
-        var solutionid = Xrm.Page.getAttribute("dgt_solutionid").getValue();
-        WorkbenchRibbon.CallWebApiExecute(WorkbenchRibbon.BuildRequest("dgt_lookup_make_environment")).then((result) => {
-            result.json().then(function (Response) {
-                if (Response.MakeEnvironmentId == "00000000-0000-0000-0000-000000000000") {
-                    Xrm.Utility.alertDialog("SecureConfig missing! e.g. { \"MakeEnvironmentId\": \"7a28c553-78bc-4866-bad9-edfdb2538201\" }", function () { return; });
-                }
-                else {
-                    Xrm.Navigation.openUrl("https://make.powerapps.com/environments/" + Response.MakeEnvironmentId + "/solutions/" + solutionid, openUrlOptions);
-                }
-            });
-        }, (error) => {
-            Xrm.Utility.alertDialog(error.message, function () { return; });
-        });
-    }
-    static BuildRequest(operationName) {
-        var request = {
+    WorkbenchRibbon.CmdOpenSolutionEditor = CmdOpenSolutionEditor;
+    function CmdOpenMakeSolution() {
+        const openUrlOptions = { height: 480, width: 640 };
+        const solutionid = Xrm.Page.getAttribute('dgt_solutionid').getValue();
+        const request = {
             getMetadata: function () {
-                var metadata = {
+                return {
                     boundParameter: null,
                     parameterTypes: {},
-                    operationName: operationName,
-                    operationType: 0
+                    operationType: 1,
+                    operationName: 'dgt_lookup_make_environment',
                 };
-                return metadata;
-            }
+            },
         };
-        return request;
-    }
-    static async CallWebApiExecute(request) {
-        return await Xrm.WebApi.online.execute(request).then(function (result) {
-            if (!result.ok) {
-                console.log("Error: " + result.status + ": " + result.statusText);
-                console.log("Data: " + request);
+        Xrm.WebApi.online
+            .execute(request)
+            .then(function success(response) {
+            if (response.ok) {
+                return response.json();
             }
-            return result;
-        }, function (error) {
-            console.error("Error: " + JSON.stringify(error));
-            console.error("Data: " + request);
-            return error;
+        })
+            .then(function (responseBody) {
+            const result = responseBody;
+            console.log(result);
+            // Return Type: mscrm.dgt_lookup_make_environmentResponse
+            // Output Parameters
+            const MakeEnvironmentId = result['MakeEnvironmentId']; // Edm.Guid
+            if (MakeEnvironmentId == '00000000-0000-0000-0000-000000000000') {
+                const alertStrings = {
+                    confirmButtonLabel: 'Abort',
+                    text: 'SecureConfig missing! e.g. { "MakeEnvironmentId": "7a28c553-78bc-4866-bad9-edfdb2538201" }',
+                    title: 'SecureConfig missing!',
+                };
+                Xrm.Navigation.openAlertDialog(alertStrings);
+            }
+            else {
+                Xrm.Navigation.openUrl('https://make.powerapps.com/environments/' + MakeEnvironmentId + '/solutions/' + solutionid, openUrlOptions);
+            }
+        })
+            .catch(function (error) {
+            console.log(error.message);
+            const alertStrings = {
+                confirmButtonLabel: 'OK',
+                text: error.message,
+                title: 'Error occured!',
+            };
+            Xrm.Navigation.openAlertDialog(alertStrings).then(function () {
+                return;
+            });
         });
     }
-}
+    WorkbenchRibbon.CmdOpenMakeSolution = CmdOpenMakeSolution;
+})(WorkbenchRibbon || (WorkbenchRibbon = {}));

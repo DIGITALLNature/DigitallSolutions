@@ -42,10 +42,5 @@ namespace dgt.solutions.Plugins
                     return ExecutionResult.Skipped;
             }
         }
-
-        public override string GetConfig(string key, int lcid = 1033, string defaultValue = null)
-        {
-            return null;
-        }
     }
 }

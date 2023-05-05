@@ -941,7 +941,7 @@
               <Description description="Reason for the status of the Workbench" languagecode="1033" />
             </Descriptions>
             <statuses>
-              <status value="1" state="0" Color="#1818bf">
+              <status value="1" state="0" TransitionData="&lt;allowedtransitions xmlns=&quot;http://schemas.microsoft.com/crm/2009/WebServices&quot;&gt;&lt;allowedtransition sourcestatusid=&quot;1&quot; tostatusid=&quot;283510004&quot; /&gt;&lt;allowedtransition sourcestatusid=&quot;1&quot; tostatusid=&quot;283510002&quot; /&gt;&lt;allowedtransition sourcestatusid=&quot;1&quot; tostatusid=&quot;283510001&quot; /&gt;&lt;/allowedtransitions&gt;" Color="#1818bf">
                 <labels>
                   <label description="Active" languagecode="1033" />
                 </labels>
@@ -949,15 +949,7 @@
                   <Description description="" languagecode="1033" />
                 </Descriptions>
               </status>
-              <status value="2" state="1" Color="#1818bf">
-                <labels>
-                  <label description="Inactive" languagecode="1033" />
-                </labels>
-                <Descriptions>
-                  <Description description="" languagecode="1033" />
-                </Descriptions>
-              </status>
-              <status value="283510001" state="0" Color="#1818bf">
+              <status value="283510001" state="0" TransitionData="&lt;allowedtransitions xmlns=&quot;http://schemas.microsoft.com/crm/2009/WebServices&quot;&gt;&lt;allowedtransition sourcestatusid=&quot;283510001&quot; tostatusid=&quot;1&quot; /&gt;&lt;allowedtransition sourcestatusid=&quot;283510001&quot; tostatusid=&quot;283510003&quot; /&gt;&lt;/allowedtransitions&gt;" Color="#1818bf">
                 <labels>
                   <label description="Merge" languagecode="1033" />
                 </labels>
@@ -965,7 +957,7 @@
                   <Description description="" languagecode="1033" />
                 </Descriptions>
               </status>
-              <status value="283510003" state="0" Color="#1818bf">
+              <status value="283510003" state="0" TransitionData="&lt;allowedtransitions xmlns=&quot;http://schemas.microsoft.com/crm/2009/WebServices&quot;&gt;&lt;allowedtransition sourcestatusid=&quot;283510003&quot; tostatusid=&quot;1&quot; /&gt;&lt;allowedtransition sourcestatusid=&quot;283510003&quot; tostatusid=&quot;2&quot; /&gt;&lt;/allowedtransitions&gt;" Color="#1818bf">
                 <labels>
                   <label description="Failure" languagecode="1033" />
                 </labels>
@@ -973,7 +965,7 @@
                   <Description description="" languagecode="1033" />
                 </Descriptions>
               </status>
-              <status value="283510002" state="0" Color="#1818bf">
+              <status value="283510002" state="0" TransitionData="&lt;allowedtransitions xmlns=&quot;http://schemas.microsoft.com/crm/2009/WebServices&quot;&gt;&lt;allowedtransition sourcestatusid=&quot;283510002&quot; tostatusid=&quot;1&quot; /&gt;&lt;/allowedtransitions&gt;" Color="#1818bf">
                 <labels>
                   <label description="Finalize" languagecode="1033" />
                 </labels>
@@ -981,9 +973,17 @@
                   <Description description="" languagecode="1033" />
                 </Descriptions>
               </status>
-              <status value="283510004" state="0" Color="#1818bf">
+              <status value="283510004" state="0" TransitionData="&lt;allowedtransitions xmlns=&quot;http://schemas.microsoft.com/crm/2009/WebServices&quot;&gt;&lt;allowedtransition sourcestatusid=&quot;283510004&quot; tostatusid=&quot;2&quot; /&gt;&lt;/allowedtransitions&gt;" Color="#1818bf">
                 <labels>
                   <label description="Close" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="" languagecode="1033" />
+                </Descriptions>
+              </status>
+              <status value="2" state="1" TransitionData="&lt;allowedtransitions xmlns=&quot;http://schemas.microsoft.com/crm/2009/WebServices&quot; /&gt;" Color="#1818bf">
+                <labels>
+                  <label description="Inactive" languagecode="1033" />
                 </labels>
                 <Descriptions>
                   <Description description="" languagecode="1033" />
