@@ -54,7 +54,7 @@
         <ValueRule Field="dgt_solutionid" Value="" Default="true" InvertResult="true" />
       </EnableRule>
       <EnableRule Id="dgt.dgt_workbench.EnableRule.OpenSolutionEditor">
-        <ValueRule Field="ec4u_solutionid" Value="" Default="true" InvertResult="true" />
+        <ValueRule Field="dgt_solutionid" Value="" Default="true" InvertResult="true" />
       </EnableRule>
     </EnableRules>
   </RuleDefinitions>
