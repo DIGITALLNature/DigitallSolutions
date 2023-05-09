@@ -17,10 +17,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Setup DotNet
-        uses: actions/setup-dotnet@v3.0.3
-        with:
-          dotnet-version: "4.6.2"
+#      - name: Setup DotNet
+#        uses: actions/setup-dotnet@v3.0.3
+#        with:
+#          dotnet-version: "4.6.2"
+      - name: MSBuild
+        run: msbuild
       - name: Install packages
         run: npm ci
       - name: Semantic Release
