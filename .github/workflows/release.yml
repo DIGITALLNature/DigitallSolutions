@@ -25,7 +25,9 @@ jobs:
 #        run: npm ci
       - name: Restore Nuget packages
         run: nuget restore solutions/DIGITALLSolutions/DIGITALLSolutions.cdsproj
-      - name: MSBuild
+      - name: Setup msbuild
+        uses: microsoft/setup-msbuild@v1.1
+      - name: Run msbuild
         run: msbuild solutions/DIGITALLSolutions/DIGITALLSolutions.cdsproj /property:Configuration=Release
       - name: Semantic Release
         env:
