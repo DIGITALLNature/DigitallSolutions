@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 18
       - name: Install npm packages
-        run: npm ci
+        run: npm ci --ignore-scripts
       - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
