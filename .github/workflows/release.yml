@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CI_GITHUB_TOKEN }}
       - name: Restore Nuget packages
         run: nuget restore solutions/DIGITALLSolutions/DIGITALLSolutions.cdsproj
       - name: Setup msbuild
