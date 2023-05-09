@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginAssemblyId="da72886b-22eb-ed11-8849-000d3a25bcec" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/dgtsolutionsPlugins-DA72886B-22EB-ED11-8849-000D3A25BCEC/dgtsolutionsPlugins.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.AddComponentToCarrierSolutionService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="dc72886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.AddComponentToCarrierSolutionService">
+      <FriendlyName>025224d9-33b2-481b-8c41-69eeb7f9b13f</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.CarrierCreator, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="de72886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.CarrierCreator">
+      <FriendlyName>4aee1465-b94a-4146-9bc1-51786c68bfd7</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.CarrierStateListener, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="df72886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.CarrierStateListener">
+      <FriendlyName>ce4c78eb-89cf-424d-bc80-ce6101d1b91d</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.CloneASolutionService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="e072886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.CloneASolutionService">
+      <FriendlyName>f8392503-ecc6-4032-a43e-0b112f4ffdd9</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.CreateNewPatchCarrierSolutionService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="e272886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.CreateNewPatchCarrierSolutionService">
+      <FriendlyName>90b5d5a1-28b2-4e16-ad2b-0385a4b49b7b</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.LookupMakeEnvironment, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="e472886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.LookupMakeEnvironment">
+      <FriendlyName>9b804b3b-3a41-4e57-ac3a-0a8b042f6e8c</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.MergeAllPatchCarrierSolutionService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="e672886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.MergeAllPatchCarrierSolutionService">
+      <FriendlyName>82688ca0-59ad-4619-a677-9745c647d0b2</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.RunCarrierDependencyCheckService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="e872886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.RunCarrierDependencyCheckService">
+      <FriendlyName>9dbfae8c-7578-4e59-bade-f20855584873</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.SynchronizeAssembliesService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="ea72886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.SynchronizeAssembliesService">
+      <FriendlyName>2b97852e-5d74-41a8-93d4-aa835348755b</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.UpdateLinkedCarrierSolutionService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="ec72886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.UpdateLinkedCarrierSolutionService">
+      <FriendlyName>b0382a78-ced3-4682-92f2-08b506b85ef1</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.UpdateLinkedWorkbenchSolutionService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="ee72886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.UpdateLinkedWorkbenchSolutionService">
+      <FriendlyName>2064fb31-0b4d-4c67-8ea0-d4511490d2ee</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.WorkbenchCreator, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="f072886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.WorkbenchCreator">
+      <FriendlyName>aca410a1-3456-47b1-a532-6938c981950a</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.WorkbenchStatusReasonListener, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="f172886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.WorkbenchStatusReasonListener">
+      <FriendlyName>88fa0908-dc07-468c-b165-399f40e9b3ba</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>
