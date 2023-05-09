@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <WebResourceId>{2215018f-47ea-ed11-8849-000d3a25bcec}</WebResourceId>
+  <WebResourceId>{5f852620-29eb-ed11-8849-000d3a25bcec}</WebResourceId>
   <Name>dgt_/Ribbons/dgt_carrier.js</Name>
   <DisplayName>dgt_carrier.js</DisplayName>
-  <Description>Upserted with DGTP: D3EFC8F9E0B299B07648F4143F95E36B04028CB69A53B0B91D22E2B6FAC93B7B</Description>
+  <Description>Upserted with DGTP: 2E6FDE08FBC54ED28E581D0D340B145EBE5A0616A820FD7AC5EC45D129F07A61</Description>
   <WebResourceType>3</WebResourceType>
   <IntroducedVersion>1.0</IntroducedVersion>
   <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
@@ -11,5 +11,5 @@
   <IsCustomizable>1</IsCustomizable>
   <CanBeDeleted>1</CanBeDeleted>
   <IsHidden>0</IsHidden>
-  <FileName>/WebResources/dgt_Ribbonsdgt_carrierjs2215018F-47EA-ED11-8849-000D3A25BCEC</FileName>
+  <FileName>/WebResources/dgt_Ribbonsdgt_carrierjs5F852620-29EB-ED11-8849-000D3A25BCEC</FileName>
 </WebResource>

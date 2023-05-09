@@ -1,4 +1,6 @@
 Push-Location -Path $PSScriptRoot/../src/webresources
+Get-ChildItem .\ -include output -Recurse | foreach { remove-item $_.fullname -Force -Recurse }
+
 & npm install
 & tsc
 

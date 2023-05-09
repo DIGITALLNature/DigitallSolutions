@@ -125,7 +125,7 @@
                         <labels>
                           <label description="Workbench Histories" languagecode="1033" />
                         </labels>
-                        <control indicationOfSubgrid="true" id="ec4u_workbench_history_subgrid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                        <control indicationOfSubgrid="true" id="dgt_workbench_history_subgrid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
                           <parameters>
                             <RecordsPerPage>20</RecordsPerPage>
                             <AutoExpand>Auto</AutoExpand>
@@ -167,7 +167,7 @@
                         <labels>
                           <label description="Carrier Dependency Checks" languagecode="1033" />
                         </labels>
-                        <control indicationOfSubgrid="true" id="ec4u_carrier_dependency_check_subgrid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                        <control indicationOfSubgrid="true" id="dgt_carrier_dependency_check_subgrid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
                           <parameters>
                             <RecordsPerPage>5</RecordsPerPage>
                             <AutoExpand>Auto</AutoExpand>
@@ -222,6 +222,12 @@
                 <label description="Status Reason" languagecode="1033" />
               </labels>
               <control id="header_statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" />
+            </cell>
+            <cell id="{1b553963-99e6-42d9-8e76-d95c43b7953d}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Created On" languagecode="1033" />
+              </labels>
+              <control id="header_createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
             </cell>
           </row>
         </rows>

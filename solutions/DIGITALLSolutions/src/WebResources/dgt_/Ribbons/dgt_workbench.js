@@ -1,12 +1,13 @@
 "use strict";
-var CarrierRibbon;
-(function (CarrierRibbon) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+var WorkbenchRibbon;
+(function (WorkbenchRibbon) {
     function CmdOpenSolutionEditor() {
         const openUrlOptions = { height: 480, width: 640 };
         const solutionid = Xrm.Page.getAttribute('dgt_solutionid').getValue();
         Xrm.Navigation.openUrl(Xrm.Utility.getGlobalContext().getClientUrl() + '/tools/solution/edit.aspx?id={' + solutionid + '}#', openUrlOptions);
     }
-    CarrierRibbon.CmdOpenSolutionEditor = CmdOpenSolutionEditor;
+    WorkbenchRibbon.CmdOpenSolutionEditor = CmdOpenSolutionEditor;
     function CmdOpenMakeSolution() {
         const openUrlOptions = { height: 480, width: 640 };
         const solutionid = Xrm.Page.getAttribute('dgt_solutionid').getValue();
@@ -57,5 +58,5 @@ var CarrierRibbon;
             });
         });
     }
-    CarrierRibbon.CmdOpenMakeSolution = CmdOpenMakeSolution;
-})(CarrierRibbon || (CarrierRibbon = {}));
+    WorkbenchRibbon.CmdOpenMakeSolution = CmdOpenMakeSolution;
+})(WorkbenchRibbon || (WorkbenchRibbon = {}));

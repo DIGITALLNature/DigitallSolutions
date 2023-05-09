@@ -17,24 +17,8 @@ namespace dgt.solutions.Plugins
     )]
     public class WorkbenchCreator : Executor
     {
-        private const string SolutionConceptPublisher = "SolutionConcept.Publisher";
-
-        public WorkbenchCreator(string unsecure, string secure) : base(unsecure, secure)
-        {
-        }
-
-        public override string GetConfig(string key, int lcid = 1033, string defaultValue = null)
-        {
-            switch (key)
-            {
-                case SolutionConceptPublisher:
-                    //null for default or { "Publisher": "mycustompublisher" }
-                    return string.IsNullOrWhiteSpace(SecureConfig) ? "ec4uexpertconsultingag" : SerializerService.JsonDeserialize<WorkbenchCreatorConfig>(SecureConfig).Publisher;
-                default:
-                    return defaultValue;
-            }
-        }
-
+        private const string SolutionConceptPublisher = "dgt_solution_concept-publisher";
+        
         protected override ExecutionResult Execute()
         {
             var workbench = Entity.ToEntity<DgtWorkbench>();
@@ -57,7 +41,7 @@ namespace dgt.solutions.Plugins
                 }
                 else
                 {
-                    var uniqueName = ConfigService.GetConfig(SolutionConceptPublisher);
+                    var uniqueName = EnvironmentVariablesService.GetConfig(SolutionConceptPublisher);
                     publisher = (from rec in dataContext.PublisherSet
                                  where rec.UniqueName == uniqueName
                                  select rec).Single();
@@ -73,7 +57,7 @@ namespace dgt.solutions.Plugins
                     FriendlyName = $"{workbench.DgtName} - Workbench ({DateTime.UtcNow.Date:yyyy-MM-dd})",
                     PublisherId = publisher.ToEntityReference(),
                     Version = "0.0.0.1",
-                    Description = "created via ec4u WorkbenchCreator"
+                    Description = "created via Digitall WorkbenchCreator"
                 });
                 var solution = SecuredOrganizationService.Retrieve(
                       Solution.EntityLogicalName,

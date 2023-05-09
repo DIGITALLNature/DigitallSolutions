@@ -1,0 +1,14 @@
+<environmentvariabledefinition schemaname="dgt_solution_concept-main_pattern">
+  <defaultvalue>minor</defaultvalue>
+  <description default="[major|minor]">
+    <label description="[major|minor]" languagecode="1033" />
+  </description>
+  <displayname default="SolutionConcept - MainPattern">
+    <label description="SolutionConcept - MainPattern" languagecode="1033" />
+  </displayname>
+  <introducedversion>3.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

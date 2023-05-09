@@ -1,14 +1,103 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <CustomActions />
+  <CustomActions>
+    <CustomAction Id="dgt.dgt_workbench.Button.OpenMakeSolution.CustomAction" Location="Mscrm.Form.dgt_workbench.MainTab.Save.Controls._children" Sequence="100">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dgt.dgt_workbench.Button.OpenMakeSolution.Alt" Command="dgt.dgt_workbench.Command.OpenMakeSolution" Id="dgt.dgt_workbench.Button.OpenMakeSolution" LabelText="$LocLabels:dgt.dgt_workbench.Button.OpenMakeSolution.LabelText" Sequence="100" TemplateAlias="o2" ToolTipTitle="$LocLabels:dgt.dgt_workbench.Button.OpenMakeSolution.ToolTipTitle" ToolTipDescription="$LocLabels:dgt.dgt_workbench.Button.OpenMakeSolution.ToolTipDescription" ModernImage="$webresource:dgt_/Icons/dgt_carrier.svg" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <CustomAction Id="dgt.dgt_workbench.Button.OpenSolutionEditor.CustomAction" Location="Mscrm.Form.dgt_workbench.MainTab.Save.Controls._children" Sequence="95">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:dgt.dgt_workbench.Button.OpenSolutionEditor.Alt" Command="dgt.dgt_workbench.Command.OpenSolutionEditor" Id="dgt.dgt_workbench.Button.OpenSolutionEditor" LabelText="$LocLabels:dgt.dgt_workbench.Button.OpenSolutionEditor.LabelText" Sequence="95" TemplateAlias="o2" ToolTipTitle="$LocLabels:dgt.dgt_workbench.Button.OpenSolutionEditor.ToolTipTitle" ToolTipDescription="$LocLabels:dgt.dgt_workbench.Button.OpenSolutionEditor.ToolTipDescription" ModernImage="$webresource:dgt_/Icons/dgt_carrier.svg" />
+      </CommandUIDefinition>
+    </CustomAction>
+  </CustomActions>
   <Templates>
     <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
   </Templates>
-  <CommandDefinitions />
+  <CommandDefinitions>
+    <CommandDefinition Id="dgt.dgt_workbench.Command.OpenMakeSolution">
+      <EnableRules>
+        <EnableRule Id="dgt.dgt_workbench.EnableRule.OpenMakeSolution" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="dgt.dgt_workbench.DisplayRule.OpenMakeSolution" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="WorkbenchRibbon.CmdOpenMakeSolution" Library="$webresource:dgt_/Ribbons/dgt_workbench.js" />
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="dgt.dgt_workbench.Command.OpenSolutionEditor">
+      <EnableRules>
+        <EnableRule Id="dgt.dgt_workbench.EnableRule.OpenSolutionEditor" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="dgt.dgt_workbench.DisplayRule.OpenSolutionEditor" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="WorkbenchRibbon.CmdOpenSolutionEditor" Library="$webresource:dgt_/Ribbons/dgt_workbench.js" />
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
   <RuleDefinitions>
     <TabDisplayRules />
-    <DisplayRules />
-    <EnableRules />
+    <DisplayRules>
+      <DisplayRule Id="dgt.dgt_workbench.DisplayRule.OpenMakeSolution">
+        <FormStateRule State="Create" Default="false" InvertResult="true" />
+      </DisplayRule>
+      <DisplayRule Id="dgt.dgt_workbench.DisplayRule.OpenSolutionEditor">
+        <FormStateRule State="Create" Default="false" InvertResult="true" />
+      </DisplayRule>
+    </DisplayRules>
+    <EnableRules>
+      <EnableRule Id="dgt.dgt_workbench.EnableRule.OpenMakeSolution">
+        <ValueRule Field="dgt_solutionid" Value="" Default="true" InvertResult="true" />
+      </EnableRule>
+      <EnableRule Id="dgt.dgt_workbench.EnableRule.OpenSolutionEditor">
+        <ValueRule Field="dgt_solutionid" Value="" Default="true" InvertResult="true" />
+      </EnableRule>
+    </EnableRules>
   </RuleDefinitions>
-  <LocLabels />
+  <LocLabels>
+    <LocLabel Id="dgt.dgt_workbench.Button.OpenMakeSolution.Alt">
+      <Titles>
+        <Title description="Modern Make Solution" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_workbench.Button.OpenMakeSolution.LabelText">
+      <Titles>
+        <Title description="Modern Make Solution" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_workbench.Button.OpenMakeSolution.ToolTipDescription">
+      <Titles>
+        <Title description="Modern Make Solution" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_workbench.Button.OpenMakeSolution.ToolTipTitle">
+      <Titles>
+        <Title description="Modern Make Solution" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_workbench.Button.OpenSolutionEditor.Alt">
+      <Titles>
+        <Title description="Classic Solution Editor" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_workbench.Button.OpenSolutionEditor.LabelText">
+      <Titles>
+        <Title description="Classic Solution Editor" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_workbench.Button.OpenSolutionEditor.ToolTipDescription">
+      <Titles>
+        <Title description="Classic Solution Editor" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="dgt.dgt_workbench.Button.OpenSolutionEditor.ToolTipTitle">
+      <Titles>
+        <Title description="Classic Solution Editor" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
 </RibbonDiffXml>

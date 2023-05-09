@@ -1,4 +1,5 @@
-namespace CarrierRibbon {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+namespace WorkbenchRibbon {
   export function CmdOpenSolutionEditor(): void {
     const openUrlOptions = { height: 480, width: 640 };
     const solutionid = Xrm.Page.getAttribute('dgt_solutionid').getValue();

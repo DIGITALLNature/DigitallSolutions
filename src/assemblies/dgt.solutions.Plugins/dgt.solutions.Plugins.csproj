@@ -48,10 +48,6 @@
         <Compile Include="Contract\ComponentInfo.cs" />
         <Compile Include="Contract\ComponentMoverLogEntry.cs" />
         <Compile Include="Contract\ConstraintCheckLogEntry.cs" />
-        <Compile Include="Contract\CreateNewPatchCarrierSolutionConfig.cs" />
-        <Compile Include="Contract\LookupMakeEnvironmentConfig.cs" />
-        <Compile Include="Contract\MergeAllPatchCarrierSolutionConfig.cs" />
-        <Compile Include="Contract\WorkbenchCreatorConfig.cs" />
         <Compile Include="CreateNewPatchCarrierSolutionService.cs" />
         <Compile Include="Helper\ComponentMover.cs" />
         <Compile Include="Helper\ConstraintCheck.cs" />
@@ -85,7 +81,7 @@
     <Import Project="..\..\..\libs\d365.extension\Registration\Registration.projitems" Label="Shared" />
     <Import Project="..\..\..\libs\d365.extension.Model\d365.extension.Model.projitems" Label="Shared" />
     <Import Project="..\..\..\libs\d365.extension\CoreLogging\PluginTrace\CoreLogging.PluginTrace.projitems" Label="Shared" />
-    <Import Project="..\..\..\libs\d365.extension\CoreConfig\Plugin\CoreConfig.Plugin.projitems" Label="Shared" />
+    <Import Project="..\..\..\libs\d365.extension\CoreConfig\EnvironmentVariables\CoreConfig.EnvironmentVariables.projitems" Label="Shared" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
     <Target Name="BeforeBuild">
