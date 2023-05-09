@@ -22,7 +22,7 @@ jobs:
 #        with:
 #          dotnet-version: "4.6.2"
       - name: MSBuild
-        run: msbuild
+        run: msbuild solutions/DIGITALLSolutions/DIGITALLSolutions.cdsproj /property:Configuration=Release
       - name: Install packages
         run: npm ci
       - name: Semantic Release
