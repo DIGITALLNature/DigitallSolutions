@@ -21,8 +21,8 @@ jobs:
 #        uses: actions/setup-dotnet@v3.0.3
 #        with:
 #          dotnet-version: "4.6.2"
-      - name: Install npm packages
-        run: npm ci
+#      - name: Install npm packages
+#        run: npm ci
       - name: Restore Nuget packages
         run: nuget restore solutions/DIGITALLSolutions/DIGITALLSolutions.cdsproj
       - name: MSBuild
