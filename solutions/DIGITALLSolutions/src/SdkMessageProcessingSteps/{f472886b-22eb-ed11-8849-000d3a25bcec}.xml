@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="dgt.solutions.Plugins.CarrierStateListener|dgt_carrier|Asynchronous|PostOperation|Update|100" SdkMessageProcessingStepId="{f472886b-22eb-ed11-8849-000d3a25bcec}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>dgt.solutions.Plugins.CarrierStateListener, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237</PluginTypeName>
+  <PluginTypeId>df72886b-22eb-ed11-8849-000d3a25bcec</PluginTypeId>
+  <PrimaryEntity>dgt_carrier</PrimaryEntity>
+  <AsyncAutoDelete>1</AsyncAutoDelete>
+  <FilteringAttributes>statecode</FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>1</Mode>
+  <Rank>100</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>
