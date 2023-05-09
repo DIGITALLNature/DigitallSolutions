@@ -1,0 +1,68 @@
+{
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@droidsolutions-oss/semantic-release-update-file": "^1.3.0",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.7",
+    "husky": "^8.0.3",
+    "semantic-release": "^21.0.2"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@droidsolutions-oss/semantic-release-update-file",
+        {
+          "files": [
+            {
+              "path": [
+                "solutions/DIGITALLSolutions/src/Other/Solution.xml"
+              ],
+              "type": "xml",
+              "replacements": [
+                {
+                  "key": "Version",
+                  "value": "${nextRelease.version}"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": "solutions/DIGITALLSolutions/src/Other/Solution.xml",
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "msbuild solutions/DIGITALLSolutions/DIGITALLSolutions.cdsproj /property:Configuration=Release"
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "solutions/DIGITALLSolutions/bin/Release/DIGITALLSolutions.zip",
+              "label": "DigitallSolutions (${nextRelease.version})",
+              "name": "DigitallSolutions.zip"
+            }
+          ]
+        }
+      ]
+    ]
+  },
+  "scripts": {
+      "prepare": "husky install"
+  }
+}

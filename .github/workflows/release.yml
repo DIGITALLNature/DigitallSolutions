@@ -1,0 +1,31 @@
+name: Build Digitall Solution
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  release:
+    name: Semantic Release
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Restore Nuget packages
+        run: nuget restore solutions/DIGITALLSolutions/DIGITALLSolutions.cdsproj
+      - name: Setup msbuild
+        uses: microsoft/setup-msbuild@v1.1
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install npm packages
+        run: npm ci
+      - name: Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
+
+
