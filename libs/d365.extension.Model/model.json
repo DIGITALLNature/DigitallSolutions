@@ -29,7 +29,8 @@
     "sdkmessageprocessingstep",
     "sdkmessageprocessingstepimage",
     "environmentvariabledefinition",
-    "environmentvariablevalue"
+    "environmentvariablevalue",
+    "msdyn_componentlayer"
   ],
   "Solutions": [
     "c81aa2bb-c4e9-ed11-8849-000d3a25bcec"

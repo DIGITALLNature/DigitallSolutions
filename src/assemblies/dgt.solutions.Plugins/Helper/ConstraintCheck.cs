@@ -12,28 +12,29 @@ namespace dgt.solutions.Plugins.Helper
 {
     internal class ConstraintCheck
     {
-        private readonly Executor _executor;
         private readonly PicklistAttributeMetadata _componentTypes;
+        private readonly Executor _executor;
 
         public ConstraintCheck(Executor executor)
         {
             _executor = executor;
-            _componentTypes = ((RetrieveAttributeResponse)executor.ElevatedOrganizationService.Execute(new RetrieveAttributeRequest { EntityLogicalName = SolutionComponent.EntityLogicalName, LogicalName = SolutionComponent.LogicalNames.ComponentType })).AttributeMetadata as PicklistAttributeMetadata;
+            _componentTypes = ((RetrieveAttributeResponse)executor.ElevatedOrganizationService.Execute(
+                new RetrieveAttributeRequest
+                {
+                    EntityLogicalName = SolutionComponent.EntityLogicalName,
+                    LogicalName = SolutionComponent.LogicalNames.ComponentType
+                })).AttributeMetadata as PicklistAttributeMetadata;
         }
 
         internal IEnumerable<ConstraintCheckLogEntry> Check(DgtCarrier carrier, DgtWorkbench workbench)
         {
             if (carrier.DgtConstraintMset == null)
-            {
                 yield return new ConstraintCheckLogEntry
                 {
                     ConstraintType = "No constraints defined"
                 };
-            }
             else
-            {
                 foreach (var constraint in carrier.DgtConstraintMset)
-                {
                     switch (constraint.Value)
                     {
                         case DgtCarrier.Options.DgtConstraintMset.PreventFlows:
@@ -49,8 +50,6 @@ namespace dgt.solutions.Plugins.Helper
                             yield return CheckForAssemblysAndAssemblysSteps(Guid.Parse(workbench.DgtSolutionid));
                             break;
                     }
-                }
-            }
         }
 
         private ConstraintCheckLogEntry CheckForAssemblysAndAssemblysSteps(Guid originId)
@@ -60,27 +59,28 @@ namespace dgt.solutions.Plugins.Helper
                 SolutionComponent.Options.ComponentType.PluginAssembly,
                 SolutionComponent.Options.ComponentType.SDKMessageProcessingStep
             };
-            var components = GetSolutionComponents(new List<ConditionExpression>{
+            var components = GetSolutionComponents(new List<ConditionExpression>
+            {
                 new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, originId),
-                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.In, componentsTypes.ToArray())
+                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.In,
+                    componentsTypes.ToArray())
             });
 
-            if(components.Any())
-            {
+            if (components.Any())
                 return new ConstraintCheckLogEntry
                 {
                     ConstraintType = "Prevent PreventPluginAssemblys",
                     Succeded = false,
-                    ErrorComponents = components.Select(c => new ComponentInfo { ComponentId = c.ObjectId.GetValueOrDefault(), ComponentType = GetComponentTypeSetLabel(c.ComponentType.Value) }).ToList()
+                    ErrorComponents = components.Select(c => new ComponentInfo
+                    {
+                        ComponentId = c.ObjectId.GetValueOrDefault(),
+                        ComponentType = GetComponentTypeSetLabel(c.ComponentType.Value)
+                    }).ToList()
                 };
-            }
-            else
+            return new ConstraintCheckLogEntry
             {
-                return new ConstraintCheckLogEntry
-                {
-                    ConstraintType = "Prevent PreventPluginAssemblys"
-                };
-            }
+                ConstraintType = "Prevent PreventPluginAssemblys"
+            };
         }
 
         private string GetComponentTypeSetLabel(int value)
@@ -90,9 +90,11 @@ namespace dgt.solutions.Plugins.Helper
 
         private ConstraintCheckLogEntry CheckForManagedEntitiesWithAllAssets(Guid originId)
         {
-            var components = GetSolutionComponents(new List<ConditionExpression>{
+            var components = GetSolutionComponents(new List<ConditionExpression>
+            {
                 new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, originId),
-                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.Equal, SolutionComponent.Options.ComponentType.Entity)
+                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.Equal,
+                    SolutionComponent.Options.ComponentType.Entity)
             });
 
             var request = new RetrieveAllEntitiesRequest
@@ -103,24 +105,26 @@ namespace dgt.solutions.Plugins.Helper
             var entities = response.EntityMetadata.ToList();
             var failedEntities = new List<ComponentInfo>();
 
-            foreach (var component in components.Where(c => c.RootComponentBehavior?.Value == SolutionComponent.Options.RootComponentBehavior.IncludeSubcomponents))
+            foreach (var component in components.Where(c =>
+                         c.RootComponentBehavior?.Value ==
+                         SolutionComponent.Options.RootComponentBehavior.IncludeSubcomponents))
             {
                 var entity = entities.Single(e => e.MetadataId == component.ObjectId);
-                if(entity.IsManaged.GetValueOrDefault())
-                {
-                    failedEntities.Add(new ComponentInfo { ComponentId = component.ObjectId.GetValueOrDefault(), ComponentType = "Entity" });
-                }
+                if (entity.IsManaged.GetValueOrDefault())
+                    failedEntities.Add(new ComponentInfo
+                    {
+                        ComponentId = component.ObjectId.GetValueOrDefault(), ComponentType = "Entity",
+                        Hint = entity.LogicalName
+                    });
             }
 
-            if(failedEntities.Any())
-            {
+            if (failedEntities.Any())
                 return new ConstraintCheckLogEntry
                 {
                     ConstraintType = "Prevent ManagedEntitiesWithAllAssets",
                     Succeded = false,
                     ErrorComponents = failedEntities
                 };
-            }
 
             return new ConstraintCheckLogEntry
             {
@@ -141,50 +145,62 @@ namespace dgt.solutions.Plugins.Helper
                 SolutionComponent.Options.ComponentType.ViewAttribute,
                 SolutionComponent.Options.ComponentType.SystemForm
             };
-            var components = GetSolutionComponents(new List<ConditionExpression>{
+            var components = GetSolutionComponents(new List<ConditionExpression>
+            {
                 new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, originId),
-                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.In, componentsTypes.ToArray())
+                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.In,
+                    componentsTypes.ToArray())
             });
 
-            if (components.Any())
+            var failed = new List<ComponentInfo>();
+
+            foreach (var component in components)
             {
+                var layers = GetSolutionLayers(component);
+                if (!layers.Any()) continue;
+
+                var first = layers.First();
+                if (first.MsdynSolutionname != "Active")
+                    failed.Add(new ComponentInfo
+                    {
+                        ComponentId = component.ObjectId.GetValueOrDefault(), Hint = first.MsdynSolutionname,
+                        ComponentType = GetComponentTypeSetLabel(component.ComponentType.Value)
+                    });
+            }
+
+            if (failed.Any())
                 return new ConstraintCheckLogEntry
                 {
                     ConstraintType = "Prevent ItemsWithouthActiveLayer",
                     Succeded = false,
-                    ErrorComponents = components.Select(c => new ComponentInfo { ComponentId = c.ObjectId.GetValueOrDefault(), ComponentType = GetComponentTypeSetLabel(c.ComponentType.Value) }).ToList()
+                    ErrorComponents = failed
                 };
-            }
-            else
+
+            return new ConstraintCheckLogEntry
             {
-                return new ConstraintCheckLogEntry
-                {
-                    ConstraintType = "Prevent ItemsWithouthActiveLayer"
-                };
-            }
+                ConstraintType = "Prevent ItemsWithouthActiveLayer",
+                Succeded = true
+            };
         }
 
         private ConstraintCheckLogEntry CheckForFlows(Guid originId)
         {
             var components = GetSolutionFlowComponents(originId);
 
-
             if (components.Any())
-            {
                 return new ConstraintCheckLogEntry
                 {
                     ConstraintType = "Prevent Flows",
                     Succeded = false,
-                    ErrorComponents = components.Select(c => new ComponentInfo { ComponentId = c.ObjectId.GetValueOrDefault(), ComponentType = "Flow" }).ToList()
+                    ErrorComponents = components.Select(c => new ComponentInfo
+                        { ComponentId = c.ObjectId.GetValueOrDefault(), ComponentType = "Flow" }).ToList()
                 };
-            }
-            else
+
+            return new ConstraintCheckLogEntry
             {
-                return new ConstraintCheckLogEntry
-                {
-                    ConstraintType = "Prevent Flows"
-                };
-            }
+                ConstraintType = "Prevent Flows",
+                Succeded = true
+            };
         }
 
         private List<SolutionComponent> GetSolutionComponents(IEnumerable<ConditionExpression> conditions)
@@ -222,6 +238,7 @@ namespace dgt.solutions.Plugins.Helper
                     break;
                 }
             }
+
             return components;
         }
 
@@ -233,15 +250,20 @@ namespace dgt.solutions.Plugins.Helper
                 NoLock = true,
                 ColumnSet = new ColumnSet(true)
             };
-            qe.Criteria.Conditions.AddRange(new List<ConditionExpression>{
+            qe.Criteria.Conditions.AddRange(new List<ConditionExpression>
+            {
                 new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, originId),
-                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.Equal, SolutionComponent.Options.ComponentType.Workflow)
+                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.Equal,
+                    SolutionComponent.Options.ComponentType.Workflow)
             });
 
-            var workflowLink = qe.AddLink(Workflow.EntityLogicalName, SolutionComponent.LogicalNames.ObjectId, Workflow.LogicalNames.WorkflowId);
+            var workflowLink = qe.AddLink(Workflow.EntityLogicalName, SolutionComponent.LogicalNames.ObjectId,
+                Workflow.LogicalNames.WorkflowId);
             workflowLink.LinkCriteria.FilterOperator = LogicalOperator.Or;
-            workflowLink.LinkCriteria.AddCondition(Workflow.LogicalNames.Category, ConditionOperator.Equal, Workflow.Options.Category.DesktopFlow);
-            workflowLink.LinkCriteria.AddCondition(Workflow.LogicalNames.Category, ConditionOperator.Equal, Workflow.Options.Category.ModernFlow);
+            workflowLink.LinkCriteria.AddCondition(Workflow.LogicalNames.Category, ConditionOperator.Equal,
+                Workflow.Options.Category.DesktopFlow);
+            workflowLink.LinkCriteria.AddCondition(Workflow.LogicalNames.Category, ConditionOperator.Equal,
+                Workflow.Options.Category.ModernFlow);
 
             qe.Orders.Add(new OrderExpression
             {
@@ -269,8 +291,37 @@ namespace dgt.solutions.Plugins.Helper
                     break;
                 }
             }
+
             return components;
         }
 
+        protected List<MsdynComponentlayer> GetSolutionLayers(SolutionComponent component)
+        {
+            var query = new QueryExpression
+            {
+                EntityName = MsdynComponentlayer.EntityLogicalName,
+                NoLock = true,
+                ColumnSet = new ColumnSet(
+                    MsdynComponentlayer.LogicalNames.MsdynName,
+                    MsdynComponentlayer.LogicalNames.MsdynSolutionname,
+                    MsdynComponentlayer.LogicalNames.MsdynOrder
+                )
+            };
+            var filter = new FilterExpression(LogicalOperator.And);
+            filter.Conditions.Add(
+                new ConditionExpression
+                {
+                    AttributeName = MsdynComponentlayer.LogicalNames.MsdynComponentid,
+                    Operator = ConditionOperator.Equal,
+                    Values = { $"{component.ObjectId:B}" }
+                }
+            );
+            query.Criteria = filter;
+
+            query.AddOrder(MsdynComponentlayer.LogicalNames.MsdynOrder, OrderType.Descending);
+            var layers = _executor.ElevatedOrganizationService.RetrieveMultiple(query).Entities
+                .Select(s => s.ToEntity<MsdynComponentlayer>()).ToList();
+            return layers;
+        }
     }
 }
