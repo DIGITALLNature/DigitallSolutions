@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.23042.190" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.23051.240" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>DIGITALLSolutions</UniqueName>
     <LocalizedNames>
       <LocalizedName description="DIGITALL Solution Concept" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.0</Version>
+    <Version>3.0.0.1</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>digitall</UniqueName>
@@ -123,18 +123,6 @@
       <RootComponent type="92" id="{f872886b-22eb-ed11-8849-000d3a25bcec}" behavior="0" />
     </RootComponents>
     <MissingDependencies>
-      <MissingDependency>
-        <Required type="SettingDefinition" displayName="FluentThemingPreview" solution="msdyn_PowerAppsThemingSettings (1.0.0.6)" id.uniquename="FluentThemingPreview" />
-        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=FluentThemingPreview" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="FluentThemingPreview" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="SettingDefinition" displayName="ServerMode" solution="SettingDefinitionsData (9.1.22112.221109001)" id.uniquename="ServerMode" />
-        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=ServerMode" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="ServerMode" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="SettingDefinition" displayName="ShareButtonOnViewsDashboards" solution="msft_PowerAppsCollaborationCommon (1.0.0.1)" id.uniquename="ShareButtonOnViewsDashboards" />
-        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=ShareButtonOnViewsDashboards" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="ShareButtonOnViewsDashboards" />
-      </MissingDependency>
       <MissingDependency>
         <Required type="SettingDefinition" displayName="FluentThemingPreview" solution="msdyn_PowerAppsThemingSettings (1.0.0.6)" id.uniquename="FluentThemingPreview" />
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=FluentThemingPreview" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="FluentThemingPreview" />
