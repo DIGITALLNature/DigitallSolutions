@@ -11,5 +11,8 @@ namespace dgt.solutions.Plugins.Contract
 
         [DataMember(Name = "Id", Order = 2)]
         public Guid ComponentId { get; set; }
+        
+        [DataMember(Name = "Hint", Order = 3)]
+        public string Hint { get; set; }
     }
 }
