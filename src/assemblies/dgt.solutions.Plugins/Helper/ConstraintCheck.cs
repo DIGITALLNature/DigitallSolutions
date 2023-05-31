@@ -146,6 +146,8 @@ namespace dgt.solutions.Plugins.Helper
                 new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.In, componentsTypes.ToArray())
             });
 
+            
+            
             if (components.Any())
             {
                 return new ConstraintCheckLogEntry
@@ -167,8 +169,23 @@ namespace dgt.solutions.Plugins.Helper
         private ConstraintCheckLogEntry CheckForFlows(Guid originId)
         {
             var components = GetSolutionFlowComponents(originId);
+            var failed = new List<Tuple<Guid, string>>();
+            
+            foreach (var component in components)
+            {
+                var layers = GetSolutionLayers(component);
+                if (!layers.Any())
+                {
+                    continue;
+                }
 
-
+                var first = layers.First();
+                if (first.MsdynSolutionname != "Active")
+                {
+                    failed.Add(new Tuple<Guid, string>(component.ObjectId.GetValueOrDefault(),first.MsdynSolutionname));
+                }
+            }
+            
             if (components.Any())
             {
                 return new ConstraintCheckLogEntry
@@ -178,13 +195,12 @@ namespace dgt.solutions.Plugins.Helper
                     ErrorComponents = components.Select(c => new ComponentInfo { ComponentId = c.ObjectId.GetValueOrDefault(), ComponentType = "Flow" }).ToList()
                 };
             }
-            else
+
+            return new ConstraintCheckLogEntry
             {
-                return new ConstraintCheckLogEntry
-                {
-                    ConstraintType = "Prevent Flows"
-                };
-            }
+                ConstraintType = "Prevent Flows",
+                Succeded = true
+            };
         }
 
         private List<SolutionComponent> GetSolutionComponents(IEnumerable<ConditionExpression> conditions)
@@ -272,5 +288,32 @@ namespace dgt.solutions.Plugins.Helper
             return components;
         }
 
+        protected List<MsdynComponentlayer> GetSolutionLayers(SolutionComponent component)
+        {
+            var query = new QueryExpression
+            {
+                EntityName = MsdynComponentlayer.EntityLogicalName,
+                NoLock = true,
+                ColumnSet = new ColumnSet(
+                    MsdynComponentlayer.LogicalNames.MsdynName,
+                    MsdynComponentlayer.LogicalNames.MsdynSolutionname,
+                    MsdynComponentlayer.LogicalNames.MsdynOrder
+                )
+            };
+            var filter = new FilterExpression(LogicalOperator.And);
+            filter.Conditions.Add(
+                new ConditionExpression
+                {
+                    AttributeName = MsdynComponentlayer.LogicalNames.MsdynComponentid,
+                    Operator = ConditionOperator.Equal,
+                    Values = { $"{component.ObjectId:B}" }
+                }
+            );
+            query.Criteria = filter;
+
+            query.AddOrder(MsdynComponentlayer.LogicalNames.MsdynOrder, OrderType.Descending);
+            var layers = _executor.ElevatedOrganizationService.RetrieveMultiple(query).Entities.Select(s => s.ToEntity<MsdynComponentlayer>()).ToList();
+            return layers;
+        }
     }
 }
