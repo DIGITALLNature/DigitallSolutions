@@ -4,7 +4,7 @@ using Microsoft.Xrm.Sdk.Client;
 
 // ReSharper disable All
 namespace D365.Extension.Model
-{ 
+{
 	[RequestProxy("dgt_clone_a_solution")]
 	public class DgtCloneASolutionRequest : OrganizationRequest
 	{
@@ -91,7 +91,6 @@ namespace D365.Extension.Model
 			}
 		}
 
-		
 	}
 
 	[ResponseProxy("dgt_clone_a_solution")]

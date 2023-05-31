@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtWorkbenchHistory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\EnvironmentVariableDefinition.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\EnvironmentVariableValue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\MsdynComponentlayer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\PluginAssembly.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\PluginType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\Publisher.cs" />

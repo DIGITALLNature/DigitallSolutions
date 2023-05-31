@@ -397,6 +397,26 @@ namespace D365.Extension.Model
         }
 
 		/// <summary>
+		/// Unique identifier for fxexpression associated with SdkMessageProcessingStep.
+		/// </summary>
+		[AttributeLogicalName("fxexpressionid")]
+        public EntityReference FxExpressionId
+        {
+            [DebuggerNonUserCode]
+			get
+            {
+                return GetAttributeValue<EntityReference>("fxexpressionid");
+            }
+            [DebuggerNonUserCode]
+			set
+            {
+                OnPropertyChanging(nameof(FxExpressionId));
+                SetAttributeValue("fxexpressionid", value);
+                OnPropertyChanged(nameof(FxExpressionId));
+            }
+        }
+
+		/// <summary>
 		/// Unique identifier of the user to impersonate context when step is executed.
 		/// </summary>
 		[AttributeLogicalName("impersonatinguserid")]
@@ -994,6 +1014,7 @@ namespace D365.Extension.Model
 				public const string EventHandler = "eventhandler";
 				public const string EventHandlerTypeCode = "eventhandlertypecode";
 				public const string FilteringAttributes = "filteringattributes";
+				public const string FxExpressionId = "fxexpressionid";
 				public const string ImpersonatingUserId = "impersonatinguserid";
 				public const string IntroducedVersion = "introducedversion";
 				public const string InvocationSource = "invocationsource";
@@ -1037,6 +1058,7 @@ namespace D365.Extension.Model
             public static class ManyToOne
             {
 				public const string CreatedbySdkmessageprocessingstep = "createdby_sdkmessageprocessingstep";
+				public const string FxexpressionSdkmessageprocessingstep = "fxexpression_sdkmessageprocessingstep";
 				public const string ImpersonatinguseridSdkmessageprocessingstep = "impersonatinguserid_sdkmessageprocessingstep";
 				public const string LkSdkmessageprocessingstepCreatedonbehalfby = "lk_sdkmessageprocessingstep_createdonbehalfby";
 				public const string LkSdkmessageprocessingstepModifiedonbehalfby = "lk_sdkmessageprocessingstep_modifiedonbehalfby";

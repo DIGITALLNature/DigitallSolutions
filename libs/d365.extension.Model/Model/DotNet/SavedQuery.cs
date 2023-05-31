@@ -392,19 +392,6 @@ namespace D365.Extension.Model
         }
 
 		/// <summary>
-		/// Indicates whether or not this is viewable by the entire organization.
-		/// </summary>
-		[AttributeLogicalName("isprivate")]
-        public bool? IsPrivate
-        {
-            [DebuggerNonUserCode]
-			get
-            {
-                return GetAttributeValue<bool?>("isprivate");
-            }
-        }
-
-		/// <summary>
 		/// Choose whether the view is compatible with Quick Find. When users search for specific items, you define the fields that are searched in.
 		/// </summary>
 		[AttributeLogicalName("isquickfindquery")]
@@ -825,7 +812,6 @@ namespace D365.Extension.Model
 				public const string IsCustomizable = "iscustomizable";
 				public const string IsDefault = "isdefault";
 				public const string IsManaged = "ismanaged";
-				public const string IsPrivate = "isprivate";
 				public const string IsQuickFindQuery = "isquickfindquery";
 				public const string IsUserDefined = "isuserdefined";
 				public const string LayoutJson = "layoutjson";
