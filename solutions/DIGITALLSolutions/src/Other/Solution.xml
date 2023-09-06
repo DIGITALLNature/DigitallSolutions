@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.23051.240" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.23081.184" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>DIGITALLSolutions</UniqueName>
     <LocalizedNames>
@@ -124,7 +124,7 @@
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
-        <Required type="SettingDefinition" displayName="FluentThemingPreview" solution="msdyn_PowerAppsThemingSettings (1.0.0.6)" id.uniquename="FluentThemingPreview" />
+        <Required type="SettingDefinition" displayName="FluentThemingPreview" solution="msdyn_PowerAppsThemingSettings (1.0.0.8)" id.uniquename="FluentThemingPreview" />
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=FluentThemingPreview" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="FluentThemingPreview" />
       </MissingDependency>
       <MissingDependency>
@@ -132,7 +132,7 @@
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=ServerMode" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="ServerMode" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="SettingDefinition" displayName="ShareButtonOnViewsDashboards" solution="msft_PowerAppsCollaborationCommon (1.0.0.1)" id.uniquename="ShareButtonOnViewsDashboards" />
+        <Required type="SettingDefinition" displayName="ShareButtonOnViewsDashboards" solution="msft_PowerAppsCollaborationCommon (1.0.0.5)" id.uniquename="ShareButtonOnViewsDashboards" />
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=ShareButtonOnViewsDashboards" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="ShareButtonOnViewsDashboards" />
       </MissingDependency>
     </MissingDependencies>
