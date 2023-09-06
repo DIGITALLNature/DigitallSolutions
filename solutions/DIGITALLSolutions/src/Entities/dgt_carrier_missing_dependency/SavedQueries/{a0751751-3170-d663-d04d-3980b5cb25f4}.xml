@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{a0751751-3170-d663-d04d-3980b5cb25f4}</savedqueryid>
+    <querytype>1048576</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dgt_carrier_missing_dependency">
+          <attribute name="dgt_carrier_missing_dependencyid" />
+          <attribute name="dgt_component" />
+          <order attribute="dgt_component" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="dgt_component" operator="like" value="{0}" />
+            <condition attribute="dgt_solution_component_recordid" operator="like" value="{0}" />
+            <condition attribute="dgt_required_component_type_name" operator="like" value="{0}" />
+            <condition attribute="dgt_required_component_type_no" operator="eq" value="{1}" />
+            <condition attribute="dgt_required_component_objectid" operator="like" value="{0}" />
+            <condition attribute="dgt_carrier_id" operator="like" value="{0}" />
+            <condition attribute="dgt_carrier_dependency_check_id" operator="like" value="{0}" />
+          </filter>
+          <attribute name="dgt_carrier_id" />
+          <attribute name="dgt_carrier_dependency_check_id" />
+          <attribute name="dgt_required_component_objectid" />
+          <attribute name="dgt_required_component_type_name" />
+          <attribute name="dgt_required_component_type_no" />
+          <attribute name="dgt_solution_component_recordid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="dgt_carrier_missing_dependency Copilot View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

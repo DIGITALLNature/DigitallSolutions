@@ -27,17 +27,17 @@ namespace dgt.solutions.Plugins
     {
         protected override ExecutionResult Execute()
         {
-            var pre = PreEntityImage.ToEntity<DgtWorkbench>();
+            var workbench = this.MergeEntity<DgtWorkbench>();
             switch (Entity.ToEntity<DgtWorkbench>().Statuscode.Value)
             {
                 case DgtWorkbench.Options.Statuscode.Merge:
-                    return new ComponentMoveProcessor(this).Init("Merge", DgtWorkbench.Options.Statecode.Active, DgtWorkbench.Options.Statuscode.Active).Execute(pre);
+                    return new ComponentMoveProcessor(this).Init("Merge", DgtWorkbench.Options.Statecode.Active, DgtWorkbench.Options.Statuscode.Active).Execute(workbench);
                 case DgtWorkbench.Options.Statuscode.Finalize:
-                    return new ComponentMoveProcessor(this).Init("Finalize", DgtWorkbench.Options.Statecode.Inactive, DgtWorkbench.Options.Statuscode.Inactive).Execute(pre);
+                    return new ComponentMoveProcessor(this).Init("Finalize", DgtWorkbench.Options.Statecode.Inactive, DgtWorkbench.Options.Statuscode.Inactive).Execute(workbench);
                 case DgtWorkbench.Options.Statuscode.Close:
-                    return new CloseProcessor(this).Init("Close", DgtWorkbench.Options.Statecode.Inactive, DgtWorkbench.Options.Statuscode.Inactive).Execute(pre);
+                    return new CloseProcessor(this).Init("Close", DgtWorkbench.Options.Statecode.Inactive, DgtWorkbench.Options.Statuscode.Inactive).Execute(workbench);
                 case DgtWorkbench.Options.Statuscode.Inactive:
-                    return new FinalizeProcessor(this).Execute(pre);
+                    return new FinalizeProcessor(this).Execute(workbench);
                 default:
                     return ExecutionResult.Skipped;
             }
