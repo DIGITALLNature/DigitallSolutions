@@ -163,8 +163,9 @@ namespace dgt.solutions.Plugins.Helper
                 if (first.MsdynSolutionname != "Active")
                     failed.Add(new ComponentInfo
                     {
-                        ComponentId = component.ObjectId.GetValueOrDefault(), Hint = first.MsdynSolutionname,
-                        ComponentType = GetComponentTypeSetLabel(component.ComponentType.Value)
+                        ComponentId = component.ObjectId.GetValueOrDefault(), 
+                        Hint = $"Top Solution: {first.MsdynSolutionname}",
+                        ComponentType = GetComponentTypeSetLabel(component.ComponentType.Value),
                     });
             }
 
