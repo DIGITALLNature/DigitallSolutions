@@ -138,6 +138,10 @@
         <Dependent type="60" displayName="Information" parentDisplayName="Carrier" id="{f4c77d5f-4b0e-46b1-be06-b1a9a8662042}" />
       </MissingDependency>
       <MissingDependency>
+        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2406.1011)" />
+        <Dependent type="68" id="{cad44041-466a-4d67-856f-343c2bd77538}" />
+      </MissingDependency>
+      <MissingDependency>
         <Required type="CustomAPI" displayName="dgt_prevent_managed_tables_with_all_assets" solution="Active" id.uniquename="dgt_prevent_managed_tables_with_all_assets" />
         <Dependent type="CustomAPIResponseProperty" displayName="customapiid.uniquename=dgt_prevent_managed_tables_with_all_assets,uniquename=Log" id.customapiid.uniquename="dgt_prevent_managed_tables_with_all_assets" id.uniquename="Log" />
       </MissingDependency>
