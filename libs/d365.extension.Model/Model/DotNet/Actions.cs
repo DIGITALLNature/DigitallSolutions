@@ -178,6 +178,189 @@ namespace D365.Extension.Model
 
 	}
 
+	[RequestProxy("dgt_prevent_items_without_active_layer")]
+	public class DgtPreventItemsWithoutActiveLayerRequest : OrganizationRequest
+	{
+		public DgtPreventItemsWithoutActiveLayerRequest()
+		{
+			RequestName = "dgt_prevent_items_without_active_layer";
+		}
+
+		#region consts
+		public const string RequestLogicalName = "dgt_prevent_items_without_active_layer";
+		#endregion
+
+		#region InParameters
+		public struct InParameters
+		{
+			public const string Target = "Target";
+		}
+		#endregion
+
+		public EntityReference Target
+		{
+			get
+			{
+				if(base.Parameters.Contains("Target"))
+				{
+					return (EntityReference)base.Parameters["Target"];
+				}
+				return default(EntityReference);
+			}
+			set
+			{
+				base.Parameters["Target"] = value;
+			}
+		}
+
+	}
+
+	[ResponseProxy("dgt_prevent_items_without_active_layer")]
+	public class DgtPreventItemsWithoutActiveLayerResponse : OrganizationResponse
+	{
+		#region OutParameters
+		public struct OutParameters
+		{
+			public const string ConstraintLog_PreventItemsWithoutActiveLayer = "Log";
+		}
+		#endregion
+
+		public string ConstraintLog_PreventItemsWithoutActiveLayer
+		{
+			get
+			{
+				if(base.Results.Contains("Log"))
+				{
+					return (string)base.Results["Log"];
+				}
+				return default(string);
+			}
+		}
+
+	}
+
+	[RequestProxy("dgt_prevent_managed_tables_with_all_assets")]
+	public class DgtPreventManagedTablesWithAllAssetsRequest : OrganizationRequest
+	{
+		public DgtPreventManagedTablesWithAllAssetsRequest()
+		{
+			RequestName = "dgt_prevent_managed_tables_with_all_assets";
+		}
+
+		#region consts
+		public const string RequestLogicalName = "dgt_prevent_managed_tables_with_all_assets";
+		#endregion
+
+		#region InParameters
+		public struct InParameters
+		{
+			public const string Target = "Target";
+		}
+		#endregion
+
+		public EntityReference Target
+		{
+			get
+			{
+				if(base.Parameters.Contains("Target"))
+				{
+					return (EntityReference)base.Parameters["Target"];
+				}
+				return default(EntityReference);
+			}
+			set
+			{
+				base.Parameters["Target"] = value;
+			}
+		}
+
+	}
+
+	[ResponseProxy("dgt_prevent_managed_tables_with_all_assets")]
+	public class DgtPreventManagedTablesWithAllAssetsResponse : OrganizationResponse
+	{
+		#region OutParameters
+		public struct OutParameters
+		{
+			public const string ConstraintLog_PreventManagedTablesWithAllAssets = "Log";
+		}
+		#endregion
+
+		public string ConstraintLog_PreventManagedTablesWithAllAssets
+		{
+			get
+			{
+				if(base.Results.Contains("Log"))
+				{
+					return (string)base.Results["Log"];
+				}
+				return default(string);
+			}
+		}
+
+	}
+
+	[RequestProxy("dgt_prevent_plugin_assemblies")]
+	public class DgtPreventPluginAssembliesRequest : OrganizationRequest
+	{
+		public DgtPreventPluginAssembliesRequest()
+		{
+			RequestName = "dgt_prevent_plugin_assemblies";
+		}
+
+		#region consts
+		public const string RequestLogicalName = "dgt_prevent_plugin_assemblies";
+		#endregion
+
+		#region InParameters
+		public struct InParameters
+		{
+			public const string Target = "Target";
+		}
+		#endregion
+
+		public EntityReference Target
+		{
+			get
+			{
+				if(base.Parameters.Contains("Target"))
+				{
+					return (EntityReference)base.Parameters["Target"];
+				}
+				return default(EntityReference);
+			}
+			set
+			{
+				base.Parameters["Target"] = value;
+			}
+		}
+
+	}
+
+	[ResponseProxy("dgt_prevent_plugin_assemblies")]
+	public class DgtPreventPluginAssembliesResponse : OrganizationResponse
+	{
+		#region OutParameters
+		public struct OutParameters
+		{
+			public const string ConstraintLog_PreventPluginAssemblies = "Log";
+		}
+		#endregion
+
+		public string ConstraintLog_PreventPluginAssemblies
+		{
+			get
+			{
+				if(base.Results.Contains("Log"))
+				{
+					return (string)base.Results["Log"];
+				}
+				return default(string);
+			}
+		}
+
+	}
+
 	[RequestProxy("dgt_run_carrier_constraints_check")]
 	public class DgtRunCarrierConstraintsCheckRequest : OrganizationRequest
 	{

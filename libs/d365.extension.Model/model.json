@@ -1,7 +1,11 @@
 ﻿{
   "CustomAPIs": [
     "dgt_clone_a_solution",
-    "dgt_run_carrier_constraints_check"
+    "dgt_run_carrier_constraints_check",
+    "dgt_prevent_flows",
+    "dgt_prevent_plugin_assemblies",
+    "dgt_prevent_managed_tables_with_all_assets",
+    "dgt_prevent_items_without_active_layer"
   ],
   "AdditionalSdkMessages": [
     "dgt_add_component_to_carrier_solution",

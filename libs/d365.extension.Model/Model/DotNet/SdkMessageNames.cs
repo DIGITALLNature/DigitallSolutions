@@ -24,6 +24,9 @@ namespace D365.Extension.Model
         public const string DgtLookupMakeEnvironment = "dgt_lookup_make_environment";
         public const string DgtMergeAllPatchCarrierSolution = "dgt_merge_all_patch_carrier_solution";
         public const string DgtPreventFlows = "dgt_prevent_flows";
+        public const string DgtPreventItemsWithoutActiveLayer = "dgt_prevent_items_without_active_layer";
+        public const string DgtPreventManagedTablesWithAllAssets = "dgt_prevent_managed_tables_with_all_assets";
+        public const string DgtPreventPluginAssemblies = "dgt_prevent_plugin_assemblies";
         public const string DgtRunCarrierConstraintsCheck = "dgt_run_carrier_constraints_check";
         public const string DgtRunCarrierDependencyCheck = "dgt_run_carrier_dependency_check";
         public const string DgtSynchronizeAssemblies = "dgt_synchronize_assemblies";

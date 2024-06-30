@@ -1,12 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using D365.Extension.Core;
 using D365.Extension.Model;
 using D365.Extension.Registration;
 using dgt.solutions.Plugins.Contract;
-using dgt.solutions.Plugins.Helper;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
@@ -39,8 +36,6 @@ namespace dgt.solutions.Plugins.CarrierConstraints
 
         internal IEnumerable<ConstraintCheckLogEntry> Check(DgtCarrier carrier, DgtWorkbench workbench)
         {
-            var constraintCheck = new ConstraintCheck(this);
-
             if (carrier.DgtConstraintMset == null)
                 yield return new ConstraintCheckLogEntry
                 {
@@ -59,13 +54,28 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                             yield return new SerializerService().JsonDeserialize<ConstraintCheckLogEntry>(preventFlowsResponse.ConstraintLog_PreventFlows);
                             break;
                         case DgtCarrier.Options.DgtConstraintMset.PreventItemsWithouthActiveLayer:
-                            yield return constraintCheck.CheckForItemsWithouthActiveLayer(Guid.Parse(workbench.DgtSolutionid));
+                            var preventItemsWithouthActiveLayerResponse = ElevatedOrganizationService.Execute(new DgtPreventItemsWithoutActiveLayerRequest
+                            {
+                                Target = workbench.ToEntityReference()
+                            }) as DgtPreventItemsWithoutActiveLayerResponse;
+
+                            yield return new SerializerService().JsonDeserialize<ConstraintCheckLogEntry>(preventItemsWithouthActiveLayerResponse.ConstraintLog_PreventItemsWithoutActiveLayer);
                             break;
                         case DgtCarrier.Options.DgtConstraintMset.PreventManagedEntitiesWithAllAssets:
-                            yield return constraintCheck.CheckForManagedEntitiesWithAllAssets(Guid.Parse(workbench.DgtSolutionid));
+                            var preventManagedEntitiesWithAllAssetsResponse = ElevatedOrganizationService.Execute(new DgtPreventManagedTablesWithAllAssetsRequest
+                            {
+                                Target = workbench.ToEntityReference()
+                            }) as DgtPreventManagedTablesWithAllAssetsResponse;
+
+                            yield return new SerializerService().JsonDeserialize<ConstraintCheckLogEntry>(preventManagedEntitiesWithAllAssetsResponse.ConstraintLog_PreventManagedTablesWithAllAssets);
                             break;
                         case DgtCarrier.Options.DgtConstraintMset.PreventPluginAssemblys:
-                            yield return constraintCheck.CheckForAssemblysAndAssemblysSteps(Guid.Parse(workbench.DgtSolutionid));
+                            var preventPluginAssemblysResponse = ElevatedOrganizationService.Execute(new DgtPreventPluginAssembliesRequest
+                            {
+                                Target = workbench.ToEntityReference()
+                            }) as DgtPreventPluginAssembliesResponse;
+
+                            yield return new SerializerService().JsonDeserialize<ConstraintCheckLogEntry>(preventPluginAssemblysResponse.ConstraintLog_PreventPluginAssemblies);
                             break;
                     }
         }
