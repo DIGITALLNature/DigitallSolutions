@@ -17,6 +17,7 @@
     <RelationshipDescription>
       <Descriptions>
         <Description description="Owner Id" languagecode="1033" />
+        <Description description="Besitzer-ID" languagecode="1031" />
       </Descriptions>
     </RelationshipDescription>
   </EntityRelationship>
@@ -37,6 +38,7 @@
     <RelationshipDescription>
       <Descriptions>
         <Description description="Owner Id" languagecode="1033" />
+        <Description description="Besitzer-ID" languagecode="1031" />
       </Descriptions>
     </RelationshipDescription>
   </EntityRelationship>

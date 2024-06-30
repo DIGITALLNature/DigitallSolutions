@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{ae99ddc2-a6dc-4304-9f77-1d8095204b51}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dgt_name" select="1" icon="1" preview="1">
+        <row name="result" id="dgt_carrier_constraintid">
+          <cell name="dgt_name" width="300" />
+          <cell name="createdon" width="125" />
+          <cell name="dgt_short_description_txt" width="140" />
+          <cell name="dgt_default_bit" width="100" />
+          <cell name="dgt_customapi_id" width="109" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dgt_carrier_constraint">
+          <attribute name="dgt_carrier_constraintid" />
+          <attribute name="dgt_name" />
+          <attribute name="createdon" />
+          <order attribute="dgt_name" descending="false" />
+          <attribute name="dgt_short_description_txt" />
+          <attribute name="dgt_default_bit" />
+          <attribute name="dgt_customapi_id" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Carrier Constraint Advanced Find View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

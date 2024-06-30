@@ -1,0 +1,19 @@
+<customapi uniquename="dgt_prevent_managed_tables_with_all_assets">
+  <allowedcustomprocessingsteptype>2</allowedcustomprocessingsteptype>
+  <bindingtype>1</bindingtype>
+  <boundentitylogicalname>dgt_workbench</boundentitylogicalname>
+  <description default="Run Constraint: Prevent managed tables with all assets">
+    <label description="Run Constraint: Prevent managed tables with all assets" languagecode="1033" />
+  </description>
+  <displayname default="Run Constraint: Prevent managed tables with all assets">
+    <label description="Run Constraint: Prevent managed tables with all assets" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>Run Constraint: Prevent managed tables with all assets</name>
+  <plugintypeid>
+    <plugintypeexportkey>cf604ba9-c936-ef11-8409-000d3aa8c88e</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>1</workflowsdkstepenabled>
+</customapi>

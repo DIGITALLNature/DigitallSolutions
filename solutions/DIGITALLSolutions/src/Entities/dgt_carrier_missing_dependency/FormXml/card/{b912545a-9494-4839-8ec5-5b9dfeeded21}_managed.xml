@@ -31,7 +31,7 @@
                     <row>
                       <cell id="{44378f97-3733-4bd6-aca3-8237f2ca6120}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Status Reason" languagecode="1033" />
                         </labels>
                         <control id="statuscode" classid="{5D68B988-0661-4db2-BC3E-17598AD3BE6C}" datafieldname="statuscode" disabled="false" />
                       </cell>
@@ -56,7 +56,7 @@
                     <row>
                       <cell id="{c1483ae9-a669-4f82-8635-755aed921030}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Component" languagecode="1033" />
                         </labels>
                         <control id="dgt_component" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dgt_component" disabled="false" />
                       </cell>
@@ -71,7 +71,7 @@
                     <row>
                       <cell id="{ab2cc1fe-c976-4808-b3ef-e7f30385bcfb}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Created On" languagecode="1033" />
                         </labels>
                         <control id="createdon" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdon" disabled="false" />
                       </cell>

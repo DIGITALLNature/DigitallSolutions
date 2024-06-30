@@ -1,0 +1,11 @@
+<customapiresponseproperty uniquename="Success">
+  <description default="Carrier Constraints Success Status">
+    <label description="Carrier Constraints Success Status" languagecode="1033" />
+  </description>
+  <displayname default="Carrier Constraints Success Status">
+    <label description="Carrier Constraints Success Status" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>Carrier Constraints Success Status</name>
+  <type>0</type>
+</customapiresponseproperty>

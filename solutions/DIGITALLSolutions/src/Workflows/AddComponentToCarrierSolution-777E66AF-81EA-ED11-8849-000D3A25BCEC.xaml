@@ -45,7 +45,7 @@
               <OutArgument x:TypeArguments="x:Object" x:Key="Result">[InvokeSdkMessageStep1_1_converted]</OutArgument>
             </mxswa:ActivityReference.Arguments>
           </mxswa:ActivityReference>
-          <mcwa:InvokeSdkMessageActivity DisplayName="InvokeSdkMessageStep1: Add Component To Carrier Solution" SdkMessageEntityName="dgt_carrier_missing_dependency" SdkMessageId="506675e7-e23b-4a4f-b1d9-23153d526381" SdkMessageName="dgt_add_component_to_carrier_solution" SdkMessageRequestSuffix="">
+          <mcwa:InvokeSdkMessageActivity DisplayName="InvokeSdkMessageStep1: Add Component To Carrier Solution" SdkMessageEntityName="dgt_carrier_missing_dependency" SdkMessageId="8c155edc-1e1d-4f9c-b3ba-966973b3f05d" SdkMessageName="dgt_add_component_to_carrier_solution" SdkMessageRequestSuffix="">
             <mcwa:InvokeSdkMessageActivity.Arguments>
               <InArgument x:TypeArguments="mxs:EntityReference" x:Key="Target">[DirectCast(InvokeSdkMessageStep1_1_converted, Microsoft.Xrm.Sdk.EntityReference)]</InArgument>
             </mcwa:InvokeSdkMessageActivity.Arguments>

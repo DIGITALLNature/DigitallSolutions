@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{d76c1ecc-800f-4cf5-8f06-2bcd2b750916}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Check Ref" languagecode="1033" />
                         </labels>
                         <control id="dgt_checkref" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dgt_checkref" />
                       </cell>

@@ -66,7 +66,7 @@
               <OutArgument x:TypeArguments="x:Object" x:Key="Result">[InvokeSdkMessageStep1_2_converted]</OutArgument>
             </mxswa:ActivityReference.Arguments>
           </mxswa:ActivityReference>
-          <mcwa:InvokeSdkMessageActivity SdkMessageEntityName="{x:Null}" DisplayName="InvokeSdkMessageStep1: Assemblies to Carrier Assemblies" SdkMessageId="9af929f5-81ba-4e43-b987-2e34af4ee8be" SdkMessageName="dgt_synchronize_assemblies" SdkMessageRequestSuffix="">
+          <mcwa:InvokeSdkMessageActivity SdkMessageEntityName="{x:Null}" DisplayName="InvokeSdkMessageStep1: Assemblies to Carrier Assemblies" SdkMessageId="8e1d2c26-26eb-48f5-9947-d087bbfb798d" SdkMessageName="dgt_synchronize_assemblies" SdkMessageRequestSuffix="">
             <mcwa:InvokeSdkMessageActivity.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="Origin">[DirectCast(InvokeSdkMessageStep1_1_converted, System.String)]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="Destination">[DirectCast(InvokeSdkMessageStep1_2_converted, System.String)]</InArgument>

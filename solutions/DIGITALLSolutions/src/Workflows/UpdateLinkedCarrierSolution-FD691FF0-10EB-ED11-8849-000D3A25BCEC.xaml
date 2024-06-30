@@ -45,7 +45,7 @@
               <OutArgument x:TypeArguments="x:Object" x:Key="Result">[InvokeSdkMessageStep1_1_converted]</OutArgument>
             </mxswa:ActivityReference.Arguments>
           </mxswa:ActivityReference>
-          <mcwa:InvokeSdkMessageActivity DisplayName="InvokeSdkMessageStep1: Update Linked Carrier Solution" SdkMessageEntityName="dgt_carrier" SdkMessageId="d1a12459-4e23-4903-bd33-3057786575cb" SdkMessageName="dgt_update_linked_carrier_solution" SdkMessageRequestSuffix="">
+          <mcwa:InvokeSdkMessageActivity DisplayName="InvokeSdkMessageStep1: Update Linked Carrier Solution" SdkMessageEntityName="dgt_carrier" SdkMessageId="e3ff3bc7-d462-40dd-aefa-d38da7d22cae" SdkMessageName="dgt_update_linked_carrier_solution" SdkMessageRequestSuffix="">
             <mcwa:InvokeSdkMessageActivity.Arguments>
               <InArgument x:TypeArguments="mxs:EntityReference" x:Key="Target">[DirectCast(InvokeSdkMessageStep1_1_converted, Microsoft.Xrm.Sdk.EntityReference)]</InArgument>
             </mcwa:InvokeSdkMessageActivity.Arguments>

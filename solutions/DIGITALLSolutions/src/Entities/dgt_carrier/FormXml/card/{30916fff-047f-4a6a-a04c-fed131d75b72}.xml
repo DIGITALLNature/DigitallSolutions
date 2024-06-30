@@ -32,6 +32,7 @@
                       <cell id="{7a7c5c78-4cba-402b-b750-08f82b8ab1ca}" showlabel="true" locklevel="0">
                         <labels>
                           <label description="Status Reason" languagecode="1033" />
+                          <label description="Statusgrund" languagecode="1031" />
                         </labels>
                         <control id="statuscode" classid="{5D68B988-0661-4db2-BC3E-17598AD3BE6C}" datafieldname="statuscode" disabled="false" />
                       </cell>
@@ -72,6 +73,7 @@
                       <cell id="{819e6077-796d-4ccf-b680-0f25834eb419}" showlabel="true" locklevel="0">
                         <labels>
                           <label description="Created On" languagecode="1033" />
+                          <label description="Erstellt am" languagecode="1031" />
                         </labels>
                         <control id="createdon" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdon" disabled="false" />
                       </cell>

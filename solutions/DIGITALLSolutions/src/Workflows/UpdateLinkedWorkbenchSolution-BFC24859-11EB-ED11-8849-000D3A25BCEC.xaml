@@ -45,7 +45,7 @@
               <OutArgument x:TypeArguments="x:Object" x:Key="Result">[InvokeSdkMessageStep1_1_converted]</OutArgument>
             </mxswa:ActivityReference.Arguments>
           </mxswa:ActivityReference>
-          <mcwa:InvokeSdkMessageActivity DisplayName="InvokeSdkMessageStep1: Update Linked Workbench Solution" SdkMessageEntityName="dgt_workbench" SdkMessageId="3421d146-ff63-4f16-ae35-ae6e772f182e" SdkMessageName="dgt_update_linked_workbench_solution" SdkMessageRequestSuffix="">
+          <mcwa:InvokeSdkMessageActivity DisplayName="InvokeSdkMessageStep1: Update Linked Workbench Solution" SdkMessageEntityName="dgt_workbench" SdkMessageId="849607c4-b556-4753-9d12-9e87820cfa52" SdkMessageName="dgt_update_linked_workbench_solution" SdkMessageRequestSuffix="">
             <mcwa:InvokeSdkMessageActivity.Arguments>
               <InArgument x:TypeArguments="mxs:EntityReference" x:Key="Target">[DirectCast(InvokeSdkMessageStep1_1_converted, Microsoft.Xrm.Sdk.EntityReference)]</InArgument>
             </mcwa:InvokeSdkMessageActivity.Arguments>

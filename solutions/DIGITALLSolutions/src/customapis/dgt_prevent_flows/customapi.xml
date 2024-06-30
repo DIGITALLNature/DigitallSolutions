@@ -1,0 +1,19 @@
+<customapi uniquename="dgt_prevent_flows">
+  <allowedcustomprocessingsteptype>2</allowedcustomprocessingsteptype>
+  <bindingtype>1</bindingtype>
+  <boundentitylogicalname>dgt_workbench</boundentitylogicalname>
+  <description default="Run Constraint: Prevent Flows">
+    <label description="Run Constraint: Prevent Flows" languagecode="1033" />
+  </description>
+  <displayname default="Run Constraint: Prevent Flows">
+    <label description="Run Constraint: Prevent Flows" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>Run Constraint: Prevent Flows</name>
+  <plugintypeid>
+    <plugintypeexportkey>aaa61850-c536-ef11-8409-000d3aa8c88e</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>1</workflowsdkstepenabled>
+</customapi>

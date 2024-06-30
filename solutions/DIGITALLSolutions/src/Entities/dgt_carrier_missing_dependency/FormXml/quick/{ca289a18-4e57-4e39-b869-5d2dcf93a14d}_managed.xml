@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{26632104-1b43-4411-a74b-cf2cc793781a}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Component" languagecode="1033" />
                         </labels>
                         <control id="dgt_component" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dgt_component" />
                       </cell>

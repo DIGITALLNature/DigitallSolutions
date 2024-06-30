@@ -8,6 +8,21 @@
     <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.AddComponentToCarrierSolutionService, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="dc72886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.AddComponentToCarrierSolutionService">
       <FriendlyName>025224d9-33b2-481b-8c41-69eeb7f9b13f</FriendlyName>
     </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.CarrierConstraints.PreventFlows, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="aaa61850-c536-ef11-8409-000d3aa8c88e" Name="dgt.solutions.Plugins.CarrierConstraints.PreventFlows">
+      <FriendlyName>03270b31-c212-49e8-bb2e-de1a86ebc291</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.CarrierConstraints.PreventItemsWithoutActiveLayer, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="ce604ba9-c936-ef11-8409-000d3aa8c88e" Name="dgt.solutions.Plugins.CarrierConstraints.PreventItemsWithoutActiveLayer">
+      <FriendlyName>e74e066a-96ba-4979-b7c2-c65cc783a15e</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.CarrierConstraints.PreventManagedTablesWithAllAssets, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="cf604ba9-c936-ef11-8409-000d3aa8c88e" Name="dgt.solutions.Plugins.CarrierConstraints.PreventManagedTablesWithAllAssets">
+      <FriendlyName>cce4630f-0d61-4b3d-a12c-307c43aa2b33</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.CarrierConstraints.PreventPluginAssemblies, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="d0604ba9-c936-ef11-8409-000d3aa8c88e" Name="dgt.solutions.Plugins.CarrierConstraints.PreventPluginAssemblies">
+      <FriendlyName>f2916af7-50b8-4e74-a4ec-13793d538e2d</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.CarrierConstraints.RunCarrierConstraintsCheck, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="aba61850-c536-ef11-8409-000d3aa8c88e" Name="dgt.solutions.Plugins.CarrierConstraints.RunCarrierConstraintsCheck">
+      <FriendlyName>7eecfd34-25a9-40c1-b868-8be96bd10add</FriendlyName>
+    </PluginType>
     <PluginType AssemblyQualifiedName="dgt.solutions.Plugins.CarrierCreator, dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" PluginTypeId="de72886b-22eb-ed11-8849-000d3a25bcec" Name="dgt.solutions.Plugins.CarrierCreator">
       <FriendlyName>4aee1465-b94a-4146-9bc1-51786c68bfd7</FriendlyName>
     </PluginType>

@@ -1,14 +1,14 @@
-<Activity x:Class="XrmWorkflow00000000000000000000000000000000" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mcwc="clr-namespace:Microsoft.Crm.Workflow.ClientActivities;assembly=Microsoft.Crm.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mcwo="clr-namespace:Microsoft.Crm.Workflow.ObjectModel;assembly=Microsoft.Crm, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mxs="clr-namespace:Microsoft.Xrm.Sdk;assembly=Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mxsq="clr-namespace:Microsoft.Xrm.Sdk.Query;assembly=Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mxswa="clr-namespace:Microsoft.Xrm.Sdk.Workflow.Activities;assembly=Microsoft.Xrm.Sdk.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:s="clr-namespace:System;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:this="clr-namespace:" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity x:Class="XrmWorkflowca67bfb853eaed118849000d3a25bcec" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mcwc="clr-namespace:Microsoft.Crm.Workflow.ClientActivities;assembly=Microsoft.Crm.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mcwo="clr-namespace:Microsoft.Crm.Workflow.ObjectModel;assembly=Microsoft.Crm, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mxs="clr-namespace:Microsoft.Xrm.Sdk;assembly=Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mxsq="clr-namespace:Microsoft.Xrm.Sdk.Query;assembly=Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mxswa="clr-namespace:Microsoft.Xrm.Sdk.Workflow.Activities;assembly=Microsoft.Xrm.Sdk.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:s="clr-namespace:System;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:this="clr-namespace:" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="InputEntities" Type="InArgument(scg:IDictionary(x:String, mxs:Entity))" />
     <x:Property Name="CreatedEntities" Type="InArgument(scg:IDictionary(x:String, mxs:Entity))" />
   </x:Members>
-  <this:XrmWorkflow00000000000000000000000000000000.InputEntities>
+  <this:XrmWorkflowca67bfb853eaed118849000d3a25bcec.InputEntities>
     <InArgument x:TypeArguments="scg:IDictionary(x:String, mxs:Entity)" />
-  </this:XrmWorkflow00000000000000000000000000000000.InputEntities>
-  <this:XrmWorkflow00000000000000000000000000000000.CreatedEntities>
+  </this:XrmWorkflowca67bfb853eaed118849000d3a25bcec.InputEntities>
+  <this:XrmWorkflowca67bfb853eaed118849000d3a25bcec.CreatedEntities>
     <InArgument x:TypeArguments="scg:IDictionary(x:String, mxs:Entity)" />
-  </this:XrmWorkflow00000000000000000000000000000000.CreatedEntities>
+  </this:XrmWorkflowca67bfb853eaed118849000d3a25bcec.CreatedEntities>
   <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
   <mxswa:Workflow>
     <mxswa:ActivityReference AssemblyQualifiedName="Microsoft.Crm.Workflow.Activities.ConditionSequence, Microsoft.Crm.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" DisplayName="ConditionStep1">
@@ -262,9 +262,9 @@
                       <mcwc:SetDefaultValue DisplayName="SetDefaultValueStep6" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" />
                       <Assign x:TypeArguments="mxs:Entity" To="[InputEntities(&quot;primaryEntity&quot;)]" Value="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" />
                     </Sequence>
-                    <Sequence DisplayName="SetAttributeValueStep_SetDefaultValueStep6_20: Set Environment Variables">
+                    <Sequence DisplayName="SetAttributeValueStep20: Set Environment Variables">
                       <Sequence.Variables>
-                        <Variable x:TypeArguments="x:Object" Name="SetAttributeValueStep_SetDefaultValueStep6_20_1" />
+                        <Variable x:TypeArguments="x:Object" Name="SetAttributeValueStep20_1" />
                       </Sequence.Variables>
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
@@ -275,67 +275,67 @@
                           <InArgument x:TypeArguments="s:Type" x:Key="TargetType">
                             <mxswa:ReferenceLiteral x:TypeArguments="s:Type" Value="x:String" />
                           </InArgument>
-                          <OutArgument x:TypeArguments="x:Object" x:Key="Result">[SetAttributeValueStep_SetDefaultValueStep6_20_1]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Object" x:Key="Result">[SetAttributeValueStep20_1]</OutArgument>
                         </mxswa:ActivityReference.Arguments>
                       </mxswa:ActivityReference>
-                      <mxswa:SetEntityProperty Attribute="dgt_name" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" Value="[SetAttributeValueStep_SetDefaultValueStep6_20_1]">
+                      <mxswa:SetEntityProperty Attribute="dgt_name" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" Value="[SetAttributeValueStep20_1]">
                         <mxswa:SetEntityProperty.TargetType>
                           <InArgument x:TypeArguments="s:Type">
                             <mxswa:ReferenceLiteral x:TypeArguments="s:Type" Value="x:String" />
                           </InArgument>
                         </mxswa:SetEntityProperty.TargetType>
                       </mxswa:SetEntityProperty>
-                      <mcwc:SetAttributeValue DisplayName="SetAttributeValueStep_SetDefaultValueStep6_20" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" />
+                      <mcwc:SetAttributeValue DisplayName="SetAttributeValueStep20" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" />
                       <Assign x:TypeArguments="mxs:Entity" To="[InputEntities(&quot;primaryEntity&quot;)]" Value="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" />
                     </Sequence>
-                    <Sequence DisplayName="SetDisplayModeStep_SetDefaultValueStep6_20_21: Lock Name">
+                    <Sequence DisplayName="SetDisplayModeStep21: Lock Name">
                       <mcwc:SetDisplayMode ControlId="dgt_name" ControlType="standard" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" IsReadOnly="True" />
                     </Sequence>
-                    <Sequence DisplayName="SetVisibilityStep_SetDefaultValueStep6_20_21_22: Hide Carrier">
+                    <Sequence DisplayName="SetVisibilityStep22: Hide Carrier">
                       <mcwc:SetVisibility ControlId="dgt_carrier_id" ControlType="standard" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" IsVisible="False" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep6_20_21_22_23: Optional Firendly Name">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep23: Optional Firendly Name">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionfriendlyname" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep6_20_21_22_23" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionfriendlyname" ControlType="standard" DisplayName="SetFieldRequiredLevelStep23" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep6_20_21_22_23_27: Optional Unique Name">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep27: Optional Unique Name">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionuniquename" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep6_20_21_22_23_27" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionuniquename" ControlType="standard" DisplayName="SetFieldRequiredLevelStep27" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep6_20_21_22_23_27_28: Optional Version">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep28: Optional Version">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionversion" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep6_20_21_22_23_27_28" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionversion" ControlType="standard" DisplayName="SetFieldRequiredLevelStep28" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep6_20_21_22_23_27_28_29: Optional Id">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep29: Optional Id">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionid" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep6_20_21_22_23_27_28_29" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionid" ControlType="standard" DisplayName="SetFieldRequiredLevelStep29" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep6_20_21_22_23_27_28_29_30: Optional Target Carrier">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep30: Optional Target Carrier">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_target_carrier_id" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep6_20_21_22_23_27_28_29_30" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_target_carrier_id" ControlType="standard" DisplayName="SetFieldRequiredLevelStep30" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetAttributeValueStep_SetDefaultValueStep6_20_21_22_23_27_28_29_30_31: Clear Target Carrier">
+                    <Sequence DisplayName="SetAttributeValueStep31: Clear Target Carrier">
                       <Sequence.Variables>
-                        <Variable x:TypeArguments="x:Object" Name="SetAttributeValueStep_SetDefaultValueStep6_20_21_22_23_27_28_29_30_31_1" />
+                        <Variable x:TypeArguments="x:Object" Name="SetAttributeValueStep31_1" />
                       </Sequence.Variables>
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mxswa:SetEntityProperty Attribute="dgt_target_carrier_id" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" Value="[SetAttributeValueStep_SetDefaultValueStep6_20_21_22_23_27_28_29_30_31_1]">
+                      <mxswa:SetEntityProperty Attribute="dgt_target_carrier_id" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" Value="[SetAttributeValueStep31_1]">
                         <mxswa:SetEntityProperty.TargetType>
                           <InArgument x:TypeArguments="s:Type">
                             <mxswa:ReferenceLiteral x:TypeArguments="s:Type" Value="mxs:EntityReference" />
                           </InArgument>
                         </mxswa:SetEntityProperty.TargetType>
                       </mxswa:SetEntityProperty>
-                      <mcwc:SetAttributeValue DisplayName="SetAttributeValueStep_SetDefaultValueStep6_20_21_22_23_27_28_29_30_31" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" />
+                      <mcwc:SetAttributeValue DisplayName="SetAttributeValueStep31" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" />
                       <Assign x:TypeArguments="mxs:Entity" To="[InputEntities(&quot;primaryEntity&quot;)]" Value="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" />
                     </Sequence>
-                    <Sequence DisplayName="SetDisplayModeStep_SetDefaultValueStep6_20_21_22_23_27_28_29_30_31_32: Lock Target Carrier">
+                    <Sequence DisplayName="SetDisplayModeStep32: Lock Target Carrier">
                       <mcwc:SetDisplayMode ControlId="dgt_target_carrier_id" ControlType="standard" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" IsReadOnly="True" />
                     </Sequence>
                   </sco:Collection>
@@ -407,9 +407,9 @@
                       <mcwc:SetDefaultValue DisplayName="SetDefaultValueStep7" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" />
                       <Assign x:TypeArguments="mxs:Entity" To="[InputEntities(&quot;primaryEntity&quot;)]" Value="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" />
                     </Sequence>
-                    <Sequence DisplayName="SetAttributeValueStep_SetDefaultValueStep7_24: Set Connection References">
+                    <Sequence DisplayName="SetAttributeValueStep24: Set Connection References">
                       <Sequence.Variables>
-                        <Variable x:TypeArguments="x:Object" Name="SetAttributeValueStep_SetDefaultValueStep7_24_1" />
+                        <Variable x:TypeArguments="x:Object" Name="SetAttributeValueStep24_1" />
                       </Sequence.Variables>
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
@@ -420,67 +420,67 @@
                           <InArgument x:TypeArguments="s:Type" x:Key="TargetType">
                             <mxswa:ReferenceLiteral x:TypeArguments="s:Type" Value="x:String" />
                           </InArgument>
-                          <OutArgument x:TypeArguments="x:Object" x:Key="Result">[SetAttributeValueStep_SetDefaultValueStep7_24_1]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Object" x:Key="Result">[SetAttributeValueStep24_1]</OutArgument>
                         </mxswa:ActivityReference.Arguments>
                       </mxswa:ActivityReference>
-                      <mxswa:SetEntityProperty Attribute="dgt_name" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" Value="[SetAttributeValueStep_SetDefaultValueStep7_24_1]">
+                      <mxswa:SetEntityProperty Attribute="dgt_name" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" Value="[SetAttributeValueStep24_1]">
                         <mxswa:SetEntityProperty.TargetType>
                           <InArgument x:TypeArguments="s:Type">
                             <mxswa:ReferenceLiteral x:TypeArguments="s:Type" Value="x:String" />
                           </InArgument>
                         </mxswa:SetEntityProperty.TargetType>
                       </mxswa:SetEntityProperty>
-                      <mcwc:SetAttributeValue DisplayName="SetAttributeValueStep_SetDefaultValueStep7_24" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" />
+                      <mcwc:SetAttributeValue DisplayName="SetAttributeValueStep24" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" />
                       <Assign x:TypeArguments="mxs:Entity" To="[InputEntities(&quot;primaryEntity&quot;)]" Value="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" />
                     </Sequence>
-                    <Sequence DisplayName="SetDisplayModeStep_SetDefaultValueStep7_24_25: Lock Name">
+                    <Sequence DisplayName="SetDisplayModeStep25: Lock Name">
                       <mcwc:SetDisplayMode ControlId="dgt_name" ControlType="standard" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" IsReadOnly="True" />
                     </Sequence>
-                    <Sequence DisplayName="SetVisibilityStep_SetDefaultValueStep7_24_25_33: Hide Carrier">
+                    <Sequence DisplayName="SetVisibilityStep33: Hide Carrier">
                       <mcwc:SetVisibility ControlId="dgt_carrier_id" ControlType="standard" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" IsVisible="False" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep7_24_25_33_34: Optional Firendly Name">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep34: Optional Firendly Name">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionfriendlyname" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep7_24_25_33_34" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionfriendlyname" ControlType="standard" DisplayName="SetFieldRequiredLevelStep34" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep7_24_25_33_34_35: Optional Unique Name">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep35: Optional Unique Name">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionuniquename" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep7_24_25_33_34_35" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionuniquename" ControlType="standard" DisplayName="SetFieldRequiredLevelStep35" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep7_24_25_33_34_35_36: Optional Version">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep36: Optional Version">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionversion" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep7_24_25_33_34_35_36" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionversion" ControlType="standard" DisplayName="SetFieldRequiredLevelStep36" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep7_24_25_33_34_35_36_37: Optional Id">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep37: Optional Id">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionid" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep7_24_25_33_34_35_36_37" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionid" ControlType="standard" DisplayName="SetFieldRequiredLevelStep37" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep7_24_25_33_34_35_36_37_38: Optional Target Carrier">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep38: Optional Target Carrier">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_target_carrier_id" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDefaultValueStep7_24_25_33_34_35_36_37_38" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_target_carrier_id" ControlType="standard" DisplayName="SetFieldRequiredLevelStep38" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetAttributeValueStep_SetDefaultValueStep7_24_25_33_34_35_36_37_38_39: Clear Target Carrier">
+                    <Sequence DisplayName="SetAttributeValueStep39: Clear Target Carrier">
                       <Sequence.Variables>
-                        <Variable x:TypeArguments="x:Object" Name="SetAttributeValueStep_SetDefaultValueStep7_24_25_33_34_35_36_37_38_39_1" />
+                        <Variable x:TypeArguments="x:Object" Name="SetAttributeValueStep39_1" />
                       </Sequence.Variables>
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mxswa:SetEntityProperty Attribute="dgt_target_carrier_id" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" Value="[SetAttributeValueStep_SetDefaultValueStep7_24_25_33_34_35_36_37_38_39_1]">
+                      <mxswa:SetEntityProperty Attribute="dgt_target_carrier_id" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" Value="[SetAttributeValueStep39_1]">
                         <mxswa:SetEntityProperty.TargetType>
                           <InArgument x:TypeArguments="s:Type">
                             <mxswa:ReferenceLiteral x:TypeArguments="s:Type" Value="mxs:EntityReference" />
                           </InArgument>
                         </mxswa:SetEntityProperty.TargetType>
                       </mxswa:SetEntityProperty>
-                      <mcwc:SetAttributeValue DisplayName="SetAttributeValueStep_SetDefaultValueStep7_24_25_33_34_35_36_37_38_39" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" />
+                      <mcwc:SetAttributeValue DisplayName="SetAttributeValueStep39" Entity="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" EntityName="dgt_workbench" />
                       <Assign x:TypeArguments="mxs:Entity" To="[InputEntities(&quot;primaryEntity&quot;)]" Value="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" />
                     </Sequence>
-                    <Sequence DisplayName="SetDisplayModeStep_SetDefaultValueStep7_24_25_33_34_35_36_37_38_39_40: Lock Target Carrier">
+                    <Sequence DisplayName="SetDisplayModeStep40: Lock Target Carrier">
                       <mcwc:SetDisplayMode ControlId="dgt_target_carrier_id" ControlType="standard" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" IsReadOnly="True" />
                     </Sequence>
                   </sco:Collection>
@@ -529,36 +529,36 @@
                     <Sequence DisplayName="SetDisplayModeStep19: Unlock Name">
                       <mcwc:SetDisplayMode ControlId="dgt_name" ControlType="standard" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" IsReadOnly="False" />
                     </Sequence>
-                    <Sequence DisplayName="SetVisibilityStep_SetDisplayModeStep19_26: Hide Carrier">
+                    <Sequence DisplayName="SetVisibilityStep26: Hide Carrier">
                       <mcwc:SetVisibility ControlId="dgt_carrier_id" ControlType="standard" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" IsVisible="False" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDisplayModeStep19_26_41: Optional Firendly Name">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep41: Optional Firendly Name">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionfriendlyname" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDisplayModeStep19_26_41" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionfriendlyname" ControlType="standard" DisplayName="SetFieldRequiredLevelStep41" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDisplayModeStep19_26_41_42: Optional Unique Name">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep42: Optional Unique Name">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionuniquename" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDisplayModeStep19_26_41_42" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionuniquename" ControlType="standard" DisplayName="SetFieldRequiredLevelStep42" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDisplayModeStep19_26_41_42_43: Optional Version">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep43: Optional Version">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionversion" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDisplayModeStep19_26_41_42_43" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionversion" ControlType="standard" DisplayName="SetFieldRequiredLevelStep43" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDisplayModeStep19_26_41_42_43_44: Optional Id">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep44: Optional Id">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionid" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDisplayModeStep19_26_41_42_43_44" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_solutionid" ControlType="standard" DisplayName="SetFieldRequiredLevelStep44" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="None" />
                     </Sequence>
-                    <Sequence DisplayName="SetDisplayModeStep_SetDisplayModeStep19_26_41_42_43_44_45: Unlock Target Carrier">
+                    <Sequence DisplayName="SetDisplayModeStep45: Unlock Target Carrier">
                       <mcwc:SetDisplayMode ControlId="dgt_target_carrier_id" ControlType="standard" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" IsReadOnly="False" />
                     </Sequence>
-                    <Sequence DisplayName="SetFieldRequiredLevelStep_SetDisplayModeStep19_26_41_42_43_44_45_46: Mandatory Target Carrier">
+                    <Sequence DisplayName="SetFieldRequiredLevelStep46: Mandatory Target Carrier">
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;dgt_workbench&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mcwc:SetFieldRequiredLevel ControlId="dgt_target_carrier_id" ControlType="standard" DisplayName="SetFieldRequiredLevelStep_SetDisplayModeStep19_26_41_42_43_44_45_46" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="Required" />
+                      <mcwc:SetFieldRequiredLevel ControlId="dgt_target_carrier_id" ControlType="standard" DisplayName="SetFieldRequiredLevelStep46" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="dgt_workbench" RequiredLevel="Required" />
                     </Sequence>
                   </sco:Collection>
                 </mxswa:ActivityReference.Properties>
@@ -570,7 +570,7 @@
           <mxswa:ActivityReference AssemblyQualifiedName="Microsoft.Crm.Workflow.Activities.EvaluateExpression, Microsoft.Crm.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" DisplayName="EvaluateExpression">
             <mxswa:ActivityReference.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="ExpressionOperator">CreateCrmType</InArgument>
-              <InArgument x:TypeArguments="s:Object[]" x:Key="Parameters">[New Object() { Microsoft.Xrm.Sdk.Workflow.WorkflowPropertyType.Boolean, "true" }]</InArgument>
+              <InArgument x:TypeArguments="s:Object[]" x:Key="Parameters">[New Object() { Microsoft.Xrm.Sdk.Workflow.WorkflowPropertyType.Boolean, "True" }]</InArgument>
               <InArgument x:TypeArguments="s:Type" x:Key="TargetType">
                 <mxswa:ReferenceLiteral x:TypeArguments="s:Type" Value="x:Boolean" />
               </InArgument>

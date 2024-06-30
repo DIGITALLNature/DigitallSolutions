@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.23081.184" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.24061.198" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>DIGITALLSolutions</UniqueName>
     <LocalizedNames>
@@ -80,7 +80,9 @@
       </Addresses>
     </Publisher>
     <RootComponents>
+      <RootComponent type="1" schemaName="customapi" behavior="1" />
       <RootComponent type="1" schemaName="dgt_carrier" behavior="0" />
+      <RootComponent type="1" schemaName="dgt_carrier_constraint" behavior="0" />
       <RootComponent type="1" schemaName="dgt_carrier_dependency_check" behavior="0" />
       <RootComponent type="1" schemaName="dgt_carrier_missing_dependency" behavior="0" />
       <RootComponent type="1" schemaName="dgt_workbench" behavior="0" />
@@ -104,12 +106,12 @@
       <RootComponent type="29" id="{e8d699c8-84ea-ed11-8849-000d3a25bcec}" behavior="0" />
       <RootComponent type="29" id="{fd691ff0-10eb-ed11-8849-000d3a25bcec}" behavior="0" />
       <RootComponent type="29" id="{ffaeb64d-52ea-ed11-8849-000d3a25bcec}" behavior="0" />
+      <RootComponent type="61" schemaName="dgt_/Icons/dgt_carrier.svg" behavior="0" />
       <RootComponent type="61" schemaName="dgt_/Icons/dgt_carrier_dependency_check.svg" behavior="0" />
       <RootComponent type="61" schemaName="dgt_/Icons/dgt_carrier_missing_dependency.svg" behavior="0" />
-      <RootComponent type="61" schemaName="dgt_/Icons/dgt_carrier.svg" behavior="0" />
       <RootComponent type="61" schemaName="dgt_/Icons/dgt_solutionconcept.svg" behavior="0" />
-      <RootComponent type="61" schemaName="dgt_/Icons/dgt_workbench_history.svg" behavior="0" />
       <RootComponent type="61" schemaName="dgt_/Icons/dgt_workbench.svg" behavior="0" />
+      <RootComponent type="61" schemaName="dgt_/Icons/dgt_workbench_history.svg" behavior="0" />
       <RootComponent type="61" schemaName="dgt_/Ribbons/dgt_carrier.js" behavior="0" />
       <RootComponent type="61" schemaName="dgt_/Ribbons/dgt_workbench.js" behavior="0" />
       <RootComponent type="62" schemaName="dgt_DigitallSolutions" behavior="0" />
@@ -124,15 +126,35 @@
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
-        <Required type="SettingDefinition" displayName="FluentThemingPreview" solution="msdyn_PowerAppsThemingSettings (1.0.0.8)" id.uniquename="FluentThemingPreview" />
+        <Required type="1" schemaName="customapi" displayName="Custom API" solution="msft_CustomAPIFramework (1.0.0.20)" />
+        <Dependent type="1" schemaName="customapi" displayName="Custom API" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="name" displayName="Name" parentSchemaName="customapi" parentDisplayName="Custom API" solution="msft_CustomAPIFramework (1.0.0.20)" />
+        <Dependent type="10" schemaName="dgt_carrier_constraint_customapi_id_customapi" displayName="dgt_carrier_constraint_customapi_id_customapi" parentSchemaName="customapi" parentDisplayName="Custom API" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2406.1011)" />
+        <Dependent type="60" displayName="Information" parentDisplayName="Carrier" id="{f4c77d5f-4b0e-46b1-be06-b1a9a8662042}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="CustomAPI" displayName="dgt_prevent_managed_tables_with_all_assets" solution="Active" id.uniquename="dgt_prevent_managed_tables_with_all_assets" />
+        <Dependent type="CustomAPIResponseProperty" displayName="customapiid.uniquename=dgt_prevent_managed_tables_with_all_assets,uniquename=Log" id.customapiid.uniquename="dgt_prevent_managed_tables_with_all_assets" id.uniquename="Log" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="CustomAPI" displayName="dgt_prevent_plugin_assemblies" solution="Active" id.uniquename="dgt_prevent_plugin_assemblies" />
+        <Dependent type="CustomAPIResponseProperty" displayName="customapiid.uniquename=dgt_prevent_plugin_assemblies,uniquename=Log" id.customapiid.uniquename="dgt_prevent_plugin_assemblies" id.uniquename="Log" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="FluentThemingPreview" solution="msdyn_PowerAppsThemingSettings (1.0.0.13)" id.uniquename="FluentThemingPreview" />
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=FluentThemingPreview" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="FluentThemingPreview" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="SettingDefinition" displayName="ServerMode" solution="SettingDefinitionsData (9.1.22112.221109001)" id.uniquename="ServerMode" />
+        <Required type="SettingDefinition" displayName="ServerMode" solution="SettingDefinitionsData (9.2.2405.2405223)" id.uniquename="ServerMode" />
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=ServerMode" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="ServerMode" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="SettingDefinition" displayName="ShareButtonOnViewsDashboards" solution="msft_PowerAppsCollaborationCommon (1.0.0.5)" id.uniquename="ShareButtonOnViewsDashboards" />
+        <Required type="SettingDefinition" displayName="ShareButtonOnViewsDashboards" solution="msft_PowerAppsCollaborationCommon (1.0.0.11)" id.uniquename="ShareButtonOnViewsDashboards" />
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=ShareButtonOnViewsDashboards" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="ShareButtonOnViewsDashboards" />
       </MissingDependency>
     </MissingDependencies>

@@ -145,6 +145,7 @@
             <cell id="{b8582ce8-4dcc-4cd9-925e-277898845617}" locklevel="0" colspan="1" rowspan="1">
               <labels>
                 <label description="Status Reason" languagecode="1033" />
+                <label description="Statusgrund" languagecode="1031" />
               </labels>
               <control id="header_statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" />
             </cell>
@@ -157,6 +158,7 @@
             <cell id="{38c0136f-89d4-42a9-b383-a5d25ebcb597}" colspan="1" rowspan="1">
               <labels>
                 <label description="Owner" languagecode="1033" />
+                <label description="Besitzer" languagecode="1031" />
               </labels>
               <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
             </cell>

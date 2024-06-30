@@ -45,7 +45,7 @@
               <OutArgument x:TypeArguments="x:Object" x:Key="Result">[InvokeSdkMessageStep1_1_converted]</OutArgument>
             </mxswa:ActivityReference.Arguments>
           </mxswa:ActivityReference>
-          <mcwa:InvokeSdkMessageActivity DisplayName="InvokeSdkMessageStep1: Just call the Action" SdkMessageEntityName="dgt_carrier" SdkMessageId="75c63463-e09b-40d6-8ed9-63899e37f03e" SdkMessageName="dgt_merge_all_patch_carrier_solution" SdkMessageRequestSuffix="">
+          <mcwa:InvokeSdkMessageActivity DisplayName="InvokeSdkMessageStep1: Just call the Action" SdkMessageEntityName="dgt_carrier" SdkMessageId="a638cc31-acf5-4c1c-b795-8023601deadf" SdkMessageName="dgt_merge_all_patch_carrier_solution" SdkMessageRequestSuffix="">
             <mcwa:InvokeSdkMessageActivity.Arguments>
               <InArgument x:TypeArguments="mxs:EntityReference" x:Key="Target">[DirectCast(InvokeSdkMessageStep1_1_converted, Microsoft.Xrm.Sdk.EntityReference)]</InArgument>
             </mcwa:InvokeSdkMessageActivity.Arguments>
