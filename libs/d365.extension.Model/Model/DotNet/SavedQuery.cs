@@ -392,6 +392,19 @@ namespace D365.Extension.Model
         }
 
 		/// <summary>
+		/// Indicates whether or not this is viewable by the entire organization.
+		/// </summary>
+		[AttributeLogicalName("isprivate")]
+        public bool? IsPrivate
+        {
+            [DebuggerNonUserCode]
+			get
+            {
+                return GetAttributeValue<bool?>("isprivate");
+            }
+        }
+
+		/// <summary>
 		/// Choose whether the view is compatible with Quick Find. When users search for specific items, you define the fields that are searched in.
 		/// </summary>
 		[AttributeLogicalName("isquickfindquery")]
@@ -656,6 +669,26 @@ namespace D365.Extension.Model
         }
 
 		/// <summary>
+		/// Contains the role display conditions for the SavedQuery.
+		/// </summary>
+		[AttributeLogicalName("roledisplayconditionsxml")]
+        public string RoleDisplayConditionsXml
+        {
+            [DebuggerNonUserCode]
+			get
+            {
+                return GetAttributeValue<string>("roledisplayconditionsxml");
+            }
+            [DebuggerNonUserCode]
+			set
+            {
+                OnPropertyChanging(nameof(RoleDisplayConditionsXml));
+                SetAttributeValue("roledisplayconditionsxml", value);
+                OnPropertyChanged(nameof(RoleDisplayConditionsXml));
+            }
+        }
+
+		/// <summary>
 		/// For internal use only.
 		/// </summary>
 		[AttributeLogicalName("savedqueryidunique")]
@@ -812,6 +845,7 @@ namespace D365.Extension.Model
 				public const string IsCustomizable = "iscustomizable";
 				public const string IsDefault = "isdefault";
 				public const string IsManaged = "ismanaged";
+				public const string IsPrivate = "isprivate";
 				public const string IsQuickFindQuery = "isquickfindquery";
 				public const string IsUserDefined = "isuserdefined";
 				public const string LayoutJson = "layoutjson";
@@ -828,6 +862,7 @@ namespace D365.Extension.Model
 				public const string QueryAppUsage = "queryappusage";
 				public const string QueryType = "querytype";
 				public const string ReturnedTypeCode = "returnedtypecode";
+				public const string RoleDisplayConditionsXml = "roledisplayconditionsxml";
 				public const string SavedQueryIdUnique = "savedqueryidunique";
 				public const string SolutionId = "solutionid";
 				public const string StateCode = "statecode";

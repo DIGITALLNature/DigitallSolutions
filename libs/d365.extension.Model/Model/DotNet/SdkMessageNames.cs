@@ -23,6 +23,7 @@ namespace D365.Extension.Model
         public const string DgtCreateNewPatchCarrierSolution = "dgt_create_new_patch_carrier_solution";
         public const string DgtLookupMakeEnvironment = "dgt_lookup_make_environment";
         public const string DgtMergeAllPatchCarrierSolution = "dgt_merge_all_patch_carrier_solution";
+        public const string DgtRunCarrierConstraintsCheck = "dgt_run_carrier_constraints_check";
         public const string DgtRunCarrierDependencyCheck = "dgt_run_carrier_dependency_check";
         public const string DgtSynchronizeAssemblies = "dgt_synchronize_assemblies";
         public const string DgtUpdateLinkedCarrierSolution = "dgt_update_linked_carrier_solution";

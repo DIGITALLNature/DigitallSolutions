@@ -697,6 +697,7 @@ namespace D365.Extension.Model
 				public const string SolutionSolutioncomponent = "solution_solutioncomponent";
 				public const string SolutionSyncErrors = "Solution_SyncErrors";
 				public const string SolutionTopDependencynode = "solution_top_dependencynode";
+				public const string UserSettingsPreferredSolution = "user_settings_preferred_solution";
 				public const string UserentityinstancedataSolution = "userentityinstancedata_solution";
             }
 

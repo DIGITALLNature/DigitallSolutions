@@ -502,26 +502,6 @@ namespace D365.Extension.Model
         }
 
 		/// <summary>
-		/// Owner Id Type
-		/// </summary>
-		[AttributeLogicalName("owneridtype")]
-        public string OwnerIdType
-        {
-            [DebuggerNonUserCode]
-			get
-            {
-                return GetAttributeValue<string>("owneridtype");
-            }
-            [DebuggerNonUserCode]
-			set
-            {
-                OnPropertyChanging(nameof(OwnerIdType));
-                SetAttributeValue("owneridtype", value);
-                OnPropertyChanged(nameof(OwnerIdType));
-            }
-        }
-
-		/// <summary>
 		/// Unique identifier for the business unit that owns the record
 		/// </summary>
 		[AttributeLogicalName("owningbusinessunit")]
@@ -903,7 +883,6 @@ namespace D365.Extension.Model
 				public const string OverriddenCreatedOn = "overriddencreatedon";
 				public const string OverwriteTime = "overwritetime";
 				public const string OwnerId = "ownerid";
-				public const string OwnerIdType = "owneridtype";
 				public const string OwningBusinessUnit = "owningbusinessunit";
 				public const string OwningTeam = "owningteam";
 				public const string OwningUser = "owninguser";
@@ -937,6 +916,11 @@ namespace D365.Extension.Model
 				public const string EnvdefinitionEnvdefinition = "envdefinition_envdefinition";
 				public const string EnvironmentvariabledefinitionAsyncOperations = "environmentvariabledefinition_AsyncOperations";
 				public const string EnvironmentvariabledefinitionBulkDeleteFailures = "environmentvariabledefinition_BulkDeleteFailures";
+				public const string EnvironmentvariabledefinitionCredentialCyberarkobject = "environmentvariabledefinition_credential_cyberarkobject";
+				public const string EnvironmentvariabledefinitionCredentialCyberarksafe = "environmentvariabledefinition_credential_cyberarksafe";
+				public const string EnvironmentvariabledefinitionCredentialCyberarkusername = "environmentvariabledefinition_credential_cyberarkusername";
+				public const string EnvironmentvariabledefinitionCredentialPassword = "environmentvariabledefinition_credential_password";
+				public const string EnvironmentvariabledefinitionCredentialUsername = "environmentvariabledefinition_credential_username";
 				public const string EnvironmentvariabledefinitionDuplicateBaseRecord = "environmentvariabledefinition_DuplicateBaseRecord";
 				public const string EnvironmentvariabledefinitionDuplicateMatchingRecord = "environmentvariabledefinition_DuplicateMatchingRecord";
 				public const string EnvironmentvariabledefinitionEnvironmentvariablevalue = "environmentvariabledefinition_environmentvariablevalue";
@@ -965,6 +949,7 @@ namespace D365.Extension.Model
             {
 				public const string BotEnvironmentvariabledefinition = "bot_environmentvariabledefinition";
 				public const string BotcomponentEnvironmentvariabledefinition = "botcomponent_environmentvariabledefinition";
+				public const string MsdynConnectordatasourceEnvironmentvariable = "msdyn_connectordatasource_environmentvariable";
             }
         }
 

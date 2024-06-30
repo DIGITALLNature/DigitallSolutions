@@ -62,7 +62,7 @@ namespace D365.Extension.Model
         #region consts
         public const string EntityLogicalName = "dgt_carrier_dependency_check";
         public const string PrimaryNameAttribute = "dgt_checkref";
-        public const int EntityTypeCode = 10440;
+        public const int EntityTypeCode = 10424;
         #endregion
 
         #region Events

@@ -117,4 +117,78 @@ namespace D365.Extension.Model
 
 	}
 
+	[RequestProxy("dgt_run_carrier_constraints_check")]
+	public class DgtRunCarrierConstraintsCheckRequest : OrganizationRequest
+	{
+		public DgtRunCarrierConstraintsCheckRequest()
+		{
+			RequestName = "dgt_run_carrier_constraints_check";
+		}
+
+		#region consts
+		public const string RequestLogicalName = "dgt_run_carrier_constraints_check";
+		#endregion
+
+		#region InParameters
+		public struct InParameters
+		{
+			public const string Target = "Target";
+		}
+		#endregion
+
+		public EntityReference Target
+		{
+			get
+			{
+				if(base.Parameters.Contains("Target"))
+				{
+					return (EntityReference)base.Parameters["Target"];
+				}
+				return default(EntityReference);
+			}
+			set
+			{
+				base.Parameters["Target"] = value;
+			}
+		}
+
+	}
+
+	[ResponseProxy("dgt_run_carrier_constraints_check")]
+	public class DgtRunCarrierConstraintsCheckResponse : OrganizationResponse
+	{
+		#region OutParameters
+		public struct OutParameters
+		{
+			public const string CarrierConstraintsLog = "Log";
+			public const string CarrierConstraintsSuccessStatus = "Success";
+		}
+		#endregion
+
+		public string CarrierConstraintsLog
+		{
+			get
+			{
+				if(base.Results.Contains("Log"))
+				{
+					return (string)base.Results["Log"];
+				}
+				return default(string);
+			}
+		}
+
+		public bool CarrierConstraintsSuccessStatus
+		{
+			get
+			{
+				if(base.Results.Contains("Success"))
+				{
+					return (bool)base.Results["Success"];
+				}
+				return default(bool);
+			}
+		}
+
+	}
+
 }

@@ -432,7 +432,9 @@ namespace D365.Extension.Model
             }
         }
 
-		
+		/// <summary>
+		/// Uniquely identifies the plug-in type associated with a plugin package when exporting a solution.
+		/// </summary>
 		[AttributeLogicalName("plugintypeexportkey")]
         public string PluginTypeExportKey
         {

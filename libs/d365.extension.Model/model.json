@@ -1,6 +1,7 @@
 ﻿{
   "CustomAPIs": [
-    "dgt_clone_a_solution"
+    "dgt_clone_a_solution",
+    "dgt_run_carrier_constraints_check"
   ],
   "AdditionalSdkMessages": [
     "dgt_add_component_to_carrier_solution",
@@ -38,5 +39,6 @@
   "SuppressTypeScript": true,
   "SuppressMetaData": true,
   "UseBaseLanguage": true,
-  "SuppressNullableSupport": true
+  "SuppressNullableSupport": true,
+  "NameSpace": "D365.Extension.Model"
 }

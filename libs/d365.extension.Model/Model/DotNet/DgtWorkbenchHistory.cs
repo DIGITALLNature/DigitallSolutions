@@ -62,7 +62,7 @@ namespace D365.Extension.Model
         #region consts
         public const string EntityLogicalName = "dgt_workbench_history";
         public const string PrimaryNameAttribute = "dgt_entry";
-        public const int EntityTypeCode = 10342;
+        public const int EntityTypeCode = 10427;
         #endregion
 
         #region Events
@@ -398,26 +398,6 @@ namespace D365.Extension.Model
         }
 
 		/// <summary>
-		/// Owner Id Type
-		/// </summary>
-		[AttributeLogicalName("owneridtype")]
-        public string OwnerIdType
-        {
-            [DebuggerNonUserCode]
-			get
-            {
-                return GetAttributeValue<string>("owneridtype");
-            }
-            [DebuggerNonUserCode]
-			set
-            {
-                OnPropertyChanging(nameof(OwnerIdType));
-                SetAttributeValue("owneridtype", value);
-                OnPropertyChanged(nameof(OwnerIdType));
-            }
-        }
-
-		/// <summary>
 		/// Unique identifier for the business unit that owns the record
 		/// </summary>
 		[AttributeLogicalName("owningbusinessunit")]
@@ -591,7 +571,6 @@ namespace D365.Extension.Model
 				public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
 				public const string OverriddenCreatedOn = "overriddencreatedon";
 				public const string OwnerId = "ownerid";
-				public const string OwnerIdType = "owneridtype";
 				public const string OwningBusinessUnit = "owningbusinessunit";
 				public const string OwningTeam = "owningteam";
 				public const string OwningUser = "owninguser";

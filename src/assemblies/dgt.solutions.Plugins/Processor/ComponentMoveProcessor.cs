@@ -36,14 +36,19 @@ namespace dgt.solutions.Plugins.Processor
 
 
             var componentMoverLog = new List<ComponentMoverLogEntry>();
-            var constraintCheckLog = new List<ConstraintCheckLogEntry>();
+            var constraintCheckLog = string.Empty;
 
             try
             {
                 //Constraints
-                constraintCheckLog.AddRange(new ConstraintCheck(Executor).Check(carrier, workbench));
-   
-                if(constraintCheckLog.Any(cl => !cl.Succeded))
+                var constraintsCheckRequest = new DgtRunCarrierConstraintsCheckRequest
+                {
+                    Target = workbench.ToEntityReference()
+                };
+                var constraintsCheckResponse = (DgtRunCarrierConstraintsCheckResponse)Executor.ElevatedOrganizationService.Execute(constraintsCheckRequest);
+                constraintCheckLog = constraintsCheckResponse.CarrierConstraintsLog;
+
+                if(!constraintsCheckResponse.CarrierConstraintsSuccessStatus)
                 {
                     throw new ConstraintViolationException("Constraint violations occured, please check logs for details.");
                 }

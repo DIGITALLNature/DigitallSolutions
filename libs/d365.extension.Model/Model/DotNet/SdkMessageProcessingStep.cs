@@ -153,6 +153,24 @@ namespace D365.Extension.Model
             }
         }
 
+		
+		[AttributeLogicalName("canbebypassed")]
+        public bool? CanBeBypassed
+        {
+            [DebuggerNonUserCode]
+			get
+            {
+                return GetAttributeValue<bool?>("canbebypassed");
+            }
+            [DebuggerNonUserCode]
+			set
+            {
+                OnPropertyChanging(nameof(CanBeBypassed));
+                SetAttributeValue("canbebypassed", value);
+                OnPropertyChanged(nameof(CanBeBypassed));
+            }
+        }
+
 		/// <summary>
 		/// Identifies whether a SDK Message Processing Step type will be ReadOnly or Read Write. false - ReadWrite, true - ReadOnly
 		/// </summary>
@@ -355,24 +373,6 @@ namespace D365.Extension.Model
                 OnPropertyChanging(nameof(EventHandler));
                 SetAttributeValue("eventhandler", value);
                 OnPropertyChanged(nameof(EventHandler));
-            }
-        }
-
-		
-		[AttributeLogicalName("eventhandlertypecode")]
-        public string EventHandlerTypeCode
-        {
-            [DebuggerNonUserCode]
-			get
-            {
-                return GetAttributeValue<string>("eventhandlertypecode");
-            }
-            [DebuggerNonUserCode]
-			set
-            {
-                OnPropertyChanging(nameof(EventHandlerTypeCode));
-                SetAttributeValue("eventhandlertypecode", value);
-                OnPropertyChanged(nameof(EventHandlerTypeCode));
             }
         }
 
@@ -927,6 +927,11 @@ namespace D365.Extension.Model
                     public const bool No = false;
                     public const bool Yes = true;
                 }
+                public struct CanBeBypassed
+                {
+                    public const bool No = false;
+                    public const bool Yes = true;
+                }
                 public struct CanUseReadOnlyConnection
                 {
                     public const bool No = false;
@@ -1000,6 +1005,7 @@ namespace D365.Extension.Model
 		{
 				public const string SdkMessageProcessingStepId = "sdkmessageprocessingstepid";
 				public const string AsyncAutoDelete = "asyncautodelete";
+				public const string CanBeBypassed = "canbebypassed";
 				public const string CanUseReadOnlyConnection = "canusereadonlyconnection";
 				public const string Category = "category";
 				public const string ComponentState = "componentstate";
@@ -1012,7 +1018,6 @@ namespace D365.Extension.Model
 				public const string EnablePluginProfiler = "enablepluginprofiler";
 				public const string EventExpander = "eventexpander";
 				public const string EventHandler = "eventhandler";
-				public const string EventHandlerTypeCode = "eventhandlertypecode";
 				public const string FilteringAttributes = "filteringattributes";
 				public const string FxExpressionId = "fxexpressionid";
 				public const string ImpersonatingUserId = "impersonatinguserid";
