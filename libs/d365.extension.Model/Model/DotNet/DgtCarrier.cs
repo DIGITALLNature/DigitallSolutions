@@ -735,6 +735,7 @@ namespace D365.Extension.Model
 
             public static class ManyToMany
             {
+				public const string DgtCarrierConstraintDgtCarrierDgtCarrier = "dgt_carrier_constraint_dgt_carrier_dgt_carrier";
             }
         }
 

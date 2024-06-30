@@ -35,7 +35,8 @@
     "sdkmessageprocessingstepimage",
     "environmentvariabledefinition",
     "environmentvariablevalue",
-    "msdyn_componentlayer"
+    "msdyn_componentlayer",
+    "customapi"
   ],
   "Solutions": [
     "c81aa2bb-c4e9-ed11-8849-000d3a25bcec"

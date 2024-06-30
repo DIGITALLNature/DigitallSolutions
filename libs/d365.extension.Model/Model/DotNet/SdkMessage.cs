@@ -579,6 +579,26 @@ namespace D365.Extension.Model
 
 		#region NavigationProperties
 		/// <summary>
+		/// 1:N sdkmessage_customapi
+		/// </summary>	
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sdkmessage_customapi")]
+		public System.Collections.Generic.IEnumerable<CustomAPI> SdkmessageCustomapi
+		{
+			[DebuggerNonUserCode]
+			get
+			{
+				return this.GetRelatedEntities<CustomAPI>("sdkmessage_customapi", null);
+			}
+			[DebuggerNonUserCode]
+			set
+			{
+				this.OnPropertyChanging("SdkmessageCustomapi");
+				this.SetRelatedEntities<CustomAPI>("sdkmessage_customapi", null, value);
+				this.OnPropertyChanged("SdkmessageCustomapi");
+			}
+		}
+
+		/// <summary>
 		/// 1:N sdkmessageid_sdkmessageprocessingstep
 		/// </summary>	
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sdkmessageid_sdkmessageprocessingstep")]

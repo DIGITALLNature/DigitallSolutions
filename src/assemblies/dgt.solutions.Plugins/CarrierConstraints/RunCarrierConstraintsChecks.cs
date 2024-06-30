@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using D365.Extension.Core;
 using D365.Extension.Model;
 using D365.Extension.Registration;
@@ -36,30 +37,36 @@ namespace dgt.solutions.Plugins.CarrierConstraints
 
         internal IEnumerable<ConstraintCheckLogEntry> Check(DgtCarrier carrier, DgtWorkbench workbench)
         {
-            if (carrier.DgtConstraintMset == null)
+            var constraintsQuery = new QueryExpression(DgtCarrierConstraint.EntityLogicalName);
+
+            constraintsQuery.AddLink(DgtCarrierConstraintDgtCarrier.EntityLogicalName, DgtCarrierConstraint.LogicalNames.DgtCarrierConstraintId, DgtCarrierConstraintDgtCarrier.LogicalNames.DgtCarrierConstraintid, JoinOperator.LeftOuter)
+                .EntityAlias = "carrier";
+            var customApiLink = constraintsQuery.AddLink(CustomAPI.EntityLogicalName, DgtCarrierConstraint.LogicalNames.DgtCustomapiId, CustomAPI.LogicalNames.CustomAPIId, JoinOperator.Inner);
+            customApiLink.Columns = new ColumnSet(CustomAPI.LogicalNames.UniqueName);
+            customApiLink.EntityAlias = "customapi";
+
+            constraintsQuery.Criteria.AddCondition(DgtCarrierConstraint.LogicalNames.Statecode, ConditionOperator.Equal, DgtCarrierConstraint.Options.Statecode.Active);
+            constraintsQuery.Criteria.AddFilter(new FilterExpression
+            {
+                FilterOperator = LogicalOperator.Or,
+                Conditions =
+                {
+                    new ConditionExpression(DgtCarrierConstraint.LogicalNames.DgtDefaultBit, ConditionOperator.Equal, DgtCarrierConstraint.Options.DgtDefaultBit.Yes),
+                    new ConditionExpression("carrier", DgtCarrier.LogicalNames.DgtCarrierId, ConditionOperator.Equal, carrier.Id),
+                },
+            });
+
+            var constraintsResponse = ElevatedOrganizationService.RetrieveMultiple(constraintsQuery);
+
+            if (!constraintsResponse.Entities.Any())
                 yield return new ConstraintCheckLogEntry
                 {
                     ConstraintType = "No constraints defined"
                 };
             else
-                foreach (var constraint in carrier.DgtConstraintMset)
+                foreach (var constraint in constraintsResponse.Entities)
                 {
-                    string constraintRequestName = string.Empty;
-                    switch(constraint.Value)
-                    {
-                        case DgtCarrier.Options.DgtConstraintMset.PreventFlows:
-                            constraintRequestName = SdkMessageNames.DgtPreventFlows;
-                            break;
-                        case DgtCarrier.Options.DgtConstraintMset.PreventItemsWithouthActiveLayer:
-                            constraintRequestName = SdkMessageNames.DgtPreventItemsWithoutActiveLayer;
-                            break;
-                        case DgtCarrier.Options.DgtConstraintMset.PreventManagedEntitiesWithAllAssets:
-                            constraintRequestName = SdkMessageNames.DgtPreventManagedTablesWithAllAssets;
-                            break;
-                        case DgtCarrier.Options.DgtConstraintMset.PreventPluginAssemblys:
-                            constraintRequestName = SdkMessageNames.DgtPreventPluginAssemblies;
-                            break;
-                    };
+                    var constraintRequestName = constraint.GetAttributeValue<AliasedValue>($"customapi.{CustomAPI.LogicalNames.UniqueName}")?.Value as string;
 
                     if (string.IsNullOrEmpty(constraintRequestName))
                         continue;

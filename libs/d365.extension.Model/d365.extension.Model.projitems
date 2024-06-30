@@ -14,8 +14,11 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\Actions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\Context.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\CustomAPI.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\Dependency.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtCarrier.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtCarrierConstraint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtCarrierConstraintDgtCarrier.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtCarrierDependencyCheck.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtCarrierMissingDependency.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtWorkbench.cs" />

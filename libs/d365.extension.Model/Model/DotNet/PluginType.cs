@@ -560,6 +560,26 @@ namespace D365.Extension.Model
 
 		#region NavigationProperties
 		/// <summary>
+		/// 1:N plugintype_customapi
+		/// </summary>	
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("plugintype_customapi")]
+		public System.Collections.Generic.IEnumerable<CustomAPI> PlugintypeCustomapi
+		{
+			[DebuggerNonUserCode]
+			get
+			{
+				return this.GetRelatedEntities<CustomAPI>("plugintype_customapi", null);
+			}
+			[DebuggerNonUserCode]
+			set
+			{
+				this.OnPropertyChanging("PlugintypeCustomapi");
+				this.SetRelatedEntities<CustomAPI>("plugintype_customapi", null, value);
+				this.OnPropertyChanged("PlugintypeCustomapi");
+			}
+		}
+
+		/// <summary>
 		/// 1:N plugintype_sdkmessageprocessingstep
 		/// </summary>	
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("plugintype_sdkmessageprocessingstep")]
