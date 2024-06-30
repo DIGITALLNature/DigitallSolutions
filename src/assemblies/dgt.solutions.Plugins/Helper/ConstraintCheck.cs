@@ -26,33 +26,7 @@ namespace dgt.solutions.Plugins.Helper
                 })).AttributeMetadata as PicklistAttributeMetadata;
         }
 
-        internal IEnumerable<ConstraintCheckLogEntry> Check(DgtCarrier carrier, DgtWorkbench workbench)
-        {
-            if (carrier.DgtConstraintMset == null)
-                yield return new ConstraintCheckLogEntry
-                {
-                    ConstraintType = "No constraints defined"
-                };
-            else
-                foreach (var constraint in carrier.DgtConstraintMset)
-                    switch (constraint.Value)
-                    {
-                        case DgtCarrier.Options.DgtConstraintMset.PreventFlows:
-                            yield return CheckForFlows(Guid.Parse(workbench.DgtSolutionid));
-                            break;
-                        case DgtCarrier.Options.DgtConstraintMset.PreventItemsWithouthActiveLayer:
-                            yield return CheckForItemsWithouthActiveLayer(Guid.Parse(workbench.DgtSolutionid));
-                            break;
-                        case DgtCarrier.Options.DgtConstraintMset.PreventManagedEntitiesWithAllAssets:
-                            yield return CheckForManagedEntitiesWithAllAssets(Guid.Parse(workbench.DgtSolutionid));
-                            break;
-                        case DgtCarrier.Options.DgtConstraintMset.PreventPluginAssemblys:
-                            yield return CheckForAssemblysAndAssemblysSteps(Guid.Parse(workbench.DgtSolutionid));
-                            break;
-                    }
-        }
-
-        private ConstraintCheckLogEntry CheckForAssemblysAndAssemblysSteps(Guid originId)
+        internal ConstraintCheckLogEntry CheckForAssemblysAndAssemblysSteps(Guid originId)
         {
             var componentsTypes = new List<int>
             {
@@ -88,7 +62,7 @@ namespace dgt.solutions.Plugins.Helper
             return _componentTypes.OptionSet.Options.Single(o => o.Value == value).Label.UserLocalizedLabel.Label;
         }
 
-        private ConstraintCheckLogEntry CheckForManagedEntitiesWithAllAssets(Guid originId)
+        internal ConstraintCheckLogEntry CheckForManagedEntitiesWithAllAssets(Guid originId)
         {
             var components = GetSolutionComponents(new List<ConditionExpression>
             {
@@ -132,7 +106,7 @@ namespace dgt.solutions.Plugins.Helper
             };
         }
 
-        private ConstraintCheckLogEntry CheckForItemsWithouthActiveLayer(Guid originId)
+        internal ConstraintCheckLogEntry CheckForItemsWithouthActiveLayer(Guid originId)
         {
             var componentsTypes = new List<int>
             {
@@ -184,7 +158,7 @@ namespace dgt.solutions.Plugins.Helper
             };
         }
 
-        private ConstraintCheckLogEntry CheckForFlows(Guid originId)
+        internal ConstraintCheckLogEntry CheckForFlows(Guid originId)
         {
             var components = GetSolutionFlowComponents(originId);
 

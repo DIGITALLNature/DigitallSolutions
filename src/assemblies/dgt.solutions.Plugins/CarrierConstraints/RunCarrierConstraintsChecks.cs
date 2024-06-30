@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using D365.Extension.Core;
@@ -24,12 +25,40 @@ public class RunCarrierConstraintsCheck : Executor
             .Retrieve(DgtCarrier.EntityLogicalName, workbench.DgtTargetCarrierId.Id, new ColumnSet(true))
             .ToEntity<DgtCarrier>();
 
-        var constraintCheckLog = new ConstraintCheck(this).Check(carrier, workbench);
+        var constraintCheckLog = Check(carrier, workbench);
         var constraintCheckLogJson = new SerializerService().JsonSerialize<List<ConstraintCheckLogEntry>>(constraintCheckLog);
 
         SetOutputParameter(DgtRunCarrierConstraintsCheckResponse.OutParameters.CarrierConstraintsSuccessStatus, constraintCheckLog.All(cl => cl.Succeded));
         SetOutputParameter(DgtRunCarrierConstraintsCheckResponse.OutParameters.CarrierConstraintsLog, constraintCheckLogJson);
 
         return ExecutionResult.Ok;
+    }
+
+    internal IEnumerable<ConstraintCheckLogEntry> Check(DgtCarrier carrier, DgtWorkbench workbench)
+    {
+        var constraintCheck = new ConstraintCheck(this);
+
+        if (carrier.DgtConstraintMset == null)
+            yield return new ConstraintCheckLogEntry
+            {
+                ConstraintType = "No constraints defined"
+            };
+        else
+            foreach (var constraint in carrier.DgtConstraintMset)
+                switch (constraint.Value)
+                {
+                    case DgtCarrier.Options.DgtConstraintMset.PreventFlows:
+                        yield return constraintCheck.CheckForFlows(Guid.Parse(workbench.DgtSolutionid));
+                        break;
+                    case DgtCarrier.Options.DgtConstraintMset.PreventItemsWithouthActiveLayer:
+                        yield return constraintCheck.CheckForItemsWithouthActiveLayer(Guid.Parse(workbench.DgtSolutionid));
+                        break;
+                    case DgtCarrier.Options.DgtConstraintMset.PreventManagedEntitiesWithAllAssets:
+                        yield return constraintCheck.CheckForManagedEntitiesWithAllAssets(Guid.Parse(workbench.DgtSolutionid));
+                        break;
+                    case DgtCarrier.Options.DgtConstraintMset.PreventPluginAssemblys:
+                        yield return constraintCheck.CheckForAssemblysAndAssemblysSteps(Guid.Parse(workbench.DgtSolutionid));
+                        break;
+                }
     }
 }
