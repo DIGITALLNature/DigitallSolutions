@@ -117,6 +117,67 @@ namespace D365.Extension.Model
 
 	}
 
+	[RequestProxy("dgt_prevent_flows")]
+	public class DgtPreventFlowsRequest : OrganizationRequest
+	{
+		public DgtPreventFlowsRequest()
+		{
+			RequestName = "dgt_prevent_flows";
+		}
+
+		#region consts
+		public const string RequestLogicalName = "dgt_prevent_flows";
+		#endregion
+
+		#region InParameters
+		public struct InParameters
+		{
+			public const string Target = "Target";
+		}
+		#endregion
+
+		public EntityReference Target
+		{
+			get
+			{
+				if(base.Parameters.Contains("Target"))
+				{
+					return (EntityReference)base.Parameters["Target"];
+				}
+				return default(EntityReference);
+			}
+			set
+			{
+				base.Parameters["Target"] = value;
+			}
+		}
+
+	}
+
+	[ResponseProxy("dgt_prevent_flows")]
+	public class DgtPreventFlowsResponse : OrganizationResponse
+	{
+		#region OutParameters
+		public struct OutParameters
+		{
+			public const string ConstraintLog_PreventFlows = "Log";
+		}
+		#endregion
+
+		public string ConstraintLog_PreventFlows
+		{
+			get
+			{
+				if(base.Results.Contains("Log"))
+				{
+					return (string)base.Results["Log"];
+				}
+				return default(string);
+			}
+		}
+
+	}
+
 	[RequestProxy("dgt_run_carrier_constraints_check")]
 	public class DgtRunCarrierConstraintsCheckRequest : OrganizationRequest
 	{

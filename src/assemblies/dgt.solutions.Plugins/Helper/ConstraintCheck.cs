@@ -158,26 +158,6 @@ namespace dgt.solutions.Plugins.Helper
             };
         }
 
-        internal ConstraintCheckLogEntry CheckForFlows(Guid originId)
-        {
-            var components = GetSolutionFlowComponents(originId);
-
-            if (components.Any())
-                return new ConstraintCheckLogEntry
-                {
-                    ConstraintType = "Prevent Flows",
-                    Succeded = false,
-                    ErrorComponents = components.Select(c => new ComponentInfo
-                        { ComponentId = c.ObjectId.GetValueOrDefault(), ComponentType = "Flow" }).ToList()
-                };
-
-            return new ConstraintCheckLogEntry
-            {
-                ConstraintType = "Prevent Flows",
-                Succeded = true
-            };
-        }
-
         private List<SolutionComponent> GetSolutionComponents(IEnumerable<ConditionExpression> conditions)
         {
             var components = new List<SolutionComponent>();
@@ -216,60 +196,6 @@ namespace dgt.solutions.Plugins.Helper
 
             return components;
         }
-
-        private List<SolutionComponent> GetSolutionFlowComponents(Guid originId)
-        {
-            var components = new List<SolutionComponent>();
-            var qe = new QueryExpression(SolutionComponent.EntityLogicalName)
-            {
-                NoLock = true,
-                ColumnSet = new ColumnSet(true)
-            };
-            qe.Criteria.Conditions.AddRange(new List<ConditionExpression>
-            {
-                new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, originId),
-                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.Equal,
-                    SolutionComponent.Options.ComponentType.Workflow)
-            });
-
-            var workflowLink = qe.AddLink(Workflow.EntityLogicalName, SolutionComponent.LogicalNames.ObjectId,
-                Workflow.LogicalNames.WorkflowId);
-            workflowLink.LinkCriteria.FilterOperator = LogicalOperator.Or;
-            workflowLink.LinkCriteria.AddCondition(Workflow.LogicalNames.Category, ConditionOperator.Equal,
-                Workflow.Options.Category.DesktopFlow);
-            workflowLink.LinkCriteria.AddCondition(Workflow.LogicalNames.Category, ConditionOperator.Equal,
-                Workflow.Options.Category.ModernFlow);
-
-            qe.Orders.Add(new OrderExpression
-            {
-                AttributeName = SolutionComponent.LogicalNames.SolutionComponentId,
-                OrderType = OrderType.Ascending
-            });
-            qe.PageInfo = new PagingInfo
-            {
-                Count = 5000,
-                PageNumber = 1,
-                PagingCookie = null
-            };
-            while (true)
-            {
-                // Retrieve the page.
-                var results = _executor.ElevatedOrganizationService.RetrieveMultiple(qe);
-                components.AddRange(results.Entities.Select(e => e.ToEntity<SolutionComponent>()));
-                if (results.MoreRecords)
-                {
-                    qe.PageInfo.PageNumber++;
-                    qe.PageInfo.PagingCookie = results.PagingCookie;
-                }
-                else
-                {
-                    break;
-                }
-            }
-
-            return components;
-        }
-
         protected List<MsdynComponentlayer> GetSolutionLayers(SolutionComponent component)
         {
             var query = new QueryExpression
