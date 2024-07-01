@@ -142,14 +142,6 @@
         <Dependent type="68" id="{cad44041-466a-4d67-856f-343c2bd77538}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="CustomAPI" displayName="dgt_prevent_managed_tables_with_all_assets" solution="Active" id.uniquename="dgt_prevent_managed_tables_with_all_assets" />
-        <Dependent type="CustomAPIResponseProperty" displayName="customapiid.uniquename=dgt_prevent_managed_tables_with_all_assets,uniquename=Log" id.customapiid.uniquename="dgt_prevent_managed_tables_with_all_assets" id.uniquename="Log" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="CustomAPI" displayName="dgt_prevent_plugin_assemblies" solution="Active" id.uniquename="dgt_prevent_plugin_assemblies" />
-        <Dependent type="CustomAPIResponseProperty" displayName="customapiid.uniquename=dgt_prevent_plugin_assemblies,uniquename=Log" id.customapiid.uniquename="dgt_prevent_plugin_assemblies" id.uniquename="Log" />
-      </MissingDependency>
-      <MissingDependency>
         <Required type="SettingDefinition" displayName="FluentThemingPreview" solution="msdyn_PowerAppsThemingSettings (1.0.0.13)" id.uniquename="FluentThemingPreview" />
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=FluentThemingPreview" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="FluentThemingPreview" />
       </MissingDependency>
