@@ -20,6 +20,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CoreLogging.PluginTrace", "
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CoreConfig.EnvironmentVariables", "libs\d365.extension\CoreConfig\EnvironmentVariables\CoreConfig.EnvironmentVariables.shproj", "{F1D4E2EA-E745-4DF1-A304-A7D96B850077}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIGITALLSolutionsPackage", "package\DIGITALLSolutionsPackage.csproj", "{842B2586-12DC-44EB-A601-DFE3D518401C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{30099324-5654-46FD-B166-3F4237B617C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30099324-5654-46FD-B166-3F4237B617C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30099324-5654-46FD-B166-3F4237B617C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{842B2586-12DC-44EB-A601-DFE3D518401C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{842B2586-12DC-44EB-A601-DFE3D518401C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{842B2586-12DC-44EB-A601-DFE3D518401C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{842B2586-12DC-44EB-A601-DFE3D518401C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{30099324-5654-46FD-B166-3F4237B617C4} = {39AD24C0-ECA2-4A07-A030-32F864F5F412}

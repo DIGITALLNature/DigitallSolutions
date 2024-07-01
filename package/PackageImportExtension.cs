@@ -1,5 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Diagnostics;
+using System.Linq;
+using D365.Extension.Model;
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase;
 
 namespace DIGITALLSolutions.Package
@@ -34,6 +40,8 @@ namespace DIGITALLSolutions.Package
         public override string GetImportPackageDescriptionText => "DIGITALLSolutions";
 
         #endregion
+
+        private readonly Dictionary<string, (string oldVersion, string newVersion)> _solutionUpgrades = new Dictionary<string, (string, string)>();
 
         /// <summary>
         /// Called to Initialize any functions in the Custom Extension.
@@ -80,6 +88,8 @@ namespace DIGITALLSolutions.Package
         public override void RunSolutionUpgradeMigrationStep(string solutionName, string oldVersion, string newVersion, Guid oldSolutionId, Guid newSolutionId)
         {
             base.RunSolutionUpgradeMigrationStep(solutionName, oldVersion, newVersion, oldSolutionId, newSolutionId);
+
+            _solutionUpgrades[solutionName] = (oldVersion, newVersion);
         }
 
         /// <summary>
@@ -89,6 +99,71 @@ namespace DIGITALLSolutions.Package
         /// <returns></returns>
         public override bool AfterPrimaryImport()
         {
+            if (!_solutionUpgrades.TryGetValue("DIGITALLSolutions", out var versions) 
+                || !Version.TryParse(versions.oldVersion, out Version oldVersion)
+                || !Version.TryParse(versions.newVersion, out Version newVersion))
+            {
+                RaiseUpdateEvent("Failed to parse version numbers for solution upgrade", ProgressPanelItemStatus.Warning, PDStage.CustomCode);
+                return true;
+            }
+
+            if (oldVersion.Major == 1 && newVersion.Major > 1)
+            {
+                PackageLog.Log("Preparing solution upgrade from version 1 to version 2", TraceEventType.Information);
+                RaiseUpdateEvent("Preparing version upgrade: converting constraints", ProgressPanelItemStatus.Working, PDStage.CustomCode);
+
+                PackageLog.Log("Loading carriers with constraints", TraceEventType.Verbose);
+                var carrierQuery = new QueryExpression(DgtCarrier.EntityLogicalName);
+                carrierQuery.Criteria.AddCondition(DgtCarrier.LogicalNames.DgtConstraintMset, ConditionOperator.NotNull);
+                carrierQuery.ColumnSet.AddColumns(DgtCarrier.LogicalNames.DgtConstraintMset);
+
+                var carriers = CrmSvc.RetrieveMultiple(carrierQuery).Entities.Select(c => c.ToEntity<DgtCarrier>()).ToList();
+
+                PackageLog.Log("Converting to contraint records", TraceEventType.Verbose);
+                foreach (var carrier in carriers)
+                {
+                    PackageLog.Log($"Converting constraints for carrier {carrier.DgtCarrierId}", TraceEventType.Verbose);
+                    var constraintSet = carrier.DgtConstraintMset;
+
+                    var constraintRecordRefs = new List<EntityReference>();
+                    foreach (var constraint in constraintSet)
+                    {
+                        switch (constraint.Value)
+                        {
+                            case DgtCarrier.Options.DgtConstraintMset.PreventFlows:
+                                constraintRecordRefs.Add(new EntityReference(DgtCarrierConstraint.EntityLogicalName, Guid.Parse("82a9f61f-ce36-ef11-8409-000d3aa8c88e")));
+                                break;
+                            case DgtCarrier.Options.DgtConstraintMset.PreventItemsWithouthActiveLayer:
+                                constraintRecordRefs.Add(new EntityReference(DgtCarrierConstraint.EntityLogicalName, Guid.Parse("dd0be450-ce36-ef11-8409-000d3aa8c88e")));
+                                break;
+                            case DgtCarrier.Options.DgtConstraintMset.PreventManagedEntitiesWithAllAssets:
+                                constraintRecordRefs.Add(new EntityReference(DgtCarrierConstraint.EntityLogicalName, Guid.Parse("2285cf57-ce36-ef11-8409-000d3aa8c88e")));
+                                break;
+                            case DgtCarrier.Options.DgtConstraintMset.PreventPluginAssemblys:
+                                constraintRecordRefs.Add(new EntityReference(DgtCarrierConstraint.EntityLogicalName, Guid.Parse("4984b838-ce36-ef11-8409-000d3aa8c88e")));
+                                break;
+                        }
+                    }
+
+                    if (constraintRecordRefs.Count > 0)
+                    {
+                        PackageLog.Log($"Creating constraints for carrier {carrier.DgtCarrierId}", TraceEventType.Information);
+                        try
+                        {
+                            CrmSvc.Associate(DgtCarrier.EntityLogicalName, carrier.Id, new Relationship(DgtCarrier.Relations.ManyToMany.DgtCarrierConstraintDgtCarrierDgtCarrier), new EntityReferenceCollection(constraintRecordRefs));
+                        }
+                        catch (Exception e)
+                        {
+                            RaiseUpdateEvent($"Failed to create constraints for carrier {carrier.DgtCarrierId}: {e.Message}", ProgressPanelItemStatus.Failed, PDStage.CustomCode);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                PackageLog.Log("No upgrade steps for this version change", TraceEventType.Information);
+            }
+
             return true;
         }
     }
