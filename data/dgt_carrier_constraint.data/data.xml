@@ -1,0 +1,36 @@
+
+<entities xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" timestamp="2024-07-01T18:11:16.4915617Z">
+  <entity name="dgt_carrier_constraint" displayname="Carrier Constraint">
+    <records>
+      <record id="82a9f61f-ce36-ef11-8409-000d3aa8c88e">
+        <field name="dgt_carrier_constraintid" value="82a9f61f-ce36-ef11-8409-000d3aa8c88e" />
+        <field name="dgt_customapi_id" value="fb7feb97-c436-ef11-8409-000d3aa8c88e" lookupentity="customapi" lookupentityname="Run Constraint: Prevent Flows" />
+        <field name="dgt_default_bit" value="False" />
+        <field name="dgt_name" value="Prevent flows" />
+        <field name="dgt_short_description_txt" value="Does not allow any cloud flows to be merged into this carrier" />
+      </record>
+      <record id="4984b838-ce36-ef11-8409-000d3aa8c88e">
+        <field name="dgt_carrier_constraintid" value="4984b838-ce36-ef11-8409-000d3aa8c88e" />
+        <field name="dgt_customapi_id" value="272010c6-c736-ef11-8409-000d3aa8c88e" lookupentity="customapi" lookupentityname="Run Constraint: Prevent plugin assemblies" />
+        <field name="dgt_default_bit" value="False" />
+        <field name="dgt_name" value="Prevent plugin assemblies" />
+        <field name="dgt_short_description_txt" value="Does not allow any plugin assemblies or plugin steps to be merged into this carrier" />
+      </record>
+      <record id="dd0be450-ce36-ef11-8409-000d3aa8c88e">
+        <field name="dgt_carrier_constraintid" value="dd0be450-ce36-ef11-8409-000d3aa8c88e" />
+        <field name="dgt_customapi_id" value="e714005f-c736-ef11-8409-000d3aa8c88e" lookupentity="customapi" lookupentityname="Run Constraint: Prevent items without active layer" />
+        <field name="dgt_default_bit" value="True" />
+        <field name="dgt_name" value="Prevent items without active layer" />
+        <field name="dgt_short_description_txt" value="Does not allow any components that do not have an active layer" />
+      </record>
+      <record id="2285cf57-ce36-ef11-8409-000d3aa8c88e">
+        <field name="dgt_carrier_constraintid" value="2285cf57-ce36-ef11-8409-000d3aa8c88e" />
+        <field name="dgt_customapi_id" value="8d6a3798-c736-ef11-8409-000d3aa8c88e" lookupentity="customapi" lookupentityname="Run Constraint: Prevent managed tables with all assets" />
+        <field name="dgt_default_bit" value="True" />
+        <field name="dgt_name" value="Prevent managed tables with all assets" />
+        <field name="dgt_short_description_txt" value="Does not allow any managed tables with all assets" />
+      </record>
+    </records>
+    <m2mrelationships />
+  </entity>
+</entities>

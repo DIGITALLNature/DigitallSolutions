@@ -1,0 +1,11 @@
+<entities >
+  <entity name="dgt_carrier_constraint" displayname="Carrier Constraint" etc="10408" primaryidfield="dgt_carrier_constraintid" primarynamefield="dgt_name" disableplugins="false">
+    <fields>
+      <field displayname="Carrier Constraint" name="dgt_carrier_constraintid" type="guid" primaryKey="true" />
+      <field displayname="Custom Api" name="dgt_customapi_id" type="entityreference" lookupType="customapi" customfield="true" />
+      <field displayname="Is Default" name="dgt_default_bit" type="bool" customfield="true" />
+      <field displayname="Name" name="dgt_name" type="string" customfield="true" />
+      <field displayname="Short Description" name="dgt_short_description_txt" type="string" customfield="true" />
+    </fields>
+  </entity>
+</entities>
