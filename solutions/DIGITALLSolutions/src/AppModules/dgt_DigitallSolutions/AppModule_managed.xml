@@ -11,6 +11,7 @@
   <NavigationType>0</NavigationType>
   <AppModuleComponents>
     <AppModuleComponent type="1" schemaName="dgt_carrier" />
+    <AppModuleComponent type="1" schemaName="dgt_carrier_constraint" />
     <AppModuleComponent type="1" schemaName="dgt_workbench" />
     <AppModuleComponent type="62" schemaName="dgt_DigitallSolutions" />
   </AppModuleComponents>
