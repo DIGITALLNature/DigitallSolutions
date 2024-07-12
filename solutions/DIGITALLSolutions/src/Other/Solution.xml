@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.23081.184" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.24063.168" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>DIGITALLSolutions</UniqueName>
     <LocalizedNames>
       <LocalizedName description="DIGITALL Solution Concept" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.2</Version>
+    <Version>3.0.1.0</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>digitall</UniqueName>
@@ -85,6 +85,7 @@
       <RootComponent type="1" schemaName="dgt_carrier_missing_dependency" behavior="0" />
       <RootComponent type="1" schemaName="dgt_workbench" behavior="0" />
       <RootComponent type="1" schemaName="dgt_workbench_history" behavior="0" />
+      <RootComponent type="1" schemaName="dgt_workbench_history_log" behavior="0" />
       <RootComponent type="20" id="{421ecd94-74ea-ed11-8849-000d3a25bcec}" behavior="0" />
       <RootComponent type="29" id="{0386ac6d-84ea-ed11-8849-000d3a25bcec}" behavior="0" />
       <RootComponent type="29" id="{19db52de-11eb-ed11-8849-000d3a25bcec}" behavior="0" />
@@ -115,6 +116,7 @@
       <RootComponent type="62" schemaName="dgt_DigitallSolutions" behavior="0" />
       <RootComponent type="80" schemaName="dgt_DigitallSolutions" behavior="0" />
       <RootComponent type="9" schemaName="dgt_constraint_type_set" behavior="0" />
+      <RootComponent type="9" schemaName="dgt_log_type_set" behavior="0" />
       <RootComponent type="9" schemaName="dgt_workbench_nature_set" behavior="0" />
       <RootComponent type="91" id="{da72886b-22eb-ed11-8849-000d3a25bcec}" schemaName="dgt.solutions.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2fe9a08c58874237" behavior="0" />
       <RootComponent type="92" id="{f272886b-22eb-ed11-8849-000d3a25bcec}" behavior="0" />
@@ -124,15 +126,23 @@
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
-        <Required type="SettingDefinition" displayName="FluentThemingPreview" solution="msdyn_PowerAppsThemingSettings (1.0.0.8)" id.uniquename="FluentThemingPreview" />
+        <Required type="181" schemaName="NonRelational Data Provider" displayName="NonRelational Data Provider" solution="NonRelationalDataProvider (9.1.0.203)" id="{1d9bde74-9ebd-4da9-8ff5-aa74945b9f74}" />
+        <Dependent type="1" schemaName="dgt_workbench_history_log" displayName="Workbench History Log" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="183" schemaName="NonRelational Data Provider" displayName="NonRelational Data Provider" solution="NonRelationalDataProvider (9.1.0.203)" id="{19897b6e-b2c2-461c-8f32-5a2413028030}" />
+        <Dependent type="1" schemaName="dgt_workbench_history_log" displayName="Workbench History Log" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="FluentThemingPreview" solution="msdyn_PowerAppsThemingSettings (1.0.0.13)" id.uniquename="FluentThemingPreview" />
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=FluentThemingPreview" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="FluentThemingPreview" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="SettingDefinition" displayName="ServerMode" solution="SettingDefinitionsData (9.1.22112.221109001)" id.uniquename="ServerMode" />
+        <Required type="SettingDefinition" displayName="ServerMode" solution="SettingDefinitionsData (9.2.2405.2405223)" id.uniquename="ServerMode" />
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=ServerMode" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="ServerMode" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="SettingDefinition" displayName="ShareButtonOnViewsDashboards" solution="msft_PowerAppsCollaborationCommon (1.0.0.5)" id.uniquename="ShareButtonOnViewsDashboards" />
+        <Required type="SettingDefinition" displayName="ShareButtonOnViewsDashboards" solution="msft_PowerAppsCollaborationCommon (1.0.0.11)" id.uniquename="ShareButtonOnViewsDashboards" />
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=ShareButtonOnViewsDashboards" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="ShareButtonOnViewsDashboards" />
       </MissingDependency>
     </MissingDependencies>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Role id="{421ecd94-74ea-ed11-8849-000d3a25bcec}" name="Digitall Solutions User" isinherited="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Role id="{421ecd94-74ea-ed11-8849-000d3a25bcec}" name="Digitall Solutions User" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <IsCustomizable>1</IsCustomizable>
   <RolePrivileges>
     <RolePrivilege name="prvAppenddgt_carrier" level="Global" />
