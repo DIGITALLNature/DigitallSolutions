@@ -2,7 +2,7 @@
 
 <br/>
 <p align="center">
-    <a href="LICENSE" target="_blank">
+    <a href="License.md" target="_blank">
         <img src="https://img.shields.io/github/license/DIGITALLNature/DigitallSolutions.svg" alt="GitHub license">
     </a>
     </a>
