@@ -20,4 +20,11 @@
     <ProjectReference Include="..\solutions\DIGITALLSolutions\DIGITALLSolutions.cdsproj" ReferenceOutputAssembly="false" PublishWorkflowsAndActivatePlugins="true" ImportMode="async" />
   </ItemGroup>
   <Import Project="..\libs\d365.extension.Model\d365.extension.Model.projitems" Label="Shared" />
+
+  <Target Name="ZipConstraintData" BeforeTargets="Build">
+        <ZipDirectory
+            SourceDirectory="$(MSBuildProjectDirectory)/../data/dgt_carrier_constraint.data"
+            DestinationFile="$(MSBuildProjectDirectory)/PkgAssets/dgt_carrier_constraint.data.zip"
+            Overwrite="true" />
+    </Target>
 </Project>
