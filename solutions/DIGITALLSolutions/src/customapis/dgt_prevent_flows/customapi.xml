@@ -1,7 +1,7 @@
 <customapi uniquename="dgt_prevent_flows">
   <allowedcustomprocessingsteptype>2</allowedcustomprocessingsteptype>
   <bindingtype>1</bindingtype>
-  <boundentitylogicalname>dgt_workbench</boundentitylogicalname>
+  <boundentitylogicalname>solution</boundentitylogicalname>
   <description default="Run Constraint: Prevent Flows">
     <label description="Run Constraint: Prevent Flows" languagecode="1033" />
   </description>

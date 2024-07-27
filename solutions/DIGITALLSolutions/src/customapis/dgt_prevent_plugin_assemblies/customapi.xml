@@ -1,7 +1,7 @@
 <customapi uniquename="dgt_prevent_plugin_assemblies">
   <allowedcustomprocessingsteptype>2</allowedcustomprocessingsteptype>
   <bindingtype>1</bindingtype>
-  <boundentitylogicalname>dgt_workbench</boundentitylogicalname>
+  <boundentitylogicalname>solution</boundentitylogicalname>
   <description default="Run Constraint: Prevent plugin assemblies">
     <label description="Run Constraint: Prevent plugin assemblies" languagecode="1033" />
   </description>

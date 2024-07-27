@@ -927,6 +927,7 @@ namespace D365.Extension.Model
 				public const string EnvironmentvariabledefinitionMailboxTrackingFolders = "environmentvariabledefinition_MailboxTrackingFolders";
 				public const string EnvironmentvariabledefinitionPrincipalObjectAttributeAccesses = "environmentvariabledefinition_PrincipalObjectAttributeAccesses";
 				public const string EnvironmentvariabledefinitionProcessSession = "environmentvariabledefinition_ProcessSession";
+				public const string EnvironmentVariableDefinitionReportParameterEvironmentVariableDefinitionId = "EnvironmentVariableDefinition_ReportParameter_EvironmentVariableDefinitionId";
 				public const string EnvironmentvariabledefinitionSyncErrors = "environmentvariabledefinition_SyncErrors";
 				public const string EnvironmentvariabledefinitionUserEntityInstanceDatas = "environmentvariabledefinition_UserEntityInstanceDatas";
 				public const string EnvvardefinitionPowerbimashupparameter = "envvardefinition_powerbimashupparameter";

@@ -13,39 +13,13 @@ using Microsoft.Xrm.Sdk.Query;
 namespace dgt.solutions.Plugins.CarrierConstraints
 {
     [CustomApiRegistration(SdkMessageNames.DgtPreventManagedTablesWithAllAssets)]
-    public class PreventManagedTablesWithAllAssets : Executor
+    public class PreventManagedTablesWithAllAssets : ConstraintBase
     {
-        protected override ExecutionResult Execute()
-        {
-            GetInputParameter("Target", out EntityReference workbenchReference);
-
-            var elevatedOrgService = ElevatedOrganizationService;
-
-            var workbench = elevatedOrgService
-                .Retrieve(DgtWorkbench.EntityLogicalName, workbenchReference.Id, new ColumnSet(true))
-                .ToEntity<DgtWorkbench>();
-
-            if (Guid.TryParse(workbench.DgtSolutionid, out var solutionId))
-            {
-                var constraintCheckLog = CheckForManagedEntitiesWithAllAssets(solutionId);
-
-                var constraintCheckLogJson = new SerializerService().JsonSerialize<ConstraintCheckLogEntry>(constraintCheckLog);
-
-                SetOutputParameter(DgtPreventFlowsResponse.OutParameters.ConstraintLog_PreventFlows, constraintCheckLogJson);
-            }
-            else
-            {
-                throw new InvalidPluginExecutionException("Invalid Solution Id");
-            }
-
-            return ExecutionResult.Ok;
-        }
-
-        internal ConstraintCheckLogEntry CheckForManagedEntitiesWithAllAssets(Guid originId)
+        protected override ConstraintCheckLogEntry RunCheck(Guid solutionId)
         {
             var components = GetSolutionComponents(new List<ConditionExpression>
             {
-                new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, originId),
+                new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, solutionId),
                 new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.Equal,
                     SolutionComponent.Options.ComponentType.Entity)
             });

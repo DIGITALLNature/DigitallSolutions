@@ -1,6 +1,6 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using D365.Extension.Core;
 using D365.Extension.Model;
 using D365.Extension.Registration;
@@ -75,7 +75,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                     {
                         Parameters = new ParameterCollection
                         {
-                            { "Target", workbench.ToEntityReference() },
+                            { "Target", new EntityReference(Solution.EntityLogicalName, Guid.Parse(workbench.DgtSolutionid)) },
                         },
                     });
 

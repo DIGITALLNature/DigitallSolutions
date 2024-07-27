@@ -937,6 +937,7 @@ namespace D365.Extension.Model
 				public const string DgtCarrierConstraintCustomapiIdCustomapi = "dgt_carrier_constraint_customapi_id_customapi";
 				public const string FabricaiskillCustomapiid = "fabricaiskill_customapiid";
 				public const string MsdynCustomapiMsdynPmbusinessruleautomationconfigCustomApiId = "msdyn_customapi_msdyn_pmbusinessruleautomationconfig_CustomApiId";
+				public const string MsdynFormmappingCustomapiid = "msdyn_formmapping_customapiid";
 				public const string MsdynKnowledgeassetconfigurationCustomapiid = "msdyn_knowledgeassetconfiguration_customapiid";
             }
 

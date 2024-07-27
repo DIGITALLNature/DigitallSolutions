@@ -1,56 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using D365.Extension.Core;
 using D365.Extension.Model;
 using D365.Extension.Registration;
 using dgt.solutions.Plugins.Contract;
-using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace dgt.solutions.Plugins.CarrierConstraints
 {
     [CustomApiRegistration(SdkMessageNames.DgtPreventPluginAssemblies)]
-    public class PreventPluginAssemblies : Executor
+    public class PreventPluginAssemblies : ConstraintBase
     {
         private PicklistAttributeMetadata _componentTypes;
 
-        protected override ExecutionResult Execute()
-        {
-            GetInputParameter("Target", out EntityReference workbenchReference);
-
-            var elevatedOrgService = ElevatedOrganizationService;
-
-            var workbench = elevatedOrgService
-                .Retrieve(DgtWorkbench.EntityLogicalName, workbenchReference.Id, new ColumnSet(true))
-                .ToEntity<DgtWorkbench>();
-
-            if (Guid.TryParse(workbench.DgtSolutionid, out var solutionId))
-            {
-
-                _componentTypes = ((RetrieveAttributeResponse)ElevatedOrganizationService.Execute(
-                    new RetrieveAttributeRequest
-                    {
-                        EntityLogicalName = SolutionComponent.EntityLogicalName,
-                        LogicalName = SolutionComponent.LogicalNames.ComponentType
-                    })).AttributeMetadata as PicklistAttributeMetadata;
-                var constraintCheckLog = CheckForAssemblysAndAssemblysSteps(solutionId);
-
-                var constraintCheckLogJson = new SerializerService().JsonSerialize<ConstraintCheckLogEntry>(constraintCheckLog);
-
-                SetOutputParameter(DgtPreventFlowsResponse.OutParameters.ConstraintLog_PreventFlows, constraintCheckLogJson);
-            }
-            else
-            {
-                throw new InvalidPluginExecutionException("Invalid Solution Id");
-            }
-
-            return ExecutionResult.Ok;
-        }
-
-        internal ConstraintCheckLogEntry CheckForAssemblysAndAssemblysSteps(Guid originId)
+        protected override ConstraintCheckLogEntry RunCheck(Guid originId)
         {
             var componentsTypes = new List<int>
             {

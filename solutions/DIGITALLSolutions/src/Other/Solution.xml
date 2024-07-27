@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.24061.198" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.24064.190" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>DIGITALLSolutions</UniqueName>
     <LocalizedNames>
       <LocalizedName description="DIGITALL Solution Concept" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>2.0.0</Version>
+    <Version>1.0.2</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>digitall</UniqueName>
@@ -134,11 +134,11 @@
         <Dependent type="10" schemaName="dgt_carrier_constraint_customapi_id_customapi" displayName="dgt_carrier_constraint_customapi_id_customapi" parentSchemaName="customapi" parentDisplayName="Custom API" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2406.1011)" />
+        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2406.4015)" />
         <Dependent type="60" displayName="Information" parentDisplayName="Carrier" id="{f4c77d5f-4b0e-46b1-be06-b1a9a8662042}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2406.1011)" />
+        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2406.4015)" />
         <Dependent type="68" id="{cad44041-466a-4d67-856f-343c2bd77538}" />
       </MissingDependency>
       <MissingDependency>

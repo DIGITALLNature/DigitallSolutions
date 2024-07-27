@@ -1,11 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using D365.Extension.Core;
 using D365.Extension.Model;
 using D365.Extension.Registration;
 using dgt.solutions.Plugins.Contract;
-using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Query;
@@ -13,41 +11,19 @@ using Microsoft.Xrm.Sdk.Query;
 namespace dgt.solutions.Plugins.CarrierConstraints
 {
     [CustomApiRegistration(SdkMessageNames.DgtPreventItemsWithoutActiveLayer)]
-    public class PreventItemsWithoutActiveLayer : Executor
+    public class PreventItemsWithoutActiveLayer : ConstraintBase
     {
         private PicklistAttributeMetadata _componentTypes;
 
-        protected override ExecutionResult Execute()
+        protected override ConstraintCheckLogEntry RunCheck(Guid solutionId)
         {
-            GetInputParameter("Target", out EntityReference workbenchReference);
-
-            var elevatedOrgService = ElevatedOrganizationService;
-
-            var workbench = elevatedOrgService
-                .Retrieve(DgtWorkbench.EntityLogicalName, workbenchReference.Id, new ColumnSet(true))
-                .ToEntity<DgtWorkbench>();
-
-            if (Guid.TryParse(workbench.DgtSolutionid, out var solutionId))
-            {
-
-                _componentTypes = ((RetrieveAttributeResponse)ElevatedOrganizationService.Execute(
+            _componentTypes = ((RetrieveAttributeResponse)ElevatedOrganizationService.Execute(
                     new RetrieveAttributeRequest
                     {
                         EntityLogicalName = SolutionComponent.EntityLogicalName,
                         LogicalName = SolutionComponent.LogicalNames.ComponentType
                     })).AttributeMetadata as PicklistAttributeMetadata;
-                var constraintCheckLog = CheckForItemsWithouthActiveLayer(solutionId);
-
-                var constraintCheckLogJson = new SerializerService().JsonSerialize<ConstraintCheckLogEntry>(constraintCheckLog);
-
-                SetOutputParameter(DgtPreventFlowsResponse.OutParameters.ConstraintLog_PreventFlows, constraintCheckLogJson);
-            }
-            else
-            {
-                throw new InvalidPluginExecutionException("Invalid Solution Id");
-            }
-
-            return ExecutionResult.Ok;
+            return CheckForItemsWithouthActiveLayer(solutionId);
         }
 
         private ConstraintCheckLogEntry CheckForItemsWithouthActiveLayer(Guid solutionId)
@@ -174,6 +150,5 @@ namespace dgt.solutions.Plugins.CarrierConstraints
         {
             return _componentTypes.OptionSet.Options.Single(o => o.Value == value).Label.UserLocalizedLabel.Label;
         }
-
     }
 }

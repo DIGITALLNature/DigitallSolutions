@@ -1,7 +1,7 @@
 <customapi uniquename="dgt_prevent_managed_tables_with_all_assets">
   <allowedcustomprocessingsteptype>2</allowedcustomprocessingsteptype>
   <bindingtype>1</bindingtype>
-  <boundentitylogicalname>dgt_workbench</boundentitylogicalname>
+  <boundentitylogicalname>solution</boundentitylogicalname>
   <description default="Run Constraint: Prevent managed tables with all assets">
     <label description="Run Constraint: Prevent managed tables with all assets" languagecode="1033" />
   </description>

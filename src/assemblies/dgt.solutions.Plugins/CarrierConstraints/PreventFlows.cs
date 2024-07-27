@@ -1,45 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using D365.Extension.Core;
 using D365.Extension.Model;
 using D365.Extension.Registration;
 using dgt.solutions.Plugins.Contract;
-using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace dgt.solutions.Plugins.CarrierConstraints
 {
     [CustomApiRegistration(SdkMessageNames.DgtPreventFlows)]
-    public class PreventFlows : Executor
+    public sealed class PreventFlows : ConstraintBase
     {
-        protected override ExecutionResult Execute()
-        {
-            GetInputParameter("Target", out EntityReference workbenchReference);
-
-            var elevatedOrgService = ElevatedOrganizationService;
-
-            var workbench = elevatedOrgService
-                .Retrieve(DgtWorkbench.EntityLogicalName, workbenchReference.Id, new ColumnSet(true))
-                .ToEntity<DgtWorkbench>();
-
-            if (Guid.TryParse(workbench.DgtSolutionid, out var solutionId))
-            {
-                var constraintCheckLog = CheckForFlows(solutionId);
-
-                var constraintCheckLogJson = new SerializerService().JsonSerialize<ConstraintCheckLogEntry>(constraintCheckLog);
-
-                SetOutputParameter(DgtPreventFlowsResponse.OutParameters.ConstraintLog_PreventFlows, constraintCheckLogJson);
-            }
-            else
-            {
-                throw new InvalidPluginExecutionException("Invalid Solution Id");
-            }
-
-            return ExecutionResult.Ok;
-        }
-
-        private ConstraintCheckLogEntry CheckForFlows(Guid solutionId)
+        protected override ConstraintCheckLogEntry RunCheck(Guid solutionId)
         {
             var components = GetSolutionFlowComponents(solutionId);
 
@@ -111,6 +83,5 @@ namespace dgt.solutions.Plugins.CarrierConstraints
 
             return components;
         }
-
     }
 }

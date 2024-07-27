@@ -832,6 +832,26 @@ namespace D365.Extension.Model
         }
 
 		/// <summary>
+		/// Flow modify metadata used for telemetry, etc.
+		/// </summary>
+		[AttributeLogicalName("modifymetadata")]
+        public string ModifyMetadata
+        {
+            [DebuggerNonUserCode]
+			get
+            {
+                return GetAttributeValue<string>("modifymetadata");
+            }
+            [DebuggerNonUserCode]
+			set
+            {
+                OnPropertyChanging(nameof(ModifyMetadata));
+                SetAttributeValue("modifymetadata", value);
+                OnPropertyChanged(nameof(ModifyMetadata));
+            }
+        }
+
+		/// <summary>
 		/// Name of the process.
 		/// </summary>
 		[AttributeLogicalName("name")]
@@ -1869,6 +1889,7 @@ namespace D365.Extension.Model
 				public const string ModifiedBy = "modifiedby";
 				public const string ModifiedOn = "modifiedon";
 				public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
+				public const string ModifyMetadata = "modifymetadata";
 				public const string Name = "name";
 				public const string OnDemand = "ondemand";
 				public const string Outputs = "outputs";
