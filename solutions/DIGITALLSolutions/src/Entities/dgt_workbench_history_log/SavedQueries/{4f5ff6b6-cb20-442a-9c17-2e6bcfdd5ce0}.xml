@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{4f5ff6b6-cb20-442a-9c17-2e6bcfdd5ce0}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dgt_message" select="1" icon="1" preview="1">
+        <row name="result" id="dgt_workbench_history_logid">
+          <cell name="dgt_message" width="300" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dgt_workbench_history_log">
+          <attribute name="dgt_workbench_history_logid" />
+          <attribute name="dgt_message" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Quick Find Active Workbench History Logs" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

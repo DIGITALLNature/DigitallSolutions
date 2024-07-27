@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{e6fc92a5-3240-ef11-a317-000d3a25b657}</savedqueryid>
+    <querytype>8192</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical" output-format="xml-platform">
+        <entity name="dgt_workbench_history_log">
+          <attribute name="dgt_workbench_history_logid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="My Workbench History Logs" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Active Workbench History Logs owned by me" languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

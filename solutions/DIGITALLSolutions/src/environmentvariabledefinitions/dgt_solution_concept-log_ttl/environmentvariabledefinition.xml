@@ -1,0 +1,14 @@
+<environmentvariabledefinition schemaname="dgt_solution_concept-log_ttl">
+  <defaultvalue>7776000</defaultvalue>
+  <description default="time-to-live for logs in seconds (value will be floored)">
+    <label description="time-to-live for logs in seconds (value will be floored)" languagecode="1033" />
+  </description>
+  <displayname default="SolutionConcept - Workbench History Logs TTL">
+    <label description="SolutionConcept - Workbench History Logs TTL" languagecode="1033" />
+  </displayname>
+  <introducedversion>3.0.1.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000001</type>
+</environmentvariabledefinition>
