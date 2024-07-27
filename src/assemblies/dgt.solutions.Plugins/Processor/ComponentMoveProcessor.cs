@@ -43,7 +43,8 @@ namespace dgt.solutions.Plugins.Processor
                 //Constraints
                 var constraintsCheckRequest = new DgtRunCarrierConstraintsCheckRequest
                 {
-                    Target = workbench.ToEntityReference()
+                    Target = workbench.DgtTargetCarrierId,
+                    Workbench = workbench.ToEntityReference(),
                 };
                 var constraintsCheckResponse = (DgtRunCarrierConstraintsCheckResponse)Executor.ElevatedOrganizationService.Execute(constraintsCheckRequest);
                 constraintCheckLog = constraintsCheckResponse.CarrierConstraintsLog;

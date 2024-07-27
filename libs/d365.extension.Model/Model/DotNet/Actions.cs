@@ -377,6 +377,7 @@ namespace D365.Extension.Model
 		public struct InParameters
 		{
 			public const string Target = "Target";
+			public const string Workbench = "Workbench";
 		}
 		#endregion
 
@@ -393,6 +394,22 @@ namespace D365.Extension.Model
 			set
 			{
 				base.Parameters["Target"] = value;
+			}
+		}
+
+		public EntityReference Workbench
+		{
+			get
+			{
+				if(base.Parameters.Contains("Workbench"))
+				{
+					return (EntityReference)base.Parameters["Workbench"];
+				}
+				return default(EntityReference);
+			}
+			set
+			{
+				base.Parameters["Workbench"] = value;
 			}
 		}
 

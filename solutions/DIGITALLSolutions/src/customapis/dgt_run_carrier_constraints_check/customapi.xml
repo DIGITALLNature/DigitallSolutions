@@ -1,7 +1,7 @@
 <customapi uniquename="dgt_run_carrier_constraints_check">
   <allowedcustomprocessingsteptype>2</allowedcustomprocessingsteptype>
   <bindingtype>1</bindingtype>
-  <boundentitylogicalname>dgt_workbench</boundentitylogicalname>
+  <boundentitylogicalname>dgt_carrier</boundentitylogicalname>
   <description default="Run Carrier Constraints Check">
     <label description="Run Carrier Constraints Check" languagecode="1033" />
   </description>

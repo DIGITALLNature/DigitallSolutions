@@ -1,0 +1,13 @@
+<customapirequestparameter uniquename="Workbench">
+  <description default="Workbench to run checks against. If not present checks will be run against carrier">
+    <label description="Workbench to run checks against. If not present checks will be run against carrier" languagecode="1033" />
+  </description>
+  <displayname default="Workbench">
+    <label description="Workbench" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>1</isoptional>
+  <logicalentityname>dgt_workbench</logicalentityname>
+  <name>Workbench</name>
+  <type>5</type>
+</customapirequestparameter>

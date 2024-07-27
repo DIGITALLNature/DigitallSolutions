@@ -15,18 +15,25 @@ namespace dgt.solutions.Plugins.CarrierConstraints
     {
         protected override ExecutionResult Execute()
         {
-            GetInputParameter("Target", out EntityReference workbenchReference);
+            GetInputParameter("Target", out EntityReference carrierReference);
 
             var elevatedOrgService = ElevatedOrganizationService;
 
-            var workbench = elevatedOrgService
-                .Retrieve(DgtWorkbench.EntityLogicalName, workbenchReference.Id, new ColumnSet(true))
-                .ToEntity<DgtWorkbench>();
             var carrier = elevatedOrgService
-                .Retrieve(DgtCarrier.EntityLogicalName, workbench.DgtTargetCarrierId.Id, new ColumnSet(true))
+                .Retrieve(DgtCarrier.EntityLogicalName, carrierReference.Id, new ColumnSet(true))
                 .ToEntity<DgtCarrier>();
 
-            var constraintCheckLog = Check(carrier, workbench);
+            var solutionId = Guid.Parse(carrier.DgtSolutionid);
+            if (GetInputParameter("Workbench", out EntityReference workbenchReference))
+            {
+                var workbench = elevatedOrgService
+                    .Retrieve(DgtWorkbench.EntityLogicalName, workbenchReference.Id, new ColumnSet(true))
+                    .ToEntity<DgtWorkbench>();
+
+                solutionId = Guid.Parse(workbench.DgtSolutionid);
+            }
+
+            var constraintCheckLog = Check(carrier, solutionId);
             var constraintCheckLogJson = new SerializerService().JsonSerialize<List<ConstraintCheckLogEntry>>(constraintCheckLog);
 
             SetOutputParameter(DgtRunCarrierConstraintsCheckResponse.OutParameters.CarrierConstraintsSuccessStatus, constraintCheckLog.All(cl => cl.Succeded));
@@ -35,7 +42,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             return ExecutionResult.Ok;
         }
 
-        internal IEnumerable<ConstraintCheckLogEntry> Check(DgtCarrier carrier, DgtWorkbench workbench)
+        internal IEnumerable<ConstraintCheckLogEntry> Check(DgtCarrier carrier, Guid solutionId)
         {
             var constraintsQuery = new QueryExpression(DgtCarrierConstraint.EntityLogicalName);
 
@@ -75,7 +82,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                     {
                         Parameters = new ParameterCollection
                         {
-                            { "Target", new EntityReference(Solution.EntityLogicalName, Guid.Parse(workbench.DgtSolutionid)) },
+                            { "Target", new EntityReference(Solution.EntityLogicalName, solutionId) },
                         },
                     });
 
