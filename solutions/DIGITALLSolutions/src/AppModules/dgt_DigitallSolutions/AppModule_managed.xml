@@ -26,6 +26,10 @@
     <Description description="Solution Concept" languagecode="1033" />
   </Descriptions>
   <appsettings>
+    <appsetting settingdefinitionid.uniquename="appcopilotenabled">
+      <iscustomizable>1</iscustomizable>
+      <value>1</value>
+    </appsetting>
     <appsetting settingdefinitionid.uniquename="FluentThemingPreview">
       <iscustomizable>1</iscustomizable>
       <value>true</value>
