@@ -27,9 +27,13 @@ namespace dgt.solutions.Plugins
             });
         }
 
-        public static WorkbenchHistoryLogger Create(IOrganizationService orgService, DgtWorkbench workbench)
+        public static WorkbenchHistoryLogger Create(IOrganizationService orgService, DgtWorkbench workbench, string message)
         {
-            var workbenchHistory = new DgtWorkbenchHistory { DgtWorkbenchId = workbench.ToEntityReference(), };
+            var workbenchHistory = new DgtWorkbenchHistory
+            {
+                DgtEntry = message,
+                DgtWorkbenchId = workbench.ToEntityReference(),
+            };
             workbenchHistory.Id = orgService.Create(workbenchHistory);
 
             return new WorkbenchHistoryLogger(orgService, workbenchHistory);

@@ -29,7 +29,7 @@ namespace dgt.solutions.Plugins.Processor
 
         public ExecutionResult Execute(DgtWorkbench workbench)
         {
-            var workbenchHistoryLogger = WorkbenchHistoryLogger.Create(_executor.OrganizationService(), workbench);
+            var workbenchHistoryLogger = WorkbenchHistoryLogger.Create(_executor.OrganizationService(), workbench, _message);
             var workbenchProcessor = new WorkbenchProcessor(_executor, workbenchHistoryLogger);
 
             //Handshake
