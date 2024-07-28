@@ -59,7 +59,9 @@ namespace dgt.solutions.Plugins.Processor
                 DgtCarrierId = carrier.ToEntityReference(),
                 DgtCarrierVersion = carrier.DgtSolutionversion,
                 DgtComponentMoverLog = componentMoverLog,
-                DgtConstraintCheckLog = constrainLog
+                DgtConstraintCheckLog = constrainLog,
+                Statuscode = new OptionSetValue(DgtWorkbenchHistory.Options.Statuscode.Success),
+                Statecode = new OptionSetValue(DgtWorkbenchHistory.Options.Statecode.Inactive),
             }); ;
         }
 
@@ -87,7 +89,9 @@ namespace dgt.solutions.Plugins.Processor
                 DgtWorkbenchId = workbench.ToEntityReference(),
                 DgtWorkbenchVersion = workbench.DgtSolutionversion,
                 DgtCarrierId = null,
-                DgtCarrierVersion = null
+                DgtCarrierVersion = null,
+                Statuscode = new OptionSetValue(DgtWorkbenchHistory.Options.Statuscode.Success),
+                Statecode = new OptionSetValue(DgtWorkbenchHistory.Options.Statecode.Inactive),
             });
         }
 
@@ -112,7 +116,9 @@ namespace dgt.solutions.Plugins.Processor
                 DgtCarrierId = carrier?.ToEntityReference(),
                 DgtCarrierVersion = carrier?.DgtSolutionversion,
                 DgtComponentMoverLog = componentMoverLog,
-                DgtConstraintCheckLog = constrainLog
+                DgtConstraintCheckLog = constrainLog,
+                Statuscode = new OptionSetValue(DgtWorkbenchHistory.Options.Statuscode.Failure),
+                Statecode = new OptionSetValue(DgtWorkbenchHistory.Options.Statecode.Inactive),
             });;
         }
 

@@ -566,7 +566,8 @@ namespace D365.Extension.Model
                 public struct Statuscode
                 {
 					public const int Active = 1;
-					public const int Inactive = 2;
+					public const int Success = 2;
+					public const int Failure = 283510001;
                 }
 		}
 		#endregion
