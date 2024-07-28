@@ -6,18 +6,21 @@ using Microsoft.Xrm.Sdk;
 
 namespace dgt.solutions.Plugins.Processor
 {
-    internal class FinalizeProcessor : WorkbenchProcessor
+    internal class FinalizeProcessor : IWorkbenchProcessor
     {
-        public FinalizeProcessor(Executor executor) : base(executor)
+        private readonly Executor _executor;
+
+        public FinalizeProcessor(Executor executor)
         {
+            _executor = executor;
         }
 
-        internal override ExecutionResult Execute(DgtWorkbench workbench)
+        public ExecutionResult Execute(DgtWorkbench workbench)
         {
             try
             {
-                var service = Executor.SecuredOrganizationService;
-                using (var dataContext = Executor.DataContext(service))
+                var service = _executor.SecuredOrganizationService;
+                using (var dataContext = _executor.DataContext(service))
                 {
                     var records = (from rec in dataContext.DgtWorkbenchHistorySet
                                    where rec.DgtWorkbenchId != null
@@ -33,12 +36,12 @@ namespace dgt.solutions.Plugins.Processor
                         });
                     }
                 }
-                Executor.ElevatedOrganizationService.Delete(Solution.EntityLogicalName, Guid.Parse(workbench.DgtSolutionid));
+                _executor.ElevatedOrganizationService.Delete(Solution.EntityLogicalName, Guid.Parse(workbench.DgtSolutionid));
                 return ExecutionResult.Ok;
             }
             catch (Exception e)
             {
-                Executor.LoggingService.Error(e.RootMessage());
+                _executor.LoggingService.Error(e.RootMessage());
                 return ExecutionResult.Failure;
             }
         }

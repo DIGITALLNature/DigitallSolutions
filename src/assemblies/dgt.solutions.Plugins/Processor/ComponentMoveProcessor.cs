@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using D365.Extension.Core;
 using D365.Extension.Model;
 using dgt.solutions.Plugins.Contract;
@@ -8,17 +7,19 @@ using dgt.solutions.Plugins.Helper;
 
 namespace dgt.solutions.Plugins.Processor
 {
-    internal class ComponentMoveProcessor : WorkbenchProcessor
+    internal class ComponentMoveProcessor : IWorkbenchProcessor
     {
         private string _message;
         private int _state;
         private int _status;
+        private readonly Executor _executor;
 
-        public ComponentMoveProcessor(Executor executor) : base(executor)
+        public ComponentMoveProcessor(Executor executor)
         {
+            _executor = executor;
         }
 
-        internal WorkbenchProcessor Init(string message, int state, int status)
+        internal IWorkbenchProcessor Init(string message, int state, int status)
         {
             _message = message;
             _state = state;
@@ -26,14 +27,16 @@ namespace dgt.solutions.Plugins.Processor
             return this;
         }
 
-        internal override ExecutionResult Execute(DgtWorkbench workbench)
+        public ExecutionResult Execute(DgtWorkbench workbench)
         {
+            var workbenchHistoryLogger = WorkbenchHistoryLogger.Create(_executor.OrganizationService(), workbench);
+            var workbenchProcessor = new WorkbenchProcessor(_executor, workbenchHistoryLogger);
+
             //Handshake
-            if (!Handshake(workbench, out var carrier))
+            if (!workbenchProcessor.Handshake(workbench, out var carrier))
             {
                 return ExecutionResult.Failure;
             }
-
 
             var componentMoverLog = new List<ComponentMoverLogEntry>();
             var constraintCheckLog = string.Empty;
@@ -46,25 +49,25 @@ namespace dgt.solutions.Plugins.Processor
                     Target = workbench.DgtTargetCarrierId,
                     Workbench = workbench.ToEntityReference(),
                 };
-                var constraintsCheckResponse = (DgtRunCarrierConstraintsCheckResponse)Executor.ElevatedOrganizationService.Execute(constraintsCheckRequest);
+                var constraintsCheckResponse = (DgtRunCarrierConstraintsCheckResponse)_executor.ElevatedOrganizationService.Execute(constraintsCheckRequest);
                 constraintCheckLog = constraintsCheckResponse.CarrierConstraintsLog;
 
-                if(!constraintsCheckResponse.CarrierConstraintsSuccessStatus)
+                if (!constraintsCheckResponse.CarrierConstraintsSuccessStatus)
                 {
                     throw new ConstraintViolationException("Constraint violations occured, please check logs for details.");
                 }
 
                 //Move
-                componentMoverLog.AddRange(new ComponentMover(Executor).MoveComponents(Guid.Parse(workbench.DgtSolutionid), carrier.DgtSolutionuniquename));
+                componentMoverLog.AddRange(new ComponentMover(_executor, workbenchHistoryLogger).MoveComponents(Guid.Parse(workbench.DgtSolutionid), carrier.DgtSolutionuniquename));
                 //Reset (Handshake)
-                carrier.DgtSolutionversion = FinishHandshake(carrier);
-                Success(_message, workbench, carrier, _state, _status, componentMoverLog, constraintCheckLog);
+                carrier.DgtSolutionversion = workbenchProcessor.FinishHandshake(carrier);
+                workbenchProcessor.Success(_message, workbench, carrier, _state, _status, componentMoverLog, constraintCheckLog);
             }
             catch (Exception e)
             {
                 //Reset (Handshake)
-                ResetHandshake(carrier);
-                Failure(e.RootMessage(), workbench, carrier, componentMoverLog, constraintCheckLog);
+                workbenchProcessor.ResetHandshake(carrier);
+                workbenchProcessor.Failure(e.RootMessage(), workbench, carrier, componentMoverLog, constraintCheckLog);
                 return ExecutionResult.Failure;
             }
             return ExecutionResult.Ok;

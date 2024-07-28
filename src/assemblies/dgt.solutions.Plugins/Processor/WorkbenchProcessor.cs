@@ -10,16 +10,21 @@ using Microsoft.Xrm.Sdk.Query;
 
 namespace dgt.solutions.Plugins.Processor
 {
-    internal abstract class WorkbenchProcessor
+    internal class WorkbenchProcessor
     {
         protected readonly Executor Executor;
 
-        protected WorkbenchProcessor(Executor executor)
+        protected WorkbenchHistoryLogger _workbenchHistoryLogger;
+
+        public WorkbenchProcessor(Executor executor) : this(executor, default) { }
+
+        public WorkbenchProcessor(Executor executor, WorkbenchHistoryLogger workbenchHistoryLogger)
         {
             Executor = executor;
+            _workbenchHistoryLogger = workbenchHistoryLogger;
         }
 
-        protected void Success(string message, DgtWorkbench workbench, DgtCarrier carrier, int state, int status, List<ComponentMoverLogEntry> moverLog = null, string constrainLog = null)
+        public void Success(string message, DgtWorkbench workbench, DgtCarrier carrier, int state, int status, List<ComponentMoverLogEntry> moverLog = null, string constrainLog = null)
         {
             if (message?.Length > 490)
             {
@@ -47,6 +52,7 @@ namespace dgt.solutions.Plugins.Processor
                 DgtCarrierId = null
             }, new DgtWorkbenchHistory
             {
+                Id = _workbenchHistoryLogger.WorkbenchHistory.Id,
                 DgtEntry = message,
                 DgtWorkbenchId = workbench.ToEntityReference(),
                 DgtWorkbenchVersion = version,
@@ -57,7 +63,7 @@ namespace dgt.solutions.Plugins.Processor
             }); ;
         }
 
-        protected void Close(string message, DgtWorkbench workbench, int state, int status)
+        public void Close(string message, DgtWorkbench workbench, int state, int status)
         {
             Executor.LoggingService.Error(message);
             if (message?.Length > 490)
@@ -76,6 +82,7 @@ namespace dgt.solutions.Plugins.Processor
                 DgtCarrierId = null
             }, new DgtWorkbenchHistory
             {
+                Id = _workbenchHistoryLogger.WorkbenchHistory.Id,
                 DgtEntry = message,
                 DgtWorkbenchId = workbench.ToEntityReference(),
                 DgtWorkbenchVersion = workbench.DgtSolutionversion,
@@ -84,7 +91,7 @@ namespace dgt.solutions.Plugins.Processor
             });
         }
 
-        protected void Failure(string message, DgtWorkbench workbench, DgtCarrier carrier = null, List<ComponentMoverLogEntry> moverLog = null, string constrainLog = null)
+        public void Failure(string message, DgtWorkbench workbench, DgtCarrier carrier = null, List<ComponentMoverLogEntry> moverLog = null, string constrainLog = null)
         {
             Executor.LoggingService.Error(message);
             if (message?.Length > 490)
@@ -98,6 +105,7 @@ namespace dgt.solutions.Plugins.Processor
                 Statuscode = new OptionSetValue(DgtWorkbench.Options.Statuscode.Failure)
             }, new DgtWorkbenchHistory
             {
+                Id = _workbenchHistoryLogger.WorkbenchHistory.Id,
                 DgtEntry = message,
                 DgtWorkbenchId = workbench.ToEntityReference(),
                 DgtWorkbenchVersion = workbench.DgtSolutionversion,
@@ -108,7 +116,7 @@ namespace dgt.solutions.Plugins.Processor
             });;
         }
 
-        protected string FinishHandshake(DgtCarrier carrier)
+        public string FinishHandshake(DgtCarrier carrier)
         {
             var solution = Executor.ElevatedOrganizationService.Retrieve(
                 Solution.EntityLogicalName,
@@ -130,7 +138,7 @@ namespace dgt.solutions.Plugins.Processor
             return version;
         }
 
-        protected void ResetHandshake(DgtCarrier carrier)
+        public void ResetHandshake(DgtCarrier carrier)
         {
             new StatusReasonHandler(Executor).Update(new DgtCarrier(carrier.Id)
             {
@@ -145,7 +153,7 @@ namespace dgt.solutions.Plugins.Processor
         /// <param name="workbench"></param>
         /// <param name="carrier">out carrier</param>
         /// <returns></returns>
-        protected bool Handshake(DgtWorkbench workbench, out DgtCarrier carrier)
+        public bool Handshake(DgtWorkbench workbench, out DgtCarrier carrier)
         {
             var targetCarrierId = workbench.DgtTargetCarrierId?.Id;
             if (targetCarrierId == null || targetCarrierId == Guid.Empty)
@@ -204,7 +212,5 @@ namespace dgt.solutions.Plugins.Processor
             }
             return true;
         }
-
-        internal abstract ExecutionResult Execute(DgtWorkbench workbench);
     }
 }

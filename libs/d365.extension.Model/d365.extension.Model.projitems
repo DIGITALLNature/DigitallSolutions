@@ -23,6 +23,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtCarrierMissingDependency.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtWorkbench.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtWorkbenchHistory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\DgtWorkbenchHistoryLog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\EnvironmentVariableDefinition.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\EnvironmentVariableValue.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DotNet\MsdynComponentlayer.cs" />

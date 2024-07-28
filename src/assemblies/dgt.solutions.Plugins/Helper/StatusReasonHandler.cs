@@ -14,7 +14,7 @@ namespace dgt.solutions.Plugins.Helper
             _executor = executor;
         }
 
-        internal void Update(Entity update, Entity create = null)
+        internal void Update(Entity update, Entity update2 = null)
         {
             //new trx needed to skip the rollback
             var executeMultipleRequest = new ExecuteMultipleRequest
@@ -30,11 +30,11 @@ namespace dgt.solutions.Plugins.Helper
             {
                 Target = update
             });
-            if (create != null)
+            if (update2 != null)
             {
-                executeMultipleRequest.Requests.Add(new CreateRequest
+                executeMultipleRequest.Requests.Add(new UpdateRequest
                 {
-                    Target = create
+                    Target = update2
                 });
             }
             try

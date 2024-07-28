@@ -12,10 +12,12 @@ namespace dgt.solutions.Plugins.Helper
     internal class ComponentMover
     {
         private readonly Executor _executor;
+        private readonly WorkbenchHistoryLogger _workbenchHistoryLogger;
 
-        public ComponentMover(Executor executor)
+        public ComponentMover(Executor executor, WorkbenchHistoryLogger workbenchHistoryLogger = default)
         {
             _executor = executor;
+            _workbenchHistoryLogger = workbenchHistoryLogger;
         }
 
         internal IEnumerable<ComponentMoverLogEntry> MoveComponents(Guid originId, string destinationName)
@@ -97,6 +99,7 @@ namespace dgt.solutions.Plugins.Helper
                     ComponentType = component.FormattedValues.ContainsKey(SolutionComponent.LogicalNames.ComponentType) ? component.FormattedValues[SolutionComponent.LogicalNames.ComponentType] : $"ComponentType: {component.ComponentType}",
                     RootComponentBehavior = component.FormattedValues.ContainsKey(SolutionComponent.LogicalNames.RootComponentBehavior) ? component.FormattedValues[SolutionComponent.LogicalNames.RootComponentBehavior] : "not applicable"
                 });
+                _workbenchHistoryLogger?.LogComponent(component);
             }
             return log;
         }

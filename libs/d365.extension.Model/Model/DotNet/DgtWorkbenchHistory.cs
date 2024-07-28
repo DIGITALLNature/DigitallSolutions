@@ -533,6 +533,26 @@ namespace D365.Extension.Model
 		#endregion
 
 		#region NavigationProperties
+		/// <summary>
+		/// 1:N dgt_workbench_history_log_dgt_workbench_history_id
+		/// </summary>	
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("dgt_workbench_history_log_dgt_workbench_history_id")]
+		public System.Collections.Generic.IEnumerable<DgtWorkbenchHistoryLog> DgtWorkbenchHistoryLogDgtWorkbenchHistoryId
+		{
+			[DebuggerNonUserCode]
+			get
+			{
+				return this.GetRelatedEntities<DgtWorkbenchHistoryLog>("dgt_workbench_history_log_dgt_workbench_history_id", null);
+			}
+			[DebuggerNonUserCode]
+			set
+			{
+				this.OnPropertyChanging("DgtWorkbenchHistoryLogDgtWorkbenchHistoryId");
+				this.SetRelatedEntities<DgtWorkbenchHistoryLog>("dgt_workbench_history_log_dgt_workbench_history_id", null, value);
+				this.OnPropertyChanged("DgtWorkbenchHistoryLogDgtWorkbenchHistoryId");
+			}
+		}
+
 		#endregion
 
 		#region Options
@@ -591,6 +611,7 @@ namespace D365.Extension.Model
 				public const string DgtWorkbenchHistoryBulkDeleteFailures = "dgt_workbench_history_BulkDeleteFailures";
 				public const string DgtWorkbenchHistoryDuplicateBaseRecord = "dgt_workbench_history_DuplicateBaseRecord";
 				public const string DgtWorkbenchHistoryDuplicateMatchingRecord = "dgt_workbench_history_DuplicateMatchingRecord";
+				public const string DgtWorkbenchHistoryLogDgtWorkbenchHistoryId = "dgt_workbench_history_log_dgt_workbench_history_id";
 				public const string DgtWorkbenchHistoryMailboxTrackingFolders = "dgt_workbench_history_MailboxTrackingFolders";
 				public const string DgtWorkbenchHistoryPrincipalObjectAttributeAccesses = "dgt_workbench_history_PrincipalObjectAttributeAccesses";
 				public const string DgtWorkbenchHistoryProcessSession = "dgt_workbench_history_ProcessSession";
