@@ -15,6 +15,16 @@ namespace dgt.solutions.Plugins
             WorkbenchHistory = workbenchHistory;
         }
 
+        public void LogDebug(OptionSetValue type, string message)
+        {
+            _orgService.Create(new DgtWorkbenchHistoryLog
+            {
+                DgtMessage = message,
+                DgtTypeSet = type,
+                DgtWorkbenchHistoryId = WorkbenchHistory.ToEntityReference(),
+            });
+        }
+
         public void LogComponent(SolutionComponent component)
         {
             component.FormattedValues.TryGetValue(SolutionComponent.LogicalNames.ComponentType, out var componentType);

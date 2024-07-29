@@ -15,6 +15,8 @@ namespace dgt.solutions.Plugins.CarrierConstraints
     {
         private PicklistAttributeMetadata _componentTypes;
 
+        protected override string ConstraintType => "Prevent ItemsWithouthActiveLayer";
+
         protected override ConstraintCheckLogEntry RunCheck(Guid solutionId)
         {
             _componentTypes = ((RetrieveAttributeResponse)ElevatedOrganizationService.Execute(

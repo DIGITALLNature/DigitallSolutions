@@ -11,6 +11,8 @@ namespace dgt.solutions.Plugins.CarrierConstraints
     [CustomApiRegistration(SdkMessageNames.DgtPreventFlows)]
     public sealed class PreventFlows : ConstraintBase
     {
+        protected override string ConstraintType => "Prevent Flows";
+
         protected override ConstraintCheckLogEntry RunCheck(Guid solutionId)
         {
             var components = GetSolutionFlowComponents(solutionId);

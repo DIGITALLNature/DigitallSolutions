@@ -133,6 +133,7 @@ namespace D365.Extension.Model
 		public struct InParameters
 		{
 			public const string Target = "Target";
+			public const string ConstraintWorkbenchHistory_PreventFlows = "WorkbenchHistory";
 		}
 		#endregion
 
@@ -149,6 +150,22 @@ namespace D365.Extension.Model
 			set
 			{
 				base.Parameters["Target"] = value;
+			}
+		}
+
+		public EntityReference ConstraintWorkbenchHistory_PreventFlows
+		{
+			get
+			{
+				if(base.Parameters.Contains("WorkbenchHistory"))
+				{
+					return (EntityReference)base.Parameters["WorkbenchHistory"];
+				}
+				return default(EntityReference);
+			}
+			set
+			{
+				base.Parameters["WorkbenchHistory"] = value;
 			}
 		}
 
@@ -378,6 +395,7 @@ namespace D365.Extension.Model
 		{
 			public const string Target = "Target";
 			public const string Workbench = "Workbench";
+			public const string ConstraintWorkbenchHistory_RunCarrierConstraintsCheck = "WorkbenchHistory";
 		}
 		#endregion
 
@@ -410,6 +428,22 @@ namespace D365.Extension.Model
 			set
 			{
 				base.Parameters["Workbench"] = value;
+			}
+		}
+
+		public EntityReference ConstraintWorkbenchHistory_RunCarrierConstraintsCheck
+		{
+			get
+			{
+				if(base.Parameters.Contains("WorkbenchHistory"))
+				{
+					return (EntityReference)base.Parameters["WorkbenchHistory"];
+				}
+				return default(EntityReference);
+			}
+			set
+			{
+				base.Parameters["WorkbenchHistory"] = value;
 			}
 		}
 

@@ -14,6 +14,8 @@ namespace dgt.solutions.Plugins.CarrierConstraints
     {
         private PicklistAttributeMetadata _componentTypes;
 
+        protected override string ConstraintType => "Prevent PreventPluginAssemblys";
+
         protected override ConstraintCheckLogEntry RunCheck(Guid originId)
         {
             var componentsTypes = new List<int>

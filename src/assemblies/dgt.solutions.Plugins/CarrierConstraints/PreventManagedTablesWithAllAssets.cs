@@ -15,6 +15,8 @@ namespace dgt.solutions.Plugins.CarrierConstraints
     [CustomApiRegistration(SdkMessageNames.DgtPreventManagedTablesWithAllAssets)]
     public class PreventManagedTablesWithAllAssets : ConstraintBase
     {
+        protected override string ConstraintType => "Prevent ManagedEntitiesWithAllAssets";
+
         protected override ConstraintCheckLogEntry RunCheck(Guid solutionId)
         {
             var components = GetSolutionComponents(new List<ConditionExpression>
