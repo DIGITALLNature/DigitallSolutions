@@ -1,3 +1,4 @@
+using System;
 using D365.Extension.Model;
 using Microsoft.Xrm.Sdk;
 
@@ -33,6 +34,17 @@ namespace dgt.solutions.Plugins
                 DgtComponentType = componentType ?? $"ComponentType: {component.ComponentType}",
                 DgtMessage = component.ObjectId.GetValueOrDefault().ToString(),
                 DgtTypeSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtTypeSet.ComponentMove),
+                DgtWorkbenchHistoryId = WorkbenchHistory.ToEntityReference(),
+            });
+        }
+
+        internal void LogConstraintViolation(string constraintType, Guid? objectId)
+        {
+            _orgService.Create(new DgtWorkbenchHistoryLog
+            {
+                DgtComponentType = "workflow",
+                DgtMessage = $"constraint violated: {constraintType} {objectId?.ToString()}",
+                DgtTypeSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtTypeSet.Constraint),
                 DgtWorkbenchHistoryId = WorkbenchHistory.ToEntityReference(),
             });
         }

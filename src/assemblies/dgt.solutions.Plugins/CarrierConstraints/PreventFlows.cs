@@ -18,6 +18,9 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             var components = GetSolutionFlowComponents(solutionId);
 
             if (components.Any())
+            {
+                Delegate.TracingService.Trace("constraint violated");
+                components.ForEach(c => WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, c.ObjectId));
                 return new ConstraintCheckLogEntry
                 {
                     ConstraintType = "Prevent Flows",
@@ -25,6 +28,11 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                     ErrorComponents = components.Select(c => new ComponentInfo
                         { ComponentId = c.ObjectId.GetValueOrDefault(), ComponentType = "Flow" }).ToList()
                 };
+            }
+            else
+            {
+                Delegate.TracingService.Trace("constraint passed");
+            }
 
             return new ConstraintCheckLogEntry
             {
@@ -69,7 +77,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             };
             while (true)
             {
-                // Retrieve the page.
+                Delegate.TracingService.Trace("retrieving solution components (page {0})", qe.PageInfo.PageNumber);
                 var results = ElevatedOrganizationService.RetrieveMultiple(qe);
                 components.AddRange(results.Entities.Select(e => e.ToEntity<SolutionComponent>()));
                 if (results.MoreRecords)
