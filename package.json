@@ -22,7 +22,8 @@
           "files": [
             {
               "path": [
-                "solutions/DIGITALLSolutions/src/Other/Solution.xml"
+                "solutions/DIGITALLSolutions/src/Other/Solution.xml",
+                "package/DIGITALLSolutionsPackage.csproj"
               ],
               "type": "xml",
               "replacements": [
@@ -38,14 +39,17 @@
       [
         "@semantic-release/git",
         {
-          "assets": "solutions/DIGITALLSolutions/src/Other/Solution.xml",
+          "assets": [
+            "solutions/DIGITALLSolutions/src/Other/Solution.xml",
+            "package/DIGITALLSolutionsPackage.csproj"
+          ],
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
       ],
       [
         "@semantic-release/exec",
         {
-          "prepareCmd": "msbuild solutions/DIGITALLSolutions/DIGITALLSolutions.cdsproj /property:Configuration=Release"
+          "prepareCmd": "dotnet build solutions/DIGITALLSolutions/DIGITALLSolutions.cdsproj --configuration Release && dotnet publish /package/DIGITALLSolutionsPackage.csproj --configuration Release /p:PdPackageTargetFileName=DIGITALLSolutionsPackage.pdpkg.zip"
         }
       ],
       [
@@ -56,6 +60,11 @@
               "path": "solutions/DIGITALLSolutions/bin/Release/DIGITALLSolutions.zip",
               "label": "DigitallSolutions (${nextRelease.version})",
               "name": "DigitallSolutions.zip"
+            },
+            {
+              "path": "package/bin/Release/DIGITALLSolutionsPackage.pdpkg.zip",
+              "label": "DIGITALLSolutionsPackage (${nextRelease.version})",
+              "name": "DIGITALLSolutionsPackage.pdpkg.zip"
             }
           ]
         }

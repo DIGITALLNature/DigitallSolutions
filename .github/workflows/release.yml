@@ -15,8 +15,10 @@ jobs:
           token: ${{ secrets.CI_GITHUB_TOKEN }}
       - name: Restore Nuget packages
         run: nuget restore solutions/DIGITALLSolutions/DIGITALLSolutions.cdsproj
-      - name: Setup msbuild
-        uses: microsoft/setup-msbuild@v1.1
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 5.0.x
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
