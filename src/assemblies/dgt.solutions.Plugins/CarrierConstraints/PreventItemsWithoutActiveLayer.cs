@@ -4,9 +4,6 @@ using System.Linq;
 using D365.Extension.Model;
 using D365.Extension.Registration;
 using dgt.solutions.Plugins.Helper;
-using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Messages;
-using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace dgt.solutions.Plugins.CarrierConstraints
@@ -14,57 +11,35 @@ namespace dgt.solutions.Plugins.CarrierConstraints
     [CustomApiRegistration(SdkMessageNames.DgtPreventItemsWithoutActiveLayer)]
     public class PreventItemsWithoutActiveLayer : ConstraintBase
     {
-        private PicklistAttributeMetadata _componentTypes;
-
         protected override string ConstraintType => "Prevent ItemsWithouthActiveLayer";
 
         protected override bool RunCheck(Guid solutionId)
         {
-            _componentTypes = ((RetrieveAttributeResponse)ElevatedOrganizationService.Execute(
-                    new RetrieveAttributeRequest
-                    {
-                        EntityLogicalName = SolutionComponent.EntityLogicalName,
-                        LogicalName = SolutionComponent.LogicalNames.ComponentType
-                    })).AttributeMetadata as PicklistAttributeMetadata;
-            return CheckForItemsWithouthActiveLayer(solutionId);
-        }
-
-        private bool CheckForItemsWithouthActiveLayer(Guid solutionId)
-        {
-            var componentsTypes = new List<int>
-            {
-                SolutionComponent.Options.ComponentType.Attribute,
-                SolutionComponent.Options.ComponentType.Form,
-                SolutionComponent.Options.ComponentType.OptionSet,
-                SolutionComponent.Options.ComponentType.Privilege,
-                SolutionComponent.Options.ComponentType.CanvasApp,
-                SolutionComponent.Options.ComponentType.SiteMap,
-                SolutionComponent.Options.ComponentType.ViewAttribute,
-                SolutionComponent.Options.ComponentType.SystemForm
-            };
-            var components = GetSolutionComponents(new List<ConditionExpression>
-            {
-                new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, solutionId),
-                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.In,
-                    componentsTypes.ToArray())
-            });
+            Delegate.TracingService.Trace("loading components");
+            var components = GetSolutionComponents(solutionId);
 
             var passed = true;
-
             foreach (var component in components)
             {
+                Delegate.TracingService.Trace("{componentId}: loading layers for component", component.Id);
                 var layers = GetSolutionLayers(component);
-                if (!layers.Any()) continue;
+                if (!layers.Any())
+                {
+                    Delegate.TracingService.Trace("{componentId}: no layers found", component.Id);
+                    continue;
+                }
 
                 var first = layers.First();
-                var componentType = GetComponentTypeSetLabel(component.ComponentType.Value);
+                component.FormattedValues.TryGetValue(SolutionComponent.LogicalNames.ComponentType, out var componentType);
                 if (first.MsdynSolutionname != "Active")
                 {
+                    Delegate.TracingService.Trace("{componentId}: failed - top solution '{solution}'", component.Id, first.MsdynSolutionname);
                     WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, componentType, component.ObjectId, $"Top Solution: {first.MsdynSolutionname}");
                     passed = false;
                 }
                 else
                 {
+                    Delegate.TracingService.Trace("{componentId}: passed", component.Id);
                     WorkbenchHistoryLogger?.LogDebug("Top Solution: Active", ConstraintType, componentType, component.ObjectId);
                 }
             }
@@ -85,7 +60,8 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                     MsdynComponentlayer.LogicalNames.MsdynName,
                     MsdynComponentlayer.LogicalNames.MsdynSolutionname,
                     MsdynComponentlayer.LogicalNames.MsdynOrder
-                )
+                ),
+                TopCount = 1,
             };
             var filter = new FilterExpression(LogicalOperator.And);
             filter.Conditions.Add(
@@ -104,14 +80,33 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             return layers;
         }
 
-        private List<SolutionComponent> GetSolutionComponents(IEnumerable<ConditionExpression> conditions)
+        private List<SolutionComponent> GetSolutionComponents(Guid solutionId)
         {
+            var componentsTypes = new List<int>
+            {
+                SolutionComponent.Options.ComponentType.Attribute,
+                SolutionComponent.Options.ComponentType.Form,
+                SolutionComponent.Options.ComponentType.OptionSet,
+                SolutionComponent.Options.ComponentType.Privilege,
+                SolutionComponent.Options.ComponentType.CanvasApp,
+                SolutionComponent.Options.ComponentType.SiteMap,
+                SolutionComponent.Options.ComponentType.ViewAttribute,
+                SolutionComponent.Options.ComponentType.SystemForm
+            };
             var qe = new QueryExpression(SolutionComponent.EntityLogicalName)
             {
                 NoLock = true,
-                ColumnSet = new ColumnSet(true)
+                ColumnSet = new ColumnSet(true),
+                Criteria = new FilterExpression
+                {
+                    Conditions =
+                    {
+                        new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, solutionId),
+                        new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.In, componentsTypes.ToArray())
+                    }
+                }
             };
-            qe.Criteria.Conditions.AddRange(conditions);
+
             qe.Orders.Add(new OrderExpression
             {
                 AttributeName = SolutionComponent.LogicalNames.SolutionComponentId,
@@ -119,11 +114,6 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             });
 
             return ElevatedOrganizationService.RetrieveMultiplePaged<SolutionComponent>(qe, Delegate.TracingService).ToList();
-        }
-
-        private string GetComponentTypeSetLabel(int value)
-        {
-            return _componentTypes.OptionSet.Options.Single(o => o.Value == value).Label.UserLocalizedLabel.Label;
         }
     }
 }
