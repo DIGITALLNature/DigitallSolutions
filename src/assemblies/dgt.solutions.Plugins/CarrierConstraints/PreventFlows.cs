@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using D365.Extension.Model;
 using D365.Extension.Registration;
+using dgt.solutions.Plugins.Helper;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace dgt.solutions.Plugins.CarrierConstraints
@@ -32,7 +33,6 @@ namespace dgt.solutions.Plugins.CarrierConstraints
 
         private List<SolutionComponent> GetSolutionFlowComponents(Guid solutionId)
         {
-            var components = new List<SolutionComponent>();
             var qe = new QueryExpression(SolutionComponent.EntityLogicalName)
             {
                 NoLock = true,
@@ -58,29 +58,8 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                 AttributeName = SolutionComponent.LogicalNames.SolutionComponentId,
                 OrderType = OrderType.Ascending
             });
-            qe.PageInfo = new PagingInfo
-            {
-                Count = 5000,
-                PageNumber = 1,
-                PagingCookie = null
-            };
-            while (true)
-            {
-                Delegate.TracingService.Trace("retrieving solution components (page {0})", qe.PageInfo.PageNumber);
-                var results = ElevatedOrganizationService.RetrieveMultiple(qe);
-                components.AddRange(results.Entities.Select(e => e.ToEntity<SolutionComponent>()));
-                if (results.MoreRecords)
-                {
-                    qe.PageInfo.PageNumber++;
-                    qe.PageInfo.PagingCookie = results.PagingCookie;
-                }
-                else
-                {
-                    break;
-                }
-            }
 
-            return components;
+            return ElevatedOrganizationService.RetrieveMultiplePaged<SolutionComponent>(qe).ToList();
         }
     }
 }

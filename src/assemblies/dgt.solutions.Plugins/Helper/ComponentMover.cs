@@ -41,7 +41,6 @@ namespace dgt.solutions.Plugins.Helper
 
         private IEnumerable<SolutionComponent> GetSolutionComponents(IEnumerable<ConditionExpression> conditions)
         {
-            var components = new List<SolutionComponent>();
             var qe = new QueryExpression(SolutionComponent.EntityLogicalName)
             {
                 NoLock = true,
@@ -53,28 +52,7 @@ namespace dgt.solutions.Plugins.Helper
                 AttributeName = SolutionComponent.LogicalNames.SolutionComponentId,
                 OrderType = OrderType.Ascending
             });
-            qe.PageInfo = new PagingInfo
-            {
-                Count = 5000,
-                PageNumber = 1,
-                PagingCookie = null
-            };
-            while (true)
-            {
-                // Retrieve the page.
-                var results = _executor.ElevatedOrganizationService.RetrieveMultiple(qe);
-                components.AddRange(results.Entities.Select(e => e.ToEntity<SolutionComponent>()));
-                if (results.MoreRecords)
-                {
-                    qe.PageInfo.PageNumber++;
-                    qe.PageInfo.PagingCookie = results.PagingCookie;
-                }
-                else
-                {
-                    break;
-                }
-            }
-            return components;
+            return _executor.ElevatedOrganizationService.RetrieveMultiplePaged<SolutionComponent>(qe).ToList();
         }
 
         private void MoveComponents(IEnumerable<SolutionComponent> components, string destinationName)
