@@ -59,7 +59,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                 OrderType = OrderType.Ascending
             });
 
-            return ElevatedOrganizationService.RetrieveMultiplePaged<SolutionComponent>(qe).ToList();
+            return ElevatedOrganizationService.RetrieveMultiplePaged<SolutionComponent>(qe, Delegate.TracingService).ToList();
         }
     }
 }

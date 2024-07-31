@@ -52,7 +52,7 @@ namespace dgt.solutions.Plugins.Helper
                 AttributeName = SolutionComponent.LogicalNames.SolutionComponentId,
                 OrderType = OrderType.Ascending
             });
-            return _executor.ElevatedOrganizationService.RetrieveMultiplePaged<SolutionComponent>(qe).ToList();
+            return _executor.ElevatedOrganizationService.RetrieveMultiplePaged<SolutionComponent>(qe, _executor.Delegate.TracingService).ToList();
         }
 
         private void MoveComponents(IEnumerable<SolutionComponent> components, string destinationName)
