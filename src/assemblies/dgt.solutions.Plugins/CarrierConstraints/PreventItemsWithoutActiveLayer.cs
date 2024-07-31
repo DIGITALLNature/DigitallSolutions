@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using D365.Extension.Model;
 using D365.Extension.Registration;
-using dgt.solutions.Plugins.Contract;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
@@ -49,7 +48,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                     componentsTypes.ToArray())
             });
 
-            var failed = new List<ComponentInfo>();
+            var passed = true;
 
             foreach (var component in components)
             {
@@ -61,12 +60,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                 if (first.MsdynSolutionname != "Active")
                 {
                     WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, componentType, component.ObjectId, $"Top Solution: {first.MsdynSolutionname}");
-                    failed.Add(new ComponentInfo
-                    {
-                        ComponentId = component.ObjectId.GetValueOrDefault(),
-                        Hint = $"Top Solution: {first.MsdynSolutionname}",
-                        ComponentType = componentType,
-                    });
+                    passed = false;
                 }
                 else
                 {
@@ -74,7 +68,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                 }
             }
 
-            if (failed.Any()) return false;
+            if (!passed) return false;
 
             WorkbenchHistoryLogger?.LogConstraintSuccess(ConstraintType);
             return true;

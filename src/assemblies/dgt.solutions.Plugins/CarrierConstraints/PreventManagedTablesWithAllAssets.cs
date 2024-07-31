@@ -4,7 +4,6 @@ using System.Linq;
 using D365.Extension.Core;
 using D365.Extension.Model;
 using D365.Extension.Registration;
-using dgt.solutions.Plugins.Contract;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
@@ -32,7 +31,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             };
             var response = (RetrieveAllEntitiesResponse)ElevatedOrganizationService.Execute(request);
             var entities = response.EntityMetadata.ToList();
-            var failedEntities = new List<ComponentInfo>();
+            var passed = true;
 
             foreach (var component in components.Where(c =>
                          c.RootComponentBehavior?.Value ==
@@ -42,12 +41,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                 if (entity.IsManaged.GetValueOrDefault())
                 {
                     WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, "Entity", component.ObjectId.GetValueOrDefault(), $"Failed - Managed table contains all assets: {entity.LogicalName}");
-                    failedEntities.Add(new ComponentInfo
-                    {
-                        ComponentId = component.ObjectId.GetValueOrDefault(),
-                        ComponentType = "Entity",
-                        Hint = entity.LogicalName
-                    });
+                    passed = false;
                 }
                 else
                 {
@@ -55,7 +49,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                 }
             }
 
-            if (failedEntities.Any()) return false;
+            if (!passed) return false;
 
             WorkbenchHistoryLogger?.LogConstraintSuccess(ConstraintType);
             return true;

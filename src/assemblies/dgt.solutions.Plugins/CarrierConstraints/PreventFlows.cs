@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using D365.Extension.Model;
 using D365.Extension.Registration;
-using dgt.solutions.Plugins.Contract;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace dgt.solutions.Plugins.CarrierConstraints

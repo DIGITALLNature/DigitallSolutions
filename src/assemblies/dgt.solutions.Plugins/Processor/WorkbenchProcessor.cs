@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using D365.Extension.Core;
 using D365.Extension.Model;
-using dgt.solutions.Plugins.Contract;
 using dgt.solutions.Plugins.Helper;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
@@ -24,7 +22,7 @@ namespace dgt.solutions.Plugins.Processor
             _workbenchHistoryLogger = workbenchHistoryLogger;
         }
 
-        public void Success(string message, DgtWorkbench workbench, DgtCarrier carrier, int state, int status, List<ComponentMoverLogEntry> moverLog = null, string constrainLog = null)
+        public void Success(string message, DgtWorkbench workbench, DgtCarrier carrier, int state, int status)
         {
             if (message?.Length > 490)
             {
@@ -43,7 +41,6 @@ namespace dgt.solutions.Plugins.Processor
                 Version = version
             });
 
-            var componentMoverLog = moverLog != null ? new SerializerService().JsonSerialize<List<ComponentMoverLogEntry>>(moverLog) : null;
             new StatusReasonHandler(Executor).Update(new DgtWorkbench(workbench.Id)
             {
                 Statecode = new OptionSetValue(state),
@@ -58,8 +55,6 @@ namespace dgt.solutions.Plugins.Processor
                 DgtWorkbenchVersion = version,
                 DgtCarrierId = carrier.ToEntityReference(),
                 DgtCarrierVersion = carrier.DgtSolutionversion,
-                DgtComponentMoverLog = componentMoverLog,
-                DgtConstraintCheckLog = constrainLog,
                 Statuscode = new OptionSetValue(DgtWorkbenchHistory.Options.Statuscode.Success),
                 Statecode = new OptionSetValue(DgtWorkbenchHistory.Options.Statecode.Inactive),
             }); ;
@@ -95,7 +90,7 @@ namespace dgt.solutions.Plugins.Processor
             });
         }
 
-        public void Failure(string message, DgtWorkbench workbench, DgtCarrier carrier = null, List<ComponentMoverLogEntry> moverLog = null, string constrainLog = null)
+        public void Failure(string message, DgtWorkbench workbench, DgtCarrier carrier = null)
         {
             Executor.LoggingService.Error(message);
             if (message?.Length > 490)
@@ -103,7 +98,6 @@ namespace dgt.solutions.Plugins.Processor
                 message = message.Substring(0, 490);
             }
             message = $"Failure - {message}";
-            var componentMoverLog = moverLog != null ? new SerializerService().JsonSerialize<List<ComponentMoverLogEntry>>(moverLog) : null;
             new StatusReasonHandler(Executor).Update(new DgtWorkbench(workbench.Id)
             {
                 Statuscode = new OptionSetValue(DgtWorkbench.Options.Statuscode.Failure)
@@ -115,8 +109,6 @@ namespace dgt.solutions.Plugins.Processor
                 DgtWorkbenchVersion = workbench.DgtSolutionversion,
                 DgtCarrierId = carrier?.ToEntityReference(),
                 DgtCarrierVersion = carrier?.DgtSolutionversion,
-                DgtComponentMoverLog = componentMoverLog,
-                DgtConstraintCheckLog = constrainLog,
                 Statuscode = new OptionSetValue(DgtWorkbenchHistory.Options.Statuscode.Failure),
                 Statecode = new OptionSetValue(DgtWorkbenchHistory.Options.Statecode.Inactive),
             });;

@@ -3,7 +3,6 @@ using System.Linq;
 using D365.Extension.Core;
 using D365.Extension.Model;
 using D365.Extension.Registration;
-using dgt.solutions.Plugins.Contract;
 using dgt.solutions.Plugins.Helper;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;

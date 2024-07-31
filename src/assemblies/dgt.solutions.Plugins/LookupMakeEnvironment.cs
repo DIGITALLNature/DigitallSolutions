@@ -2,7 +2,6 @@
 using D365.Extension.Core;
 using D365.Extension.Model;
 using D365.Extension.Registration;
-using dgt.solutions.Plugins.Contract;
 
 namespace dgt.solutions.Plugins
 {

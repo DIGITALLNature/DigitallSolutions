@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using D365.Extension.Core;
 using D365.Extension.Model;
-using dgt.solutions.Plugins.Contract;
 using dgt.solutions.Plugins.Helper;
 
 namespace dgt.solutions.Plugins.Processor
@@ -38,9 +37,6 @@ namespace dgt.solutions.Plugins.Processor
                 return ExecutionResult.Failure;
             }
 
-            var componentMoverLog = new List<ComponentMoverLogEntry>();
-            var constraintCheckLog = string.Empty;
-
             try
             {
                 //Constraints
@@ -58,16 +54,16 @@ namespace dgt.solutions.Plugins.Processor
                 }
 
                 //Move
-                componentMoverLog.AddRange(new ComponentMover(_executor, workbenchHistoryLogger).MoveComponents(Guid.Parse(workbench.DgtSolutionid), carrier.DgtSolutionuniquename));
+                new ComponentMover(_executor, workbenchHistoryLogger).MoveComponents(Guid.Parse(workbench.DgtSolutionid), carrier.DgtSolutionuniquename);
                 //Reset (Handshake)
                 carrier.DgtSolutionversion = workbenchProcessor.FinishHandshake(carrier);
-                workbenchProcessor.Success(_message, workbench, carrier, _state, _status, componentMoverLog, constraintCheckLog);
+                workbenchProcessor.Success(_message, workbench, carrier, _state, _status);
             }
             catch (Exception e)
             {
                 //Reset (Handshake)
                 workbenchProcessor.ResetHandshake(carrier);
-                workbenchProcessor.Failure(e.RootMessage(), workbench, carrier, componentMoverLog, constraintCheckLog);
+                workbenchProcessor.Failure(e.RootMessage(), workbench, carrier);
                 return ExecutionResult.Failure;
             }
             return ExecutionResult.Ok;

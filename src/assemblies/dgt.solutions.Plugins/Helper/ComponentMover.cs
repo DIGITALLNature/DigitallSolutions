@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using D365.Extension.Core;
 using D365.Extension.Model;
-using dgt.solutions.Plugins.Contract;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Query;
 
@@ -20,21 +19,21 @@ namespace dgt.solutions.Plugins.Helper
             _workbenchHistoryLogger = workbenchHistoryLogger;
         }
 
-        internal IEnumerable<ComponentMoverLogEntry> MoveComponents(Guid originId, string destinationName)
+        internal void MoveComponents(Guid originId, string destinationName)
         {
-            return MoveComponents(GetSolutionComponents(new List<ConditionExpression>{
+            MoveComponents(GetSolutionComponents(new List<ConditionExpression>{
                 new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, originId)
             }), destinationName);
         }
 
-        internal IEnumerable<ComponentMoverLogEntry> MoveAssemblyComponents(Guid originId, string destinationName)
+        internal void MoveAssemblyComponents(Guid originId, string destinationName)
         {
             var componentsTypes = new List<int>
             {
                 SolutionComponent.Options.ComponentType.PluginAssembly,
                 SolutionComponent.Options.ComponentType.SDKMessageProcessingStep
             };
-            return MoveComponents(GetSolutionComponents(new List<ConditionExpression>{
+            MoveComponents(GetSolutionComponents(new List<ConditionExpression>{
                 new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, originId),
                 new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.In, componentsTypes.ToArray())
             }), destinationName);
@@ -78,9 +77,8 @@ namespace dgt.solutions.Plugins.Helper
             return components;
         }
 
-        private IEnumerable<ComponentMoverLogEntry> MoveComponents(IEnumerable<SolutionComponent> components, string destinationName)
+        private void MoveComponents(IEnumerable<SolutionComponent> components, string destinationName)
         {
-            var log = new List<ComponentMoverLogEntry>();
             foreach (var component in components)
             {
                 _executor.ElevatedOrganizationService.Execute(new AddSolutionComponentRequest
@@ -93,15 +91,8 @@ namespace dgt.solutions.Plugins.Helper
                         component.RootComponentBehavior?.Value == SolutionComponent.Options.RootComponentBehavior.DoNotIncludeSubcomponents ||
                         component.RootComponentBehavior?.Value == SolutionComponent.Options.RootComponentBehavior.IncludeAsShellOnly
                 });
-                log.Add(new ComponentMoverLogEntry
-                {
-                    ComponentId = component.ObjectId.GetValueOrDefault(),
-                    ComponentType = component.FormattedValues.ContainsKey(SolutionComponent.LogicalNames.ComponentType) ? component.FormattedValues[SolutionComponent.LogicalNames.ComponentType] : $"ComponentType: {component.ComponentType}",
-                    RootComponentBehavior = component.FormattedValues.ContainsKey(SolutionComponent.LogicalNames.RootComponentBehavior) ? component.FormattedValues[SolutionComponent.LogicalNames.RootComponentBehavior] : "not applicable"
-                });
                 _workbenchHistoryLogger?.LogComponent(component);
             }
-            return log;
         }
     }
 }
