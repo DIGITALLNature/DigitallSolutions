@@ -189,6 +189,24 @@ namespace D365.Extension.Model
         }
 
 		
+		[AttributeLogicalName("dgt_log_level_set")]
+        public OptionSetValue DgtLogLevelSet
+        {
+            [DebuggerNonUserCode]
+			get
+            {
+                return GetAttributeValue<OptionSetValue>("dgt_log_level_set");
+            }
+            [DebuggerNonUserCode]
+			set
+            {
+                OnPropertyChanging(nameof(DgtLogLevelSet));
+                SetAttributeValue("dgt_log_level_set", value);
+                OnPropertyChanged(nameof(DgtLogLevelSet));
+            }
+        }
+
+		
 		[AttributeLogicalName("dgt_message")]
         public string DgtMessage
         {
@@ -203,6 +221,24 @@ namespace D365.Extension.Model
                 OnPropertyChanging(nameof(DgtMessage));
                 SetAttributeValue("dgt_message", value);
                 OnPropertyChanged(nameof(DgtMessage));
+            }
+        }
+
+		
+		[AttributeLogicalName("dgt_objectid_txt")]
+        public string DgtObjectidTxt
+        {
+            [DebuggerNonUserCode]
+			get
+            {
+                return GetAttributeValue<string>("dgt_objectid_txt");
+            }
+            [DebuggerNonUserCode]
+			set
+            {
+                OnPropertyChanging(nameof(DgtObjectidTxt));
+                SetAttributeValue("dgt_objectid_txt", value);
+                OnPropertyChanged(nameof(DgtObjectidTxt));
             }
         }
 
@@ -460,10 +496,18 @@ namespace D365.Extension.Model
 		#region Options
 		public static class Options
 		{
+			    public struct DgtLogLevelSet
+                {
+					public const int Error = 283510000;
+					public const int Warning = 283510001;
+					public const int Information = 283510002;
+					public const int Debug = 283510003;
+                }
 			    public struct DgtTypeSet
                 {
 					public const int ComponentMove = 283510000;
 					public const int Constraint = 283510001;
+					public const int Log = 283510002;
                 }
 		}
 		#endregion
@@ -476,7 +520,9 @@ namespace D365.Extension.Model
 				public const string CreatedOn = "createdon";
 				public const string CreatedOnBehalfBy = "createdonbehalfby";
 				public const string DgtComponentType = "dgt_component_type";
+				public const string DgtLogLevelSet = "dgt_log_level_set";
 				public const string DgtMessage = "dgt_message";
+				public const string DgtObjectidTxt = "dgt_objectid_txt";
 				public const string DgtSubtypeTxt = "dgt_subtype_txt";
 				public const string DgtTypeSet = "dgt_type_set";
 				public const string DgtWorkbenchHistoryId = "dgt_workbench_history_id";

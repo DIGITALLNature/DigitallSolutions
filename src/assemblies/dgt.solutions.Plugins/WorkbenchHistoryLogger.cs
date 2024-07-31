@@ -35,6 +35,7 @@ namespace dgt.solutions.Plugins
                 DgtMessage = component.ObjectId.GetValueOrDefault().ToString(),
                 DgtTypeSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtTypeSet.ComponentMove),
                 DgtWorkbenchHistoryId = WorkbenchHistory.ToEntityReference(),
+                DgtObjectidTxt = component.ObjectId.GetValueOrDefault().ToString(),
             });
         }
 
@@ -42,9 +43,25 @@ namespace dgt.solutions.Plugins
         {
             _orgService.Create(new DgtWorkbenchHistoryLog
             {
+                DgtLogLevelSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtLogLevelSet.Error),
                 DgtComponentType = "workflow",
                 DgtMessage = $"constraint violated: {constraintType} {objectId?.ToString()}",
                 DgtTypeSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtTypeSet.Constraint),
+                DgtSubtypeTxt = "Violation",
+                DgtWorkbenchHistoryId = WorkbenchHistory.ToEntityReference(),
+                DgtObjectidTxt = objectId?.ToString(),
+            });
+        }
+
+        internal void LogConstraintSuccess(string constraintType)
+        {
+            _orgService.Create(new DgtWorkbenchHistoryLog
+            {
+                DgtLogLevelSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtLogLevelSet.Information),
+                DgtComponentType = "workflow",
+                DgtMessage = $"constraint succeeded: {constraintType}",
+                DgtTypeSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtTypeSet.Constraint),
+                DgtSubtypeTxt = "Success",
                 DgtWorkbenchHistoryId = WorkbenchHistory.ToEntityReference(),
             });
         }

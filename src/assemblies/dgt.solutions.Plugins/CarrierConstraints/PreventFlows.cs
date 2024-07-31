@@ -34,6 +34,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                 Delegate.TracingService.Trace("constraint passed");
             }
 
+            WorkbenchHistoryLogger?.LogConstraintSuccess(ConstraintType);
             return new ConstraintCheckLogEntry
             {
                 ConstraintType = "Prevent Flows",
