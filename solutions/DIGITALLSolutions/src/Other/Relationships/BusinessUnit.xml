@@ -59,6 +59,7 @@
     <RelationshipDescription>
       <Descriptions>
         <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+        <Description description="Eindeutiger Bezeichner der für den Datensatz zuständigen Unternehmenseinheit." languagecode="1031" />
       </Descriptions>
     </RelationshipDescription>
   </EntityRelationship>

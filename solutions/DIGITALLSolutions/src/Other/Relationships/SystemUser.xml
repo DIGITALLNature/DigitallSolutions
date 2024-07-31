@@ -225,6 +225,7 @@
     <RelationshipDescription>
       <Descriptions>
         <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+        <Description description="Eindeutiger Bezeichner des Benutzers, der den Datensatz erstellt hat." languagecode="1031" />
       </Descriptions>
     </RelationshipDescription>
   </EntityRelationship>
@@ -245,6 +246,7 @@
     <RelationshipDescription>
       <Descriptions>
         <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+        <Description description="Eindeutiger Bezeichner des Benutzers, der den Datensatz geändert hat." languagecode="1031" />
       </Descriptions>
     </RelationshipDescription>
   </EntityRelationship>
@@ -349,6 +351,7 @@
     <RelationshipDescription>
       <Descriptions>
         <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+        <Description description="Eindeutiger Bezeichner des für den Datensatz zuständigen Benutzers." languagecode="1031" />
       </Descriptions>
     </RelationshipDescription>
   </EntityRelationship>

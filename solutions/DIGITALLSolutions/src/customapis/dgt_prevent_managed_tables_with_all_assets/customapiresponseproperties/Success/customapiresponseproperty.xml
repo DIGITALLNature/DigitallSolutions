@@ -1,0 +1,11 @@
+<customapiresponseproperty uniquename="Success">
+  <description default="Constraint Success: Prevent managed tables with all assets">
+    <label description="Constraint Success: Prevent managed tables with all assets" languagecode="1033" />
+  </description>
+  <displayname default="Constraint Success: Prevent managed tables with all assets">
+    <label description="Constraint Success: Prevent managed tables with all assets" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>Constraint Success: Prevent managed tables with all assets</name>
+  <type>0</type>
+</customapiresponseproperty>

@@ -30,6 +30,7 @@
           <attribute name="statecode" />
           <attribute name="statuscode" />
           <attribute name="createdon" />
+          <order attribute="createdon" descending="true" />
         </entity>
       </fetch>
     </fetchxml>

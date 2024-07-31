@@ -92,26 +92,43 @@
             </column>
           </columns>
         </tab>
-        <tab name="tab_constraint_check_log" id="c3984119-7d20-4b99-9843-433fff477d4d" IsUserDefined="0" locklevel="0" showlabel="true">
+        <tab name="tab_log" id="5640b23e-a245-4f19-bc72-38dcaa72beb0" IsUserDefined="0" locklevel="0" showlabel="true">
           <labels>
-            <label description="Constraint Check Log" languagecode="1033" />
+            <label description="Log" languagecode="1033" />
           </labels>
           <columns>
             <column width="100%">
               <sections>
-                <section name="constraint_check_log" id="e47bb3e0-6a05-4ffb-b59b-44ce27c2a645" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" visible="true">
+                <section name="tab_component_move_log_section_log" id="be9de029-60d8-401c-8eb1-a525aab148e3" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
                   <labels>
-                    <label description="Constraint Check Log" languagecode="1033" />
+                    <label description="Log" languagecode="1033" />
                   </labels>
                   <rows>
+                    <row />
                     <row>
-                      <cell id="{8e67aac2-acac-42f1-bdcf-810b0b5e0e08}" locklevel="0" colspan="1" rowspan="1" auto="true" showlabel="false">
+                      <cell locklevel="0" id="{170902bb-ba80-45c6-8e70-8713295d8ecc}" rowspan="4" colspan="1" auto="true">
                         <labels>
-                          <label description="Constraint Check Log" languagecode="1033" />
+                          <label description="Logs" languagecode="1033" />
                         </labels>
-                        <control id="dgt_constraint_check_log" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="dgt_constraint_check_log" disabled="false" />
+                        <control indicationOfSubgrid="true" id="subgrid_workbench_history_logs" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" uniqueid="{7cbca96a-3dbc-4497-b9e9-e244d4373a9f}">
+                          <parameters>
+                            <RecordsPerPage>10</RecordsPerPage>
+                            <AutoExpand>Auto</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>true</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <TargetEntityType>dgt_workbench_history_log</TargetEntityType>
+                            <ViewId>{5F11367E-7E4F-EF11-BFE2-6045BD88EF06}</ViewId>
+                            <ViewIds>{470A9288-DB30-4E90-9E38-721238CEF727},{5F11367E-7E4F-EF11-BFE2-6045BD88EF06}</ViewIds>
+                            <RelationshipName>dgt_workbench_history_log_dgt_workbench_history_id</RelationshipName>
+                          </parameters>
+                        </control>
                       </cell>
                     </row>
+                    <row />
+                    <row />
+                    <row />
                   </rows>
                 </section>
               </sections>
@@ -144,6 +161,7 @@
             </cell>
             <cell id="{b8582ce8-4dcc-4cd9-925e-277898845617}" locklevel="0" colspan="1" rowspan="1">
               <labels>
+                <label description="Statusgrund" languagecode="1031" />
                 <label description="Status Reason" languagecode="1033" />
               </labels>
               <control id="header_statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" />
@@ -156,6 +174,7 @@
             </cell>
             <cell id="{38c0136f-89d4-42a9-b383-a5d25ebcb597}" colspan="1" rowspan="1">
               <labels>
+                <label description="Besitzer" languagecode="1031" />
                 <label description="Owner" languagecode="1033" />
               </labels>
               <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
@@ -187,6 +206,120 @@
       <DisplayConditions Order="0" FallbackForm="true">
         <Everyone />
       </DisplayConditions>
+      <controlDescriptions>
+        <controlDescription forControl="{7cbca96a-3dbc-4497-b9e9-e244d4373a9f}">
+          <customControl id="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+            <parameters>
+              <RecordsPerPage>10</RecordsPerPage>
+              <AutoExpand>Auto</AutoExpand>
+              <EnableQuickFind>false</EnableQuickFind>
+              <EnableViewPicker>true</EnableViewPicker>
+              <EnableChartPicker>true</EnableChartPicker>
+              <ChartGridMode>All</ChartGridMode>
+              <TargetEntityType>dgt_workbench_history_log</TargetEntityType>
+              <ViewId>{5F11367E-7E4F-EF11-BFE2-6045BD88EF06}</ViewId>
+              <ViewIds>{470A9288-DB30-4E90-9E38-721238CEF727}</ViewIds>
+              <RelationshipName>dgt_workbench_history_log_dgt_workbench_history_id</RelationshipName>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="Microsoft.PowerApps.PowerAppsOneGrid">
+            <parameters>
+              <data-set name="Items">
+                <ViewId>{5F11367E-7E4F-EF11-BFE2-6045BD88EF06}</ViewId>
+                <TargetEntityType>dgt_workbench_history_log</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <EnableViewPicker>true</EnableViewPicker>
+                <RelationshipName>dgt_workbench_history_log_dgt_workbench_history_id</RelationshipName>
+                <FilteredViewIds>{470A9288-DB30-4E90-9E38-721238CEF727}</FilteredViewIds>
+              </data-set>
+              <EnableEditing type="Enum" static="true">no</EnableEditing>
+              <DisableChildItemsEditing type="Enum" static="true">no</DisableChildItemsEditing>
+              <EnableFiltering type="Enum" static="true">yes</EnableFiltering>
+              <EnableSorting type="Enum" static="true">yes</EnableSorting>
+              <EnableGrouping type="Enum" static="true">yes</EnableGrouping>
+              <EnableAggregation type="Enum" static="true">no</EnableAggregation>
+              <EnableColumnMoving type="Enum" static="true">yes</EnableColumnMoving>
+              <EnableMultipleSelection type="Enum" static="true">yes</EnableMultipleSelection>
+              <EnableRangeSelection type="Enum" static="true">yes</EnableRangeSelection>
+              <EnableJumpBar type="Enum" static="true">no</EnableJumpBar>
+              <EnablePagination type="Enum" static="true">no</EnablePagination>
+              <EnableDropdownColor type="Enum" static="true">yes</EnableDropdownColor>
+              <EnableStatusIcons type="Enum" static="true">yes</EnableStatusIcons>
+              <EnableTypeIcons type="Enum" static="true">no</EnableTypeIcons>
+              <NavigationTypesAllowed type="Enum" static="true">all</NavigationTypesAllowed>
+              <ReflowBehavior type="Enum" static="true">Reflow</ReflowBehavior>
+              <ShowAvatar type="Enum" static="true">yes</ShowAvatar>
+              <ShowFooter type="Enum" static="true">yes</ShowFooter>
+              <ShowColumnHeaders type="Enum" static="true">yes</ShowColumnHeaders>
+              <EnableStatusColumn type="Enum" static="true">yes</EnableStatusColumn>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="Microsoft.PowerApps.PowerAppsOneGrid">
+            <parameters>
+              <data-set name="Items">
+                <ViewId>{5F11367E-7E4F-EF11-BFE2-6045BD88EF06}</ViewId>
+                <TargetEntityType>dgt_workbench_history_log</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <EnableViewPicker>true</EnableViewPicker>
+                <RelationshipName>dgt_workbench_history_log_dgt_workbench_history_id</RelationshipName>
+                <FilteredViewIds>{470A9288-DB30-4E90-9E38-721238CEF727}</FilteredViewIds>
+              </data-set>
+              <EnableEditing type="Enum" static="true">no</EnableEditing>
+              <DisableChildItemsEditing type="Enum" static="true">no</DisableChildItemsEditing>
+              <EnableFiltering type="Enum" static="true">yes</EnableFiltering>
+              <EnableSorting type="Enum" static="true">yes</EnableSorting>
+              <EnableGrouping type="Enum" static="true">yes</EnableGrouping>
+              <EnableAggregation type="Enum" static="true">no</EnableAggregation>
+              <EnableColumnMoving type="Enum" static="true">yes</EnableColumnMoving>
+              <EnableMultipleSelection type="Enum" static="true">yes</EnableMultipleSelection>
+              <EnableRangeSelection type="Enum" static="true">yes</EnableRangeSelection>
+              <EnableJumpBar type="Enum" static="true">no</EnableJumpBar>
+              <EnablePagination type="Enum" static="true">no</EnablePagination>
+              <EnableDropdownColor type="Enum" static="true">yes</EnableDropdownColor>
+              <EnableStatusIcons type="Enum" static="true">yes</EnableStatusIcons>
+              <EnableTypeIcons type="Enum" static="true">no</EnableTypeIcons>
+              <NavigationTypesAllowed type="Enum" static="true">all</NavigationTypesAllowed>
+              <ReflowBehavior type="Enum" static="true">Reflow</ReflowBehavior>
+              <ShowAvatar type="Enum" static="true">yes</ShowAvatar>
+              <ShowFooter type="Enum" static="true">yes</ShowFooter>
+              <ShowColumnHeaders type="Enum" static="true">yes</ShowColumnHeaders>
+              <EnableStatusColumn type="Enum" static="true">yes</EnableStatusColumn>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="Microsoft.PowerApps.PowerAppsOneGrid">
+            <parameters>
+              <data-set name="Items">
+                <ViewId>{5F11367E-7E4F-EF11-BFE2-6045BD88EF06}</ViewId>
+                <TargetEntityType>dgt_workbench_history_log</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <EnableViewPicker>true</EnableViewPicker>
+                <RelationshipName>dgt_workbench_history_log_dgt_workbench_history_id</RelationshipName>
+                <FilteredViewIds>{470A9288-DB30-4E90-9E38-721238CEF727}</FilteredViewIds>
+              </data-set>
+              <EnableEditing type="Enum" static="true">no</EnableEditing>
+              <DisableChildItemsEditing type="Enum" static="true">no</DisableChildItemsEditing>
+              <EnableFiltering type="Enum" static="true">yes</EnableFiltering>
+              <EnableSorting type="Enum" static="true">yes</EnableSorting>
+              <EnableGrouping type="Enum" static="true">yes</EnableGrouping>
+              <EnableAggregation type="Enum" static="true">no</EnableAggregation>
+              <EnableColumnMoving type="Enum" static="true">yes</EnableColumnMoving>
+              <EnableMultipleSelection type="Enum" static="true">yes</EnableMultipleSelection>
+              <EnableRangeSelection type="Enum" static="true">yes</EnableRangeSelection>
+              <EnableJumpBar type="Enum" static="true">no</EnableJumpBar>
+              <EnablePagination type="Enum" static="true">no</EnablePagination>
+              <EnableDropdownColor type="Enum" static="true">yes</EnableDropdownColor>
+              <EnableStatusIcons type="Enum" static="true">yes</EnableStatusIcons>
+              <EnableTypeIcons type="Enum" static="true">no</EnableTypeIcons>
+              <NavigationTypesAllowed type="Enum" static="true">all</NavigationTypesAllowed>
+              <ReflowBehavior type="Enum" static="true">Reflow</ReflowBehavior>
+              <ShowAvatar type="Enum" static="true">yes</ShowAvatar>
+              <ShowFooter type="Enum" static="true">yes</ShowFooter>
+              <ShowColumnHeaders type="Enum" static="true">yes</ShowColumnHeaders>
+              <EnableStatusColumn type="Enum" static="true">yes</EnableStatusColumn>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
     </form>
     <IsCustomizable>1</IsCustomizable>
     <CanBeDeleted>1</CanBeDeleted>

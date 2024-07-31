@@ -1,0 +1,11 @@
+<customapiresponseproperty uniquename="Success">
+  <description default="Constraint Success: Prevent Flows">
+    <label description="Constraint Success: Prevent Flows" languagecode="1033" />
+  </description>
+  <displayname default="Constraint Success: Prevent Flows">
+    <label description="Constraint Success: Prevent Flows" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>Constraint Success: Prevent Flows</name>
+  <type>0</type>
+</customapiresponseproperty>

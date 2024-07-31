@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{dbe72509-f239-a1bc-03ca-6c4c5fe4a458}</savedqueryid>
+    <querytype>1048576</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="dgt_workbench_history">
+          <attribute name="dgt_workbench_historyid" />
+          <attribute name="dgt_entry" />
+          <order attribute="dgt_entry" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="dgt_entry" operator="like" value="{0}" />
+          </filter>
+          <attribute name="dgt_workbench_id" />
+          <attribute name="dgt_carrier_id" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="dgt_workbench_history Copilot View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

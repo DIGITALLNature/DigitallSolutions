@@ -38,6 +38,7 @@
                     <row>
                       <cell id="{94dcaa12-550b-4a5c-a1de-8344fa52e119}" locklevel="0" colspan="2" rowspan="1">
                         <labels>
+                          <label description="Erstellt am" languagecode="1031" />
                           <label description="Created On" languagecode="1033" />
                         </labels>
                         <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="true" />

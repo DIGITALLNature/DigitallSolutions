@@ -70,6 +70,7 @@
                     <row>
                       <cell id="{a9694468-0e5c-4845-ae18-2ba19210113a}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
+                          <label description="Statusgrund" languagecode="1031" />
                           <label description="Status Reason" languagecode="1033" />
                         </labels>
                         <control id="statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" />
@@ -78,6 +79,7 @@
                     <row>
                       <cell id="{5e496408-7f95-4311-9e7b-249c2894efd0}" colspan="1" rowspan="1">
                         <labels>
+                          <label description="Besitzer" languagecode="1031" />
                           <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />

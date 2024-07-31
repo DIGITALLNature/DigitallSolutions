@@ -102,7 +102,7 @@
                         <labels>
                           <label description="Workbench Histories" languagecode="1033" />
                         </labels>
-                        <control indicationOfSubgrid="true" id="dgt_workbench_history_subgrid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                        <control indicationOfSubgrid="true" id="dgt_workbench_history_subgrid" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" uniqueid="{49dfc62d-236b-400c-a0fd-5e054140d28b}">
                           <parameters>
                             <RecordsPerPage>10</RecordsPerPage>
                             <AutoExpand>Auto</AutoExpand>
@@ -203,6 +203,127 @@
       <DisplayConditions Order="0" FallbackForm="true">
         <Everyone />
       </DisplayConditions>
+      <controlDescriptions>
+        <controlDescription forControl="{49dfc62d-236b-400c-a0fd-5e054140d28b}">
+          <customControl id="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+            <parameters />
+          </customControl>
+          <customControl formFactor="0" name="Microsoft.PowerApps.PowerAppsOneGrid">
+            <parameters>
+              <data-set name="Items">
+                <ViewId>{9ae9ce94-6cea-ed11-8849-000d3a25bcec}</ViewId>
+                <TargetEntityType>dgt_workbench_history</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <EnableViewPicker>false</EnableViewPicker>
+                <RelationshipName>dgt_workbench_to_workbench_history</RelationshipName>
+                <FilteredViewIds>{AAA547C5-CBF8-4872-AC34-1F9591622C97},{9AE9CE94-6CEA-ED11-8849-000D3A25BCEC}</FilteredViewIds>
+              </data-set>
+              <data-set name="ChildItems">
+                <ViewId>{5f11367e-7e4f-ef11-bfe2-6045bd88ef06}</ViewId>
+                <TargetEntityType>dgt_workbench_history_log</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <ParentId>dgt_workbench_history_id</ParentId>
+              </data-set>
+              <EnableEditing type="Enum" static="true">no</EnableEditing>
+              <DisableChildItemsEditing type="Enum" static="true">yes</DisableChildItemsEditing>
+              <EnableFiltering type="Enum" static="true">yes</EnableFiltering>
+              <EnableSorting type="Enum" static="true">yes</EnableSorting>
+              <EnableGrouping type="Enum" static="true">yes</EnableGrouping>
+              <EnableAggregation type="Enum" static="true">no</EnableAggregation>
+              <EnableColumnMoving type="Enum" static="true">yes</EnableColumnMoving>
+              <EnableMultipleSelection type="Enum" static="true">yes</EnableMultipleSelection>
+              <EnableRangeSelection type="Enum" static="true">yes</EnableRangeSelection>
+              <EnableJumpBar type="Enum" static="true">no</EnableJumpBar>
+              <EnablePagination type="Enum" static="true">no</EnablePagination>
+              <EnableDropdownColor type="Enum" static="true">yes</EnableDropdownColor>
+              <EnableStatusIcons type="Enum" static="true">yes</EnableStatusIcons>
+              <EnableTypeIcons type="Enum" static="true">no</EnableTypeIcons>
+              <NavigationTypesAllowed type="Enum" static="true">all</NavigationTypesAllowed>
+              <ReflowBehavior type="Enum" static="true">Reflow</ReflowBehavior>
+              <ShowAvatar type="Enum" static="true">yes</ShowAvatar>
+              <ShowFooter type="Enum" static="true">yes</ShowFooter>
+              <ShowColumnHeaders type="Enum" static="true">yes</ShowColumnHeaders>
+              <EnableStatusColumn type="Enum" static="true">yes</EnableStatusColumn>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="Microsoft.PowerApps.PowerAppsOneGrid">
+            <parameters>
+              <data-set name="Items">
+                <ViewId>{9ae9ce94-6cea-ed11-8849-000d3a25bcec}</ViewId>
+                <TargetEntityType>dgt_workbench_history</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <EnableViewPicker>false</EnableViewPicker>
+                <RelationshipName>dgt_workbench_to_workbench_history</RelationshipName>
+                <FilteredViewIds>{AAA547C5-CBF8-4872-AC34-1F9591622C97},{9AE9CE94-6CEA-ED11-8849-000D3A25BCEC}</FilteredViewIds>
+              </data-set>
+              <data-set name="ChildItems">
+                <ViewId>{5f11367e-7e4f-ef11-bfe2-6045bd88ef06}</ViewId>
+                <TargetEntityType>dgt_workbench_history_log</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <ParentId>dgt_workbench_history_id</ParentId>
+              </data-set>
+              <EnableEditing type="Enum" static="true">no</EnableEditing>
+              <DisableChildItemsEditing type="Enum" static="true">yes</DisableChildItemsEditing>
+              <EnableFiltering type="Enum" static="true">yes</EnableFiltering>
+              <EnableSorting type="Enum" static="true">yes</EnableSorting>
+              <EnableGrouping type="Enum" static="true">yes</EnableGrouping>
+              <EnableAggregation type="Enum" static="true">no</EnableAggregation>
+              <EnableColumnMoving type="Enum" static="true">yes</EnableColumnMoving>
+              <EnableMultipleSelection type="Enum" static="true">yes</EnableMultipleSelection>
+              <EnableRangeSelection type="Enum" static="true">yes</EnableRangeSelection>
+              <EnableJumpBar type="Enum" static="true">no</EnableJumpBar>
+              <EnablePagination type="Enum" static="true">no</EnablePagination>
+              <EnableDropdownColor type="Enum" static="true">yes</EnableDropdownColor>
+              <EnableStatusIcons type="Enum" static="true">yes</EnableStatusIcons>
+              <EnableTypeIcons type="Enum" static="true">no</EnableTypeIcons>
+              <NavigationTypesAllowed type="Enum" static="true">all</NavigationTypesAllowed>
+              <ReflowBehavior type="Enum" static="true">Reflow</ReflowBehavior>
+              <ShowAvatar type="Enum" static="true">yes</ShowAvatar>
+              <ShowFooter type="Enum" static="true">yes</ShowFooter>
+              <ShowColumnHeaders type="Enum" static="true">yes</ShowColumnHeaders>
+              <EnableStatusColumn type="Enum" static="true">yes</EnableStatusColumn>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="Microsoft.PowerApps.PowerAppsOneGrid">
+            <parameters>
+              <data-set name="Items">
+                <ViewId>{9ae9ce94-6cea-ed11-8849-000d3a25bcec}</ViewId>
+                <TargetEntityType>dgt_workbench_history</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <EnableViewPicker>false</EnableViewPicker>
+                <RelationshipName>dgt_workbench_to_workbench_history</RelationshipName>
+                <FilteredViewIds>{AAA547C5-CBF8-4872-AC34-1F9591622C97},{9AE9CE94-6CEA-ED11-8849-000D3A25BCEC}</FilteredViewIds>
+              </data-set>
+              <data-set name="ChildItems">
+                <ViewId>{5f11367e-7e4f-ef11-bfe2-6045bd88ef06}</ViewId>
+                <TargetEntityType>dgt_workbench_history_log</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <ParentId>dgt_workbench_history_id</ParentId>
+              </data-set>
+              <EnableEditing type="Enum" static="true">no</EnableEditing>
+              <DisableChildItemsEditing type="Enum" static="true">yes</DisableChildItemsEditing>
+              <EnableFiltering type="Enum" static="true">yes</EnableFiltering>
+              <EnableSorting type="Enum" static="true">yes</EnableSorting>
+              <EnableGrouping type="Enum" static="true">yes</EnableGrouping>
+              <EnableAggregation type="Enum" static="true">no</EnableAggregation>
+              <EnableColumnMoving type="Enum" static="true">yes</EnableColumnMoving>
+              <EnableMultipleSelection type="Enum" static="true">yes</EnableMultipleSelection>
+              <EnableRangeSelection type="Enum" static="true">yes</EnableRangeSelection>
+              <EnableJumpBar type="Enum" static="true">no</EnableJumpBar>
+              <EnablePagination type="Enum" static="true">no</EnablePagination>
+              <EnableDropdownColor type="Enum" static="true">yes</EnableDropdownColor>
+              <EnableStatusIcons type="Enum" static="true">yes</EnableStatusIcons>
+              <EnableTypeIcons type="Enum" static="true">no</EnableTypeIcons>
+              <NavigationTypesAllowed type="Enum" static="true">all</NavigationTypesAllowed>
+              <ReflowBehavior type="Enum" static="true">Reflow</ReflowBehavior>
+              <ShowAvatar type="Enum" static="true">yes</ShowAvatar>
+              <ShowFooter type="Enum" static="true">yes</ShowFooter>
+              <ShowColumnHeaders type="Enum" static="true">yes</ShowColumnHeaders>
+              <EnableStatusColumn type="Enum" static="true">yes</EnableStatusColumn>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
     </form>
     <IsCustomizable>1</IsCustomizable>
     <CanBeDeleted>1</CanBeDeleted>

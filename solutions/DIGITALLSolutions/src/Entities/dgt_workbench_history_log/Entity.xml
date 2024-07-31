@@ -47,9 +47,11 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Created By" languagecode="1033" />
+            <displayname description="Erstellt von" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+            <Description description="Eindeutiger Bezeichner des Benutzers, der den Datensatz erstellt hat." languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="CreatedOn">
@@ -87,9 +89,11 @@
           <Behavior>1</Behavior>
           <displaynames>
             <displayname description="Created On" languagecode="1033" />
+            <displayname description="Erstellt am" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Date and time when the record was created." languagecode="1033" />
+            <Description description="Datum und Uhrzeit der Datensatzerstellung." languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="CreatedOnBehalfBy">
@@ -126,9 +130,11 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Created By (Delegate)" languagecode="1033" />
+            <displayname description="Erstellt von (Stellvertreter)" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier of the delegate user who created the record." languagecode="1033" />
+            <Description description="Eindeutiger Bezeichner des stellvertretenden Benutzers, der den Datensatz erstellt hat." languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="dgt_component_type">
@@ -171,6 +177,45 @@
             <Description description="" languagecode="1033" />
           </Descriptions>
         </attribute>
+        <attribute PhysicalName="dgt_log_level_set">
+          <Type>picklist</Type>
+          <Name>dgt_log_level_set</Name>
+          <LogicalName>dgt_log_level_set</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+          <ImeMode>auto</ImeMode>
+          <ValidForUpdateApi>1</ValidForUpdateApi>
+          <ValidForReadApi>1</ValidForReadApi>
+          <ValidForCreateApi>1</ValidForCreateApi>
+          <IsCustomField>1</IsCustomField>
+          <IsAuditEnabled>0</IsAuditEnabled>
+          <IsSecured>0</IsSecured>
+          <IntroducedVersion>3.0.1.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <SourceType>0</SourceType>
+          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+          <IsSortableEnabled>0</IsSortableEnabled>
+          <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+          <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+          <IsDataSourceSecret>0</IsDataSourceSecret>
+          <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
+          <AppDefaultValue>283510002</AppDefaultValue>
+          <OptionSetName>dgt_log_level_set</OptionSetName>
+          <displaynames>
+            <displayname description="Level" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="" languagecode="1033" />
+          </Descriptions>
+        </attribute>
         <attribute PhysicalName="dgt_message">
           <Type>nvarchar</Type>
           <Name>dgt_message</Name>
@@ -207,6 +252,46 @@
           <Length>200</Length>
           <displaynames>
             <displayname description="Message" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="dgt_objectid_txt">
+          <Type>nvarchar</Type>
+          <Name>dgt_objectid_txt</Name>
+          <LogicalName>dgt_objectid_txt</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+          <ImeMode>auto</ImeMode>
+          <ValidForUpdateApi>1</ValidForUpdateApi>
+          <ValidForReadApi>1</ValidForReadApi>
+          <ValidForCreateApi>1</ValidForCreateApi>
+          <IsCustomField>1</IsCustomField>
+          <IsAuditEnabled>0</IsAuditEnabled>
+          <IsSecured>0</IsSecured>
+          <IntroducedVersion>1.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <SourceType>0</SourceType>
+          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+          <IsSortableEnabled>0</IsSortableEnabled>
+          <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+          <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+          <IsDataSourceSecret>0</IsDataSourceSecret>
+          <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
+          <Format>text</Format>
+          <MaxLength>36</MaxLength>
+          <Length>72</Length>
+          <displaynames>
+            <displayname description="Objectid" languagecode="1033" />
           </displaynames>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -297,6 +382,7 @@
           <LogicalName>dgt_workbench_history_id</LogicalName>
           <RequiredLevel>required</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+          <ImeMode>auto</ImeMode>
           <ValidForUpdateApi>1</ValidForUpdateApi>
           <ValidForReadApi>1</ValidForReadApi>
           <ValidForCreateApi>1</ValidForCreateApi>
@@ -364,6 +450,7 @@
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier for entity instances" languagecode="1033" />
+            <Description description="Eindeutiger Bezeichner der Entitätsinstanzen" languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="ImportSequenceNumber">
@@ -401,9 +488,11 @@
           <MaxValue>2147483647</MaxValue>
           <displaynames>
             <displayname description="Import Sequence Number" languagecode="1033" />
+            <displayname description="Importsequenznummer" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Sequence number of the import that created this record." languagecode="1033" />
+            <Description description="Sequenznummer des Imports, mit dem dieser Datensatz erstellt wurde." languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="ModifiedBy">
@@ -440,9 +529,11 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Modified By" languagecode="1033" />
+            <displayname description="Geändert von" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+            <Description description="Eindeutiger Bezeichner des Benutzers, der den Datensatz geändert hat." languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="ModifiedOn">
@@ -480,9 +571,11 @@
           <Behavior>1</Behavior>
           <displaynames>
             <displayname description="Modified On" languagecode="1033" />
+            <displayname description="Geändert am" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Date and time when the record was modified." languagecode="1033" />
+            <Description description="Datum und Uhrzeit der Datensatzänderung." languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="ModifiedOnBehalfBy">
@@ -519,9 +612,11 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Modified By (Delegate)" languagecode="1033" />
+            <displayname description="Geändert von (Stellvertreter)" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier of the delegate user who modified the record." languagecode="1033" />
+            <Description description="Eindeutiger Bezeichner des stellvertretenden Benutzers, der den Datensatz geändert hat." languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="OverriddenCreatedOn">
@@ -559,9 +654,11 @@
           <Behavior>1</Behavior>
           <displaynames>
             <displayname description="Record Created On" languagecode="1033" />
+            <displayname description="Datensatz erstellt am" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Date and time that the record was migrated." languagecode="1033" />
+            <Description description="Datum und Uhrzeit der Datensatzmigration." languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="OwnerId">
@@ -601,9 +698,11 @@
           </LookupTypes>
           <displaynames>
             <displayname description="Owner" languagecode="1033" />
+            <displayname description="Besitzer" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Owner Id" languagecode="1033" />
+            <Description description="Besitzer-ID" languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="OwningBusinessUnit">
@@ -640,9 +739,11 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Owning Business Unit" languagecode="1033" />
+            <displayname description="Besitzer (Unternehmenseinheit)" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+            <Description description="Eindeutiger Bezeichner der für den Datensatz zuständigen Unternehmenseinheit." languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="OwningTeam">
@@ -679,9 +780,11 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Owning Team" languagecode="1033" />
+            <displayname description="Besitzer (Team)" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier for the team that owns the record." languagecode="1033" />
+            <Description description="Eindeutiger Bezeichner des für den Datensatz zuständigen Teams." languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="OwningUser">
@@ -718,9 +821,11 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Owning User" languagecode="1033" />
+            <displayname description="Besitzer (Benutzer)" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+            <Description description="Eindeutiger Bezeichner des für den Datensatz zuständigen Benutzers." languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="PartitionId">
@@ -755,11 +860,14 @@
           <IsLocalizable>0</IsLocalizable>
           <Format>text</Format>
           <MaxLength>100</MaxLength>
+          <Length>200</Length>
           <displaynames>
             <displayname description="Workbench Partition Id" languagecode="1033" />
+            <displayname description="Partitions-ID" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Logical partition id. A logical partition consists of a set of records with same partition id." languagecode="1033" />
+            <Description description="Logische Partitions-ID. Eine logische Partition besteht aus einer Gruppe von Datensätzen mit derselben Partitions-ID." languagecode="1031" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="TTLInSeconds">
@@ -797,9 +905,11 @@
           <MaxValue>2147483647</MaxValue>
           <displaynames>
             <displayname description="Time to live" languagecode="1033" />
+            <displayname description="Gültigkeitsdauer" languagecode="1031" />
           </displaynames>
           <Descriptions>
             <Description description="Time to live in seconds." languagecode="1033" />
+            <Description description="Gültigkeitsdauer in Sekunden." languagecode="1031" />
           </Descriptions>
         </attribute>
       </attributes>

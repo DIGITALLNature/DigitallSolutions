@@ -1,0 +1,13 @@
+<customapirequestparameter uniquename="WorkbenchHistory">
+  <description default="Constraint Workbench History: Prevent plugin assemblies">
+    <label description="Constraint Workbench History: Prevent plugin assemblies" languagecode="1033" />
+  </description>
+  <displayname default="Constraint Workbench History: Prevent plugin assemblies">
+    <label description="Constraint Workbench History: Prevent plugin assemblies" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>1</isoptional>
+  <logicalentityname>dgt_workbench_history</logicalentityname>
+  <name>Constraint Workbench History: Prevent plugin assemblies</name>
+  <type>5</type>
+</customapirequestparameter>

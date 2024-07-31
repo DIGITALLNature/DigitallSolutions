@@ -56,7 +56,7 @@
                     <row>
                       <cell id="{5214ca3c-78e4-44bb-833a-3049982476b3}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Message" languagecode="1033" />
                         </labels>
                         <control id="dgt_message" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="dgt_message" disabled="false" />
                       </cell>
@@ -71,13 +71,13 @@
                     <row>
                       <cell id="{c6e27e0f-38be-47dd-aff3-114965bb653b}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
                       </cell>
                       <cell id="{ccd58895-bb17-4753-be17-fc49681a51a1}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Created On" languagecode="1033" />
                         </labels>
                         <control id="createdon" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdon" disabled="false" />
                       </cell>

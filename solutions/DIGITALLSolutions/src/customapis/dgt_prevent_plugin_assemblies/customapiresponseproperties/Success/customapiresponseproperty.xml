@@ -1,0 +1,11 @@
+<customapiresponseproperty uniquename="Success">
+  <description default="Constraint Success: Prevent plugin assemblies">
+    <label description="Constraint Success: Prevent plugin assemblies" languagecode="1033" />
+  </description>
+  <displayname default="Constraint Success: Prevent plugin assemblies">
+    <label description="Constraint Success: Prevent plugin assemblies" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>Constraint Success: Prevent plugin assemblies</name>
+  <type>0</type>
+</customapiresponseproperty>

@@ -28,5 +28,13 @@
         <Description description="" languagecode="1033" />
       </Descriptions>
     </option>
+    <option value="283510002">
+      <labels>
+        <label description="Log" languagecode="1033" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
+    </option>
   </options>
 </optionset>

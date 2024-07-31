@@ -931,15 +931,29 @@
               <Description description="Grund für den Status von Workbench History" languagecode="1031" />
             </Descriptions>
             <statuses>
-              <status value="1" state="0">
+              <status value="1" state="0" Color="#b0c4de">
                 <labels>
                   <label description="Active" languagecode="1033" />
                 </labels>
+                <Descriptions>
+                  <Description description="" languagecode="1033" />
+                </Descriptions>
               </status>
-              <status value="2" state="1">
+              <status value="2" state="1" Color="#8fbc8f">
                 <labels>
-                  <label description="Inactive" languagecode="1033" />
+                  <label description="Success" languagecode="1033" />
                 </labels>
+                <Descriptions>
+                  <Description description="" languagecode="1033" />
+                </Descriptions>
+              </status>
+              <status value="283510001" state="1" Color="#f08080">
+                <labels>
+                  <label description="Failure" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="" languagecode="1033" />
+                </Descriptions>
               </status>
             </statuses>
           </optionset>

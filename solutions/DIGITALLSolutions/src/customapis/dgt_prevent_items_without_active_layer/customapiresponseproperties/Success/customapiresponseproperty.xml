@@ -1,0 +1,11 @@
+<customapiresponseproperty uniquename="Success">
+  <description default="Constraint Success: Prevent items without active layer">
+    <label description="Constraint Success: Prevent items without active layer" languagecode="1033" />
+  </description>
+  <displayname default="Constraint Success: Prevent items without active layer">
+    <label description="Constraint Success: Prevent items without active layer" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>Constraint Success: Prevent items without active layer</name>
+  <type>0</type>
+</customapiresponseproperty>
