@@ -1,11 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using D365.Extension.Core;
 using D365.Extension.Model;
 using D365.Extension.Registration;
 using dgt.solutions.Plugins.Helper;
-using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Query;
@@ -19,13 +17,10 @@ namespace dgt.solutions.Plugins.CarrierConstraints
 
         protected override bool RunCheck(Guid solutionId)
         {
-            var components = GetSolutionComponents(new List<ConditionExpression>
-            {
-                new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, solutionId),
-                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.Equal,
-                    SolutionComponent.Options.ComponentType.Entity)
-            });
+            Delegate.TracingService.Trace("loading components");
+            var components = GetSolutionComponents(solutionId);
 
+            Delegate.TracingService.Trace("loading entities");
             var request = new RetrieveAllEntitiesRequest
             {
                 EntityFilters = EntityFilters.Entity
@@ -41,29 +36,42 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                 var entity = entities.Single(e => e.MetadataId == component.ObjectId);
                 if (entity.IsManaged.GetValueOrDefault())
                 {
+                    Delegate.TracingService.Trace("{componentId}: failed", component.ObjectId);
                     WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, "Entity", component.ObjectId.GetValueOrDefault(), $"Failed - Managed table contains all assets: {entity.LogicalName}");
                     passed = false;
                 }
                 else
                 {
+                    Delegate.TracingService.Trace("{componentId}: passed", component.ObjectId);
                     WorkbenchHistoryLogger?.LogDebug($"Table: {entity.LogicalName}", ConstraintType, "Entity", component.ObjectId.GetValueOrDefault());
                 }
             }
 
-            if (!passed) return false;
+            if (!passed)
+            {
+                Delegate.TracingService.Trace("constraint failed");
+                return false;
+            }
 
+            Delegate.TracingService.Trace("constraint passed");
             WorkbenchHistoryLogger?.LogConstraintSuccess(ConstraintType);
             return true;
         }
 
-        private List<SolutionComponent> GetSolutionComponents(IEnumerable<ConditionExpression> conditions)
+        private List<SolutionComponent> GetSolutionComponents(Guid solutionId)
         {
             var qe = new QueryExpression(SolutionComponent.EntityLogicalName)
             {
                 NoLock = true,
-                ColumnSet = new ColumnSet(true)
+                ColumnSet = new ColumnSet(true),
+                Criteria = new FilterExpression
+                {
+                    Conditions = {
+                        new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, solutionId),
+                        new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.Equal, SolutionComponent.Options.ComponentType.Entity),
+                    }
+                }
             };
-            qe.Criteria.Conditions.AddRange(conditions);
             qe.Orders.Add(new OrderExpression
             {
                 AttributeName = SolutionComponent.LogicalNames.SolutionComponentId,
