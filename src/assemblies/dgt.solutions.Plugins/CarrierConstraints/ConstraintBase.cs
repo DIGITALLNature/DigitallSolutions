@@ -25,8 +25,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();
-            WorkbenchHistoryLogger?.LogDebug(new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtTypeSet.Constraint),
-                $"checking constraint '{ConstraintType}'");
+            WorkbenchHistoryLogger?.LogDebug($"checking constraint '{ConstraintType}'");
 
             Delegate.TracingService.Trace("run check for solution {0}", solutionReference?.Id);
             var constraintCheckLog = RunCheck(solutionReference.Id);
@@ -36,8 +35,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             SetOutputParameter(DgtPreventFlowsResponse.OutParameters.ConstraintLog_PreventFlows, constraintCheckLogJson);
 
             stopwatch.Stop();
-            WorkbenchHistoryLogger?.LogDebug(new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtTypeSet.Constraint),
-                $"finished constraint '{ConstraintType}' in {stopwatch.ElapsedMilliseconds} ms");
+            WorkbenchHistoryLogger?.LogDebug($"finished constraint '{ConstraintType}' in {stopwatch.ElapsedMilliseconds} ms");
 
             return ExecutionResult.Ok;
         }

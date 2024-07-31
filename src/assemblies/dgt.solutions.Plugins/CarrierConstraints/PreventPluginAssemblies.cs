@@ -31,6 +31,8 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             });
 
             if (components.Any())
+            {
+                components.ForEach(c => WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, "PluginAssembly", c.ObjectId));
                 return new ConstraintCheckLogEntry
                 {
                     ConstraintType = "Prevent PreventPluginAssemblys",
@@ -41,6 +43,9 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                         ComponentType = GetComponentTypeSetLabel(c.ComponentType.Value)
                     }).ToList()
                 };
+            }
+
+            WorkbenchHistoryLogger?.LogConstraintSuccess(ConstraintType);
             return new ConstraintCheckLogEntry
             {
                 ConstraintType = "Prevent PreventPluginAssemblys"

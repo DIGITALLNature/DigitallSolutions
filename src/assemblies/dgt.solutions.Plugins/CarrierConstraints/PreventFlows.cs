@@ -20,7 +20,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             if (components.Any())
             {
                 Delegate.TracingService.Trace("constraint violated");
-                components.ForEach(c => WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, c.ObjectId));
+                components.ForEach(c => WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, "Workflow", c.ObjectId, $"Failed - Flow shall not be merged: {c.ObjectId}"));
                 return new ConstraintCheckLogEntry
                 {
                     ConstraintType = "Prevent Flows",

@@ -4,6 +4,7 @@ using System.Linq;
 using D365.Extension.Model;
 using D365.Extension.Registration;
 using dgt.solutions.Plugins.Contract;
+using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Query;
@@ -56,13 +57,21 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                 if (!layers.Any()) continue;
 
                 var first = layers.First();
+                var componentType = GetComponentTypeSetLabel(component.ComponentType.Value);
                 if (first.MsdynSolutionname != "Active")
+                {
+                    WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, componentType, component.ObjectId, $"Top Solution: {first.MsdynSolutionname}");
                     failed.Add(new ComponentInfo
                     {
                         ComponentId = component.ObjectId.GetValueOrDefault(),
                         Hint = $"Top Solution: {first.MsdynSolutionname}",
-                        ComponentType = GetComponentTypeSetLabel(component.ComponentType.Value),
+                        ComponentType = componentType,
                     });
+                }
+                else
+                {
+                    WorkbenchHistoryLogger?.LogDebug("Top Solution: Active", ConstraintType, componentType, component.ObjectId);
+                }
             }
 
             if (failed.Any())
@@ -73,6 +82,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                     ErrorComponents = failed
                 };
 
+            WorkbenchHistoryLogger?.LogConstraintSuccess(ConstraintType);
             return new ConstraintCheckLogEntry
             {
                 ConstraintType = "Prevent ItemsWithouthActiveLayer",

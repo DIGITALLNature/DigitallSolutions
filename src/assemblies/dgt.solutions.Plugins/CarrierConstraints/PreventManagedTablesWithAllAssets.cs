@@ -40,11 +40,18 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             {
                 var entity = entities.Single(e => e.MetadataId == component.ObjectId);
                 if (entity.IsManaged.GetValueOrDefault())
+                {
+                    WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, "Entity", component.ObjectId.GetValueOrDefault(), $"Failed - Managed table contains all assets: {entity.LogicalName}");
                     failedEntities.Add(new ComponentInfo
                     {
                         ComponentId = component.ObjectId.GetValueOrDefault(), ComponentType = "Entity",
                         Hint = entity.LogicalName
                     });
+                }
+                else
+                {
+                    WorkbenchHistoryLogger?.LogDebug($"Table: {entity.LogicalName}", ConstraintType, "Entity", component.ObjectId.GetValueOrDefault());
+                }
             }
 
             if (failedEntities.Any())
@@ -55,6 +62,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                     ErrorComponents = failedEntities
                 };
 
+            WorkbenchHistoryLogger?.LogConstraintSuccess(ConstraintType);
             return new ConstraintCheckLogEntry
             {
                 ConstraintType = "Prevent ManagedEntitiesWithAllAssets"
