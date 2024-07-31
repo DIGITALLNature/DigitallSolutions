@@ -41,7 +41,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             Delegate.TracingService.Trace("running checks for solution {0}", solutionId);
             var checksPassed = Check(carrier, solutionId, workbenchHistoryReference);
 
-            Delegate.TracingService.Trace("setting output parameters");
+            Delegate.TracingService.Trace($"setting success status to {checksPassed}");
             SetOutputParameter(DgtRunCarrierConstraintsCheckResponse.OutParameters.CarrierConstraintsSuccessStatus, checksPassed);
 
             Delegate.TracingService.Trace("finished {0}", nameof(RunCarrierConstraintsCheck));
@@ -91,7 +91,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             }
             else
             {
-                var hasFailed = false;
+                var passed = true;
                 Delegate.TracingService.Trace("running constraints");
                 foreach (var customApi in customApiResponse.Entities.Cast<CustomAPI>())
                 {
@@ -107,11 +107,11 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                         },
                     });
 
-                    Delegate.TracingService.Trace("parsing constraint check response");
-                    constraintCheckResponse.Results.TryGetValue("Log", out var constraintLog);
-                    hasFailed = hasFailed && constraintLog != default;
+                    constraintCheckResponse.Results.TryGetValue("Success", out bool success);
+                    Delegate.TracingService.Trace($"setting output success to {success}");
+                    passed = passed && success;
                 }
-                return hasFailed;
+                return passed;
             }
         }
     }
