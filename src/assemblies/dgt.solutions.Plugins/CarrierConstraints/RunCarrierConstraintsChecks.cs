@@ -39,21 +39,20 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             }
 
             Delegate.TracingService.Trace("running checks for solution {0}", solutionId);
-            var constraintCheckLog = Check(carrier, solutionId, workbenchHistoryReference).ToList();
-
-            Delegate.TracingService.Trace("checking constraints result");
-            var constraintCheckLogJson = new SerializerService().JsonSerialize<List<ConstraintCheckLogEntry>>(constraintCheckLog);
+            var checksPassed = Check(carrier, solutionId, workbenchHistoryReference);
 
             Delegate.TracingService.Trace("setting output parameters");
-            SetOutputParameter(DgtRunCarrierConstraintsCheckResponse.OutParameters.CarrierConstraintsSuccessStatus, constraintCheckLog.All(cl => cl.Succeded));
-            SetOutputParameter(DgtRunCarrierConstraintsCheckResponse.OutParameters.CarrierConstraintsLog, constraintCheckLogJson);
+            SetOutputParameter(DgtRunCarrierConstraintsCheckResponse.OutParameters.CarrierConstraintsSuccessStatus, checksPassed);
 
             Delegate.TracingService.Trace("finished {0}", nameof(RunCarrierConstraintsCheck));
             return ExecutionResult.Ok;
         }
 
-        internal IEnumerable<ConstraintCheckLogEntry> Check(DgtCarrier carrier, Guid solutionId, EntityReference workbenchHistoryReference)
+        internal bool Check(DgtCarrier carrier, Guid solutionId, EntityReference workbenchHistoryReference)
         {
+            var workbenchHistoryLogger = new WorkbenchHistoryLogger(OrganizationService(), new DgtWorkbenchHistory { Id = workbenchHistoryReference.Id });
+            workbenchHistoryLogger.LogDebug("start checking constraints");
+
             Delegate.TracingService.Trace("preparing constraints query");
             var customApiQuery = new QueryExpression(CustomAPI.EntityLogicalName)
             {
@@ -87,13 +86,12 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             if (!customApiResponse.Entities.Any())
             {
                 Delegate.TracingService.Trace("no constraints defined");
-                yield return new ConstraintCheckLogEntry
-                {
-                    ConstraintType = "No constraints defined"
-                };
+                workbenchHistoryLogger.LogDebug("finished constraints - no constraints defined");
+                return true;
             }
             else
             {
+                var hasFailed = false;
                 Delegate.TracingService.Trace("running constraints");
                 foreach (var customApi in customApiResponse.Entities.Cast<CustomAPI>())
                 {
@@ -111,8 +109,9 @@ namespace dgt.solutions.Plugins.CarrierConstraints
 
                     Delegate.TracingService.Trace("parsing constraint check response");
                     constraintCheckResponse.Results.TryGetValue("Log", out var constraintLog);
-                    yield return new SerializerService().JsonDeserialize<ConstraintCheckLogEntry>(constraintLog as string);
+                    hasFailed = hasFailed && constraintLog != default;
                 }
+                return hasFailed;
             }
         }
     }

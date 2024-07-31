@@ -177,19 +177,19 @@ namespace D365.Extension.Model
 		#region OutParameters
 		public struct OutParameters
 		{
-			public const string ConstraintLog_PreventFlows = "Log";
+			public const string ConstraintSuccess_PreventFlows = "Success";
 		}
 		#endregion
 
-		public string ConstraintLog_PreventFlows
+		public bool ConstraintSuccess_PreventFlows
 		{
 			get
 			{
-				if(base.Results.Contains("Log"))
+				if(base.Results.Contains("Success"))
 				{
-					return (string)base.Results["Log"];
+					return (bool)base.Results["Success"];
 				}
-				return default(string);
+				return default(bool);
 			}
 		}
 
@@ -255,19 +255,19 @@ namespace D365.Extension.Model
 		#region OutParameters
 		public struct OutParameters
 		{
-			public const string ConstraintLog_PreventItemsWithoutActiveLayer = "Log";
+			public const string ConstraintSuccess_PreventItemsWithoutActiveLayer = "Success";
 		}
 		#endregion
 
-		public string ConstraintLog_PreventItemsWithoutActiveLayer
+		public bool ConstraintSuccess_PreventItemsWithoutActiveLayer
 		{
 			get
 			{
-				if(base.Results.Contains("Log"))
+				if(base.Results.Contains("Success"))
 				{
-					return (string)base.Results["Log"];
+					return (bool)base.Results["Success"];
 				}
-				return default(string);
+				return default(bool);
 			}
 		}
 
@@ -333,19 +333,19 @@ namespace D365.Extension.Model
 		#region OutParameters
 		public struct OutParameters
 		{
-			public const string ConstraintLog_PreventManagedTablesWithAllAssets = "Log";
+			public const string ConstraintSuccess_PreventManagedTablesWithAllAssets = "Success";
 		}
 		#endregion
 
-		public string ConstraintLog_PreventManagedTablesWithAllAssets
+		public bool ConstraintSuccess_PreventManagedTablesWithAllAssets
 		{
 			get
 			{
-				if(base.Results.Contains("Log"))
+				if(base.Results.Contains("Success"))
 				{
-					return (string)base.Results["Log"];
+					return (bool)base.Results["Success"];
 				}
-				return default(string);
+				return default(bool);
 			}
 		}
 
@@ -411,19 +411,19 @@ namespace D365.Extension.Model
 		#region OutParameters
 		public struct OutParameters
 		{
-			public const string ConstraintLog_PreventPluginAssemblies = "Log";
+			public const string ConstraintSuccess_PreventPluginAssemblies = "Success";
 		}
 		#endregion
 
-		public string ConstraintLog_PreventPluginAssemblies
+		public bool ConstraintSuccess_PreventPluginAssemblies
 		{
 			get
 			{
-				if(base.Results.Contains("Log"))
+				if(base.Results.Contains("Success"))
 				{
-					return (string)base.Results["Log"];
+					return (bool)base.Results["Success"];
 				}
-				return default(string);
+				return default(bool);
 			}
 		}
 
@@ -506,22 +506,9 @@ namespace D365.Extension.Model
 		#region OutParameters
 		public struct OutParameters
 		{
-			public const string CarrierConstraintsLog = "Log";
 			public const string CarrierConstraintsSuccessStatus = "Success";
 		}
 		#endregion
-
-		public string CarrierConstraintsLog
-		{
-			get
-			{
-				if(base.Results.Contains("Log"))
-				{
-					return (string)base.Results["Log"];
-				}
-				return default(string);
-			}
-		}
 
 		public bool CarrierConstraintsSuccessStatus
 		{

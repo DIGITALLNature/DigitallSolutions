@@ -13,7 +13,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
     {
         protected override string ConstraintType => "Prevent Flows";
 
-        protected override ConstraintCheckLogEntry RunCheck(Guid solutionId)
+        protected override bool RunCheck(Guid solutionId)
         {
             var components = GetSolutionFlowComponents(solutionId);
 
@@ -21,25 +21,14 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             {
                 Delegate.TracingService.Trace("constraint violated");
                 components.ForEach(c => WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, "Workflow", c.ObjectId, $"Failed - Flow shall not be merged: {c.ObjectId}"));
-                return new ConstraintCheckLogEntry
-                {
-                    ConstraintType = "Prevent Flows",
-                    Succeded = false,
-                    ErrorComponents = components.Select(c => new ComponentInfo
-                        { ComponentId = c.ObjectId.GetValueOrDefault(), ComponentType = "Flow" }).ToList()
-                };
+                return false;
             }
             else
             {
                 Delegate.TracingService.Trace("constraint passed");
+                WorkbenchHistoryLogger?.LogConstraintSuccess(ConstraintType);
+                return true;
             }
-
-            WorkbenchHistoryLogger?.LogConstraintSuccess(ConstraintType);
-            return new ConstraintCheckLogEntry
-            {
-                ConstraintType = "Prevent Flows",
-                Succeded = true
-            };
         }
 
         private List<SolutionComponent> GetSolutionFlowComponents(Guid solutionId)

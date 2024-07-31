@@ -24,7 +24,7 @@ namespace dgt.solutions.Plugins
                 DgtSubtypeTxt = subType,
                 DgtMessage = message,
                 DgtTypeSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtTypeSet.Log),
-                DgtLogLevelSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtLogLevelSet.Debug),
+                DgtLogLevelSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtLogLevelSet._3Debug),
                 DgtWorkbenchHistoryId = WorkbenchHistory.ToEntityReference(),
                 DgtObjectidTxt = objectId.ToString(),
             });
@@ -47,7 +47,7 @@ namespace dgt.solutions.Plugins
         {
             _orgService.Create(new DgtWorkbenchHistoryLog
             {
-                DgtLogLevelSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtLogLevelSet.Error),
+                DgtLogLevelSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtLogLevelSet._0Error),
                 DgtComponentType = componentType,
                 DgtMessage = message ?? "Failed",
                 DgtTypeSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtTypeSet.Constraint),
@@ -61,7 +61,7 @@ namespace dgt.solutions.Plugins
         {
             _orgService.Create(new DgtWorkbenchHistoryLog
             {
-                DgtLogLevelSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtLogLevelSet.Information),
+                DgtLogLevelSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtLogLevelSet._2Information),
                 DgtComponentType = "workflow",
                 DgtMessage = "Succeeded",
                 DgtTypeSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtTypeSet.Constraint),

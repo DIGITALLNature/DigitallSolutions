@@ -2,7 +2,6 @@ using System;
 using System.Diagnostics;
 using D365.Extension.Core;
 using D365.Extension.Model;
-using dgt.solutions.Plugins.Contract;
 using Microsoft.Xrm.Sdk;
 
 namespace dgt.solutions.Plugins.CarrierConstraints
@@ -28,18 +27,17 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             WorkbenchHistoryLogger?.LogDebug($"checking constraint '{ConstraintType}'");
 
             Delegate.TracingService.Trace("run check for solution {0}", solutionReference?.Id);
-            var constraintCheckLog = RunCheck(solutionReference.Id);
-
-            Delegate.TracingService.Trace("parsing output");
-            var constraintCheckLogJson = new SerializerService().JsonSerialize<ConstraintCheckLogEntry>(constraintCheckLog);
-            SetOutputParameter(DgtPreventFlowsResponse.OutParameters.ConstraintLog_PreventFlows, constraintCheckLogJson);
+            var passed = RunCheck(solutionReference.Id);
 
             stopwatch.Stop();
             WorkbenchHistoryLogger?.LogDebug($"finished constraint '{ConstraintType}' in {stopwatch.ElapsedMilliseconds} ms");
 
+            Delegate.TracingService.Trace("setting output parameters");
+            SetOutputParameter(DgtPreventFlowsResponse.OutParameters.ConstraintSuccess_PreventFlows, passed);
+
             return ExecutionResult.Ok;
         }
 
-        protected abstract ConstraintCheckLogEntry RunCheck(Guid solutionId);
+        protected abstract bool RunCheck(Guid solutionId);
     }
 }

@@ -18,7 +18,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
 
         protected override string ConstraintType => "Prevent ItemsWithouthActiveLayer";
 
-        protected override ConstraintCheckLogEntry RunCheck(Guid solutionId)
+        protected override bool RunCheck(Guid solutionId)
         {
             _componentTypes = ((RetrieveAttributeResponse)ElevatedOrganizationService.Execute(
                     new RetrieveAttributeRequest
@@ -29,7 +29,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             return CheckForItemsWithouthActiveLayer(solutionId);
         }
 
-        private ConstraintCheckLogEntry CheckForItemsWithouthActiveLayer(Guid solutionId)
+        private bool CheckForItemsWithouthActiveLayer(Guid solutionId)
         {
             var componentsTypes = new List<int>
             {
@@ -74,20 +74,10 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                 }
             }
 
-            if (failed.Any())
-                return new ConstraintCheckLogEntry
-                {
-                    ConstraintType = "Prevent ItemsWithouthActiveLayer",
-                    Succeded = false,
-                    ErrorComponents = failed
-                };
+            if (failed.Any()) return false;
 
             WorkbenchHistoryLogger?.LogConstraintSuccess(ConstraintType);
-            return new ConstraintCheckLogEntry
-            {
-                ConstraintType = "Prevent ItemsWithouthActiveLayer",
-                Succeded = true
-            };
+            return true;
         }
 
         protected List<MsdynComponentlayer> GetSolutionLayers(SolutionComponent component)

@@ -16,7 +16,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
 
         protected override string ConstraintType => "Prevent PreventPluginAssemblys";
 
-        protected override ConstraintCheckLogEntry RunCheck(Guid originId)
+        protected override bool RunCheck(Guid originId)
         {
             var componentsTypes = new List<int>
             {
@@ -33,23 +33,11 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             if (components.Any())
             {
                 components.ForEach(c => WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, "PluginAssembly", c.ObjectId));
-                return new ConstraintCheckLogEntry
-                {
-                    ConstraintType = "Prevent PreventPluginAssemblys",
-                    Succeded = false,
-                    ErrorComponents = components.Select(c => new ComponentInfo
-                    {
-                        ComponentId = c.ObjectId.GetValueOrDefault(),
-                        ComponentType = GetComponentTypeSetLabel(c.ComponentType.Value)
-                    }).ToList()
-                };
+                return false;
             }
 
             WorkbenchHistoryLogger?.LogConstraintSuccess(ConstraintType);
-            return new ConstraintCheckLogEntry
-            {
-                ConstraintType = "Prevent PreventPluginAssemblys"
-            };
+            return true;
         }
 
         private List<SolutionComponent> GetSolutionComponents(IEnumerable<ConditionExpression> conditions)

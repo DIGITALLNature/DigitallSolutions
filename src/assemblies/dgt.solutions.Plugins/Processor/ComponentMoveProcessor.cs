@@ -51,7 +51,6 @@ namespace dgt.solutions.Plugins.Processor
                     ConstraintWorkbenchHistory_RunCarrierConstraintsCheck = workbenchHistoryLogger.WorkbenchHistory.ToEntityReference(),
                 };
                 var constraintsCheckResponse = (DgtRunCarrierConstraintsCheckResponse)_executor.ElevatedOrganizationService.Execute(constraintsCheckRequest);
-                constraintCheckLog = constraintsCheckResponse.CarrierConstraintsLog;
 
                 if (!constraintsCheckResponse.CarrierConstraintsSuccessStatus)
                 {

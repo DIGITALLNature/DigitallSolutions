@@ -17,7 +17,7 @@ namespace dgt.solutions.Plugins.CarrierConstraints
     {
         protected override string ConstraintType => "Prevent ManagedEntitiesWithAllAssets";
 
-        protected override ConstraintCheckLogEntry RunCheck(Guid solutionId)
+        protected override bool RunCheck(Guid solutionId)
         {
             var components = GetSolutionComponents(new List<ConditionExpression>
             {
@@ -44,7 +44,8 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                     WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, "Entity", component.ObjectId.GetValueOrDefault(), $"Failed - Managed table contains all assets: {entity.LogicalName}");
                     failedEntities.Add(new ComponentInfo
                     {
-                        ComponentId = component.ObjectId.GetValueOrDefault(), ComponentType = "Entity",
+                        ComponentId = component.ObjectId.GetValueOrDefault(),
+                        ComponentType = "Entity",
                         Hint = entity.LogicalName
                     });
                 }
@@ -54,19 +55,10 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                 }
             }
 
-            if (failedEntities.Any())
-                return new ConstraintCheckLogEntry
-                {
-                    ConstraintType = "Prevent ManagedEntitiesWithAllAssets",
-                    Succeded = false,
-                    ErrorComponents = failedEntities
-                };
+            if (failedEntities.Any()) return false;
 
             WorkbenchHistoryLogger?.LogConstraintSuccess(ConstraintType);
-            return new ConstraintCheckLogEntry
-            {
-                ConstraintType = "Prevent ManagedEntitiesWithAllAssets"
-            };
+            return true;
         }
 
         private List<SolutionComponent> GetSolutionComponents(IEnumerable<ConditionExpression> conditions)

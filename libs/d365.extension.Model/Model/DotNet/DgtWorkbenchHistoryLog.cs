@@ -498,10 +498,10 @@ namespace D365.Extension.Model
 		{
 			    public struct DgtLogLevelSet
                 {
-					public const int Error = 283510000;
-					public const int Warning = 283510001;
-					public const int Information = 283510002;
-					public const int Debug = 283510003;
+					public const int _0Error = 283510000;
+					public const int _1Warning = 283510001;
+					public const int _2Information = 283510002;
+					public const int _3Debug = 283510003;
                 }
 			    public struct DgtTypeSet
                 {
