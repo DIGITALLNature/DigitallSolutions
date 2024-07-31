@@ -17,7 +17,7 @@ namespace dgt.solutions.Plugins
     public class WorkbenchCreator : Executor
     {
         private const string SolutionConceptPublisher = "dgt_solution_concept-publisher";
-        
+
         protected override ExecutionResult Execute()
         {
             var workbench = Entity.ToEntity<DgtWorkbench>();

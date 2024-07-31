@@ -99,7 +99,7 @@ namespace DIGITALLSolutions.Package
         /// <returns></returns>
         public override bool AfterPrimaryImport()
         {
-            if (!_solutionUpgrades.TryGetValue("DIGITALLSolutions", out var versions) 
+            if (!_solutionUpgrades.TryGetValue("DIGITALLSolutions", out var versions)
                 || !Version.TryParse(versions.oldVersion, out Version oldVersion)
                 || !Version.TryParse(versions.newVersion, out Version newVersion))
             {

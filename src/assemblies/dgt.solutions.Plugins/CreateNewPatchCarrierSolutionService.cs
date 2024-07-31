@@ -14,7 +14,7 @@ namespace dgt.solutions.Plugins
     public class CreateNewPatchCarrierSolutionService : Executor
     {
         private const string SolutionConceptPatchPattern = "dgt_solution_concept-patch_pattern";
-        
+
         protected override ExecutionResult Execute()
         {
             var lookup = new SolutionLookup(this);

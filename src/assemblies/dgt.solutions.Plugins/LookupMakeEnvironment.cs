@@ -10,7 +10,7 @@ namespace dgt.solutions.Plugins
     {
         private const string SolutionConceptMakeEnvironmentId = "dgt_make_enviroment_id";
 
-       
+
         protected override ExecutionResult Execute()
         {
             var makeEnvironmentId = EnvironmentVariablesService.GetConfig(SolutionConceptMakeEnvironmentId);

@@ -111,7 +111,7 @@ namespace dgt.solutions.Plugins.Processor
                 DgtCarrierVersion = carrier?.DgtSolutionversion,
                 Statuscode = new OptionSetValue(DgtWorkbenchHistory.Options.Statuscode.Failure),
                 Statecode = new OptionSetValue(DgtWorkbenchHistory.Options.Statecode.Inactive),
-            });;
+            });
         }
 
         public string FinishHandshake(DgtCarrier carrier)
