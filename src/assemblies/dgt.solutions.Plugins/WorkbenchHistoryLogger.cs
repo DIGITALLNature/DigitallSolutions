@@ -62,7 +62,7 @@ namespace dgt.solutions.Plugins
             _orgService.Create(new DgtWorkbenchHistoryLog
             {
                 DgtLogLevelSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtLogLevelSet._2Information),
-                DgtComponentType = "workflow",
+                DgtComponentType = constraintType,
                 DgtMessage = "Succeeded",
                 DgtTypeSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtTypeSet.Constraint),
                 DgtSubtypeTxt = constraintType,
