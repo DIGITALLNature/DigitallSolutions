@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.24064.190" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.24093.200" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.24093.200" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.24093.00200">
   <SolutionManifest>
     <UniqueName>DIGITALLSolutions</UniqueName>
     <LocalizedNames>
@@ -11,9 +11,11 @@
     <Publisher>
       <UniqueName>digitall</UniqueName>
       <LocalizedNames>
+        <LocalizedName description="DIGITALL" languagecode="1031" />
         <LocalizedName description="DIGITALL" languagecode="1033" />
       </LocalizedNames>
       <Descriptions>
+        <Description description="We are DIGITALL – a digital leader born from two technology and business driven consulting companies with more than 20 years of success and experiences on the global market. By joining forces, we deliver the next generation Digital Transformation &amp; Digital Cloud Experience to enterprises. We digitalize and protect customers, employees and data. Our customers rely on us to transform their core business processes in a secure way in the digital world. And we achieve this by leveraging best-in-class partner technologies and own innovative solutions, implemented by experienced teams. In this way, we empower our customers to be among the leaders in their industry and scale globally.  visit us on: https://digitall.com follow us on: https://www.linkedin.com/company/digitall-gmbh" languagecode="1031" />
         <Description description="We are DIGITALL – a digital leader born from two technology and business driven consulting companies with more than 20 years of success and experiences on the global market. By joining forces, we deliver the next generation Digital Transformation &amp; Digital Cloud Experience to enterprises.&#xA;We digitalize and protect customers, employees and data. Our customers rely on us to transform their core business processes in a secure way in the digital world.&#xA;And we achieve this by leveraging best-in-class partner technologies and own innovative solutions, implemented by experienced teams. In this way, we empower our customers to be among the leaders in their industry and scale globally.&#xA;&#xA;visit us on: https://digitall.com&#xA;follow us on: https://www.linkedin.com/company/digitall-gmbh" languagecode="1033" />
       </Descriptions>
       <EMailAddress>info@digitall.com</EMailAddress>
@@ -129,39 +131,39 @@
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
-        <Required type="1" schemaName="customapi" displayName="Custom API" solution="msft_CustomAPIFramework (1.0.0.20)" />
+        <Required type="1" schemaName="customapi" displayName="Custom API" solution="msft_CustomAPIFramework (1.0.0.24)" />
         <Dependent type="1" schemaName="customapi" displayName="Custom API" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="181" schemaName="NonRelational Data Provider" displayName="NonRelational Data Provider" solution="NonRelationalDataProvider (9.1.0.203)" id="{1d9bde74-9ebd-4da9-8ff5-aa74945b9f74}" />
+        <Required type="181" schemaName="NonRelational Data Provider" displayName="NonRelational Data Provider" solution="NonRelationalDataProvider (9.1.0.226)" id="{1d9bde74-9ebd-4da9-8ff5-aa74945b9f74}" />
         <Dependent type="1" schemaName="dgt_workbench_history_log" displayName="Workbench History Log" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="183" schemaName="NonRelational Data Provider" displayName="NonRelational Data Provider" solution="NonRelationalDataProvider (9.1.0.203)" id="{19897b6e-b2c2-461c-8f32-5a2413028030}" />
+        <Required type="183" schemaName="NonRelational Data Provider" displayName="NonRelational Data Provider" solution="NonRelationalDataProvider (9.1.0.226)" id="{19897b6e-b2c2-461c-8f32-5a2413028030}" />
         <Dependent type="1" schemaName="dgt_workbench_history_log" displayName="Workbench History Log" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="2" schemaName="name" displayName="Name" parentSchemaName="customapi" parentDisplayName="Custom API" solution="msft_CustomAPIFramework (1.0.0.20)" />
+        <Required type="2" schemaName="name" displayName="Name" parentSchemaName="customapi" parentDisplayName="Custom API" solution="msft_CustomAPIFramework (1.0.0.24)" />
         <Dependent type="10" schemaName="dgt_carrier_constraint_customapi_id_customapi" displayName="dgt_carrier_constraint_customapi_id_customapi" parentSchemaName="customapi" parentDisplayName="Custom API" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2406.4015)" />
+        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2409.3018)" />
         <Dependent type="60" displayName="Information" parentDisplayName="Workbench History" id="{40b57992-4586-4a8c-86bf-79ebb4ee5e80}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2406.4015)" />
+        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2409.3018)" />
         <Dependent type="60" displayName="Information" parentDisplayName="Workbench" id="{552531fa-a975-40f9-90b6-5d3134de778b}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2406.4015)" />
+        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2409.3018)" />
         <Dependent type="60" displayName="Information" parentDisplayName="Carrier" id="{f4c77d5f-4b0e-46b1-be06-b1a9a8662042}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2406.4015)" />
+        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2409.3018)" />
         <Dependent type="68" id="{cad44041-466a-4d67-856f-343c2bd77538}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="SettingDefinition" displayName="appcopilotenabled" solution="msdyn_AppCopilotAppInfraSettings (9.1.24.240618029)" id.uniquename="appcopilotenabled" />
+        <Required type="SettingDefinition" displayName="appcopilotenabled" solution="msdyn_AppCopilotAppInfraSettings (9.1.2024085.240828052)" id.uniquename="appcopilotenabled" />
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=appcopilotenabled" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="appcopilotenabled" />
       </MissingDependency>
       <MissingDependency>
@@ -169,7 +171,7 @@
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=FluentThemingPreview" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="FluentThemingPreview" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="SettingDefinition" displayName="ServerMode" solution="SettingDefinitionsData (9.2.2405.2405223)" id.uniquename="ServerMode" />
+        <Required type="SettingDefinition" displayName="ServerMode" solution="SettingDefinitionsData (9.2.2409.2409111)" id.uniquename="ServerMode" />
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=dgt_DigitallSolutions,settingdefinitionid.uniquename=ServerMode" id.parentappmoduleid.uniquename="dgt_DigitallSolutions" id.settingdefinitionid.uniquename="ServerMode" />
       </MissingDependency>
       <MissingDependency>
