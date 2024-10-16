@@ -21,11 +21,11 @@ namespace dgt.solutions.Plugins.CarrierConstraints
             var passed = true;
             foreach (var component in components)
             {
-                Delegate.TracingService.Trace("{componentId}: loading layers for component", component.Id);
+                Delegate.TracingService.Trace("{0}: loading layers for component", component.Id);
                 var layers = GetSolutionLayers(component);
                 if (!layers.Any())
                 {
-                    Delegate.TracingService.Trace("{componentId}: no layers found", component.Id);
+                    Delegate.TracingService.Trace("{0}: no layers found", component.Id);
                     continue;
                 }
 
@@ -33,13 +33,13 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                 component.FormattedValues.TryGetValue(SolutionComponent.LogicalNames.ComponentType, out var componentType);
                 if (first.MsdynSolutionname != "Active")
                 {
-                    Delegate.TracingService.Trace("{componentId}: failed - top solution '{solution}'", component.Id, first.MsdynSolutionname);
+                    Delegate.TracingService.Trace("{0}: failed - top solution '{1}'", component.Id, first.MsdynSolutionname);
                     WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, componentType, component.ObjectId, $"Top Solution: {first.MsdynSolutionname}");
                     passed = false;
                 }
                 else
                 {
-                    Delegate.TracingService.Trace("{componentId}: passed", component.Id);
+                    Delegate.TracingService.Trace("{0}: passed", component.Id);
                     WorkbenchHistoryLogger?.LogDebug("Top Solution: Active", ConstraintType, componentType, component.ObjectId);
                 }
             }

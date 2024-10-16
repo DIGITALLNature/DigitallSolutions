@@ -36,13 +36,13 @@ namespace dgt.solutions.Plugins.CarrierConstraints
                 var entity = entities.Single(e => e.MetadataId == component.ObjectId);
                 if (entity.IsManaged.GetValueOrDefault())
                 {
-                    Delegate.TracingService.Trace("{componentId}: failed", component.ObjectId);
+                    Delegate.TracingService.Trace("{0}: failed", component.ObjectId);
                     WorkbenchHistoryLogger?.LogConstraintViolation(ConstraintType, "Entity", component.ObjectId.GetValueOrDefault(), $"Failed - Managed table contains all assets: {entity.LogicalName}");
                     passed = false;
                 }
                 else
                 {
-                    Delegate.TracingService.Trace("{componentId}: passed", component.ObjectId);
+                    Delegate.TracingService.Trace("{0}: passed", component.ObjectId);
                     WorkbenchHistoryLogger?.LogDebug($"Table: {entity.LogicalName}", ConstraintType, "Entity", component.ObjectId.GetValueOrDefault());
                 }
             }
