@@ -43,6 +43,20 @@ namespace dgt.solutions.Plugins
             });
         }
 
+        public void LogComponentError(SolutionComponent component)
+        {
+            component.FormattedValues.TryGetValue(SolutionComponent.LogicalNames.ComponentType, out var componentType);
+            _orgService.Create(new DgtWorkbenchHistoryLog
+            {
+                DgtComponentType = componentType ?? $"ComponentType: {component.ComponentType}",
+                DgtMessage = component.ObjectId.GetValueOrDefault().ToString(),
+                DgtTypeSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtTypeSet.ComponentMove),
+                DgtWorkbenchHistoryId = WorkbenchHistory.ToEntityReference(),
+                DgtObjectidTxt = component.ObjectId.GetValueOrDefault().ToString(),
+                DgtLogLevelSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtLogLevelSet._0Error),
+            });
+        }
+
         internal void LogConstraintViolation(string constraintType, string componentType, Guid? objectId, string message = default)
         {
             _orgService.Create(new DgtWorkbenchHistoryLog

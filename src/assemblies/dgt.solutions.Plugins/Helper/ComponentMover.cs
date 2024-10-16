@@ -59,17 +59,25 @@ namespace dgt.solutions.Plugins.Helper
         {
             foreach (var component in components)
             {
-                _executor.ElevatedOrganizationService.Execute(new AddSolutionComponentRequest
+                try
                 {
-                    AddRequiredComponents = false,
-                    ComponentId = component.ObjectId.GetValueOrDefault(),
-                    ComponentType = component.ComponentType.Value,
-                    SolutionUniqueName = destinationName,
-                    DoNotIncludeSubcomponents =
-                        component.RootComponentBehavior?.Value == SolutionComponent.Options.RootComponentBehavior.DoNotIncludeSubcomponents ||
-                        component.RootComponentBehavior?.Value == SolutionComponent.Options.RootComponentBehavior.IncludeAsShellOnly
-                });
-                _workbenchHistoryLogger?.LogComponent(component);
+                    _executor.ElevatedOrganizationService.Execute(new AddSolutionComponentRequest
+                    {
+                        AddRequiredComponents = false,
+                        ComponentId = component.ObjectId.GetValueOrDefault(),
+                        ComponentType = component.ComponentType.Value,
+                        SolutionUniqueName = destinationName,
+                        DoNotIncludeSubcomponents =
+                            component.RootComponentBehavior?.Value == SolutionComponent.Options.RootComponentBehavior.DoNotIncludeSubcomponents ||
+                            component.RootComponentBehavior?.Value == SolutionComponent.Options.RootComponentBehavior.IncludeAsShellOnly
+                    });
+                    _workbenchHistoryLogger?.LogComponent(component);
+                }
+                catch (Exception)
+                {
+                    _workbenchHistoryLogger?.LogComponentError(component);
+                    throw;
+                }
             }
         }
     }
