@@ -4,6 +4,8 @@ using System.Linq;
 using D365.Extension.Core;
 using D365.Extension.Model;
 using Microsoft.Crm.Sdk.Messages;
+using Microsoft.Xrm.Sdk.Messages;
+using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace dgt.solutions.Plugins.Helper
@@ -61,6 +63,22 @@ namespace dgt.solutions.Plugins.Helper
             {
                 try
                 {
+                    if (component.ComponentType?.Value == SolutionComponent.Options.ComponentType.Entity)
+                    {
+                        var entityMetadataRequest = new RetrieveEntityRequest
+                        {
+                            MetadataId = component.ObjectId.GetValueOrDefault(),
+                            EntityFilters = EntityFilters.Entity,
+                        };
+                        var entityMetadata = ((RetrieveEntityResponse)_executor.ElevatedOrganizationService.Execute(entityMetadataRequest)).EntityMetadata;
+
+                        if (entityMetadata.IsIntersect.GetValueOrDefault())
+                        {
+                            _workbenchHistoryLogger?.LogComponentDetail(component, "skipping intersect table", DgtWorkbenchHistoryLog.Options.DgtLogLevelSet._3Debug);
+                            continue;
+                        }
+                    }
+
                     _executor.ElevatedOrganizationService.Execute(new AddSolutionComponentRequest
                     {
                         AddRequiredComponents = false,
@@ -73,9 +91,9 @@ namespace dgt.solutions.Plugins.Helper
                     });
                     _workbenchHistoryLogger?.LogComponent(component);
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    _workbenchHistoryLogger?.LogComponentError(component);
+                    _workbenchHistoryLogger?.LogComponentDetail(component, e.Message);
                     throw;
                 }
             }

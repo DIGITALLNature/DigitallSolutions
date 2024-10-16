@@ -43,17 +43,17 @@ namespace dgt.solutions.Plugins
             });
         }
 
-        public void LogComponentError(SolutionComponent component)
+        public void LogComponentDetail(SolutionComponent component, string message, int logLevel = DgtWorkbenchHistoryLog.Options.DgtLogLevelSet._2Information)
         {
             component.FormattedValues.TryGetValue(SolutionComponent.LogicalNames.ComponentType, out var componentType);
             _orgService.Create(new DgtWorkbenchHistoryLog
             {
                 DgtComponentType = componentType ?? $"ComponentType: {component.ComponentType}",
-                DgtMessage = component.ObjectId.GetValueOrDefault().ToString(),
+                DgtMessage = message,
                 DgtTypeSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtTypeSet.ComponentMove),
                 DgtWorkbenchHistoryId = WorkbenchHistory.ToEntityReference(),
                 DgtObjectidTxt = component.ObjectId.GetValueOrDefault().ToString(),
-                DgtLogLevelSet = new OptionSetValue(DgtWorkbenchHistoryLog.Options.DgtLogLevelSet._0Error),
+                DgtLogLevelSet = new OptionSetValue(logLevel),
             });
         }
 
