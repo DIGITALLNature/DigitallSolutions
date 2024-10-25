@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{3b3ed5e2-1292-ef11-8a69-6045bd8e559e}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="dgt_name" select="1" icon="1" preview="1">
+        <row name="result" id="dgt_workbenchid">
+          <cell name="dgt_name" width="200" />
+          <cell name="dgt_target_carrier_id" width="300" />
+          <cell name="ownerid" width="100" />
+          <cell name="dgt_solutionfriendlyname" width="125" />
+          <cell name="dgt_solutionuniquename" width="119" />
+          <cell name="dgt_solutionversion" width="100" />
+          <cell name="modifiedon" width="113" />
+          <cell name="statuscode" width="119" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="dgt_workbench">
+          <attribute name="dgt_name" />
+          <attribute name="dgt_workbenchid" />
+          <attribute name="ownerid" />
+          <attribute name="dgt_solutionfriendlyname" />
+          <attribute name="dgt_solutionuniquename" />
+          <attribute name="dgt_solutionversion" />
+          <attribute name="dgt_target_carrier_id" />
+          <attribute name="modifiedon" />
+          <attribute name="statuscode" />
+          <order attribute="modifiedon" descending="false" />
+          <filter type="and">
+            <filter type="or">
+              <condition attribute="dgt_target_carrier_id" operator="null" />
+              <condition attribute="modifiedon" operator="olderthan-x-weeks" value="2" />
+            </filter>
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.2</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Orphaned Workbenches" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Worbenches without Carrier or Worbenches that are longer not merged" languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>
