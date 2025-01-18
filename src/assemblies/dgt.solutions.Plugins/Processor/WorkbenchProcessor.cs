@@ -14,8 +14,6 @@ namespace dgt.solutions.Plugins.Processor
 
         protected WorkbenchHistoryLogger _workbenchHistoryLogger;
 
-        public WorkbenchProcessor(Executor executor) : this(executor, default) { }
-
         public WorkbenchProcessor(Executor executor, WorkbenchHistoryLogger workbenchHistoryLogger)
         {
             Executor = executor;

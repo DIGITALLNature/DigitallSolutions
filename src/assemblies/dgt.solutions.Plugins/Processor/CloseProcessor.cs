@@ -26,7 +26,8 @@ namespace dgt.solutions.Plugins.Processor
 
         public ExecutionResult Execute(DgtWorkbench workbench)
         {
-            var workbenchProcessor = new WorkbenchProcessor(_executor);
+            var workbenchHistoryLogger = WorkbenchHistoryLogger.Create(_executor.OrganizationService(), workbench, _message);
+            var workbenchProcessor = new WorkbenchProcessor(_executor, workbenchHistoryLogger);
 
             try
             {
