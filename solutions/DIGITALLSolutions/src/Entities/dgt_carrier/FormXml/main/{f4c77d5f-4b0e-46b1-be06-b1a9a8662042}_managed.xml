@@ -9,6 +9,7 @@
       <tabs>
         <tab verticallayout="true" id="{e68d9512-664d-47ea-9516-ef338dcd4198}" IsUserDefined="1">
           <labels>
+            <label description="Allgemein" languagecode="1031" />
             <label description="General" languagecode="1033" />
           </labels>
           <columns>
@@ -110,6 +111,7 @@
         </tab>
         <tab name="tab_history" id="76a09831-a117-49d8-85eb-1ebdde355b4e" IsUserDefined="0" locklevel="0" showlabel="true">
           <labels>
+            <label description="Historie" languagecode="1031" />
             <label description="History" languagecode="1033" />
           </labels>
           <columns>
@@ -152,6 +154,7 @@
         </tab>
         <tab name="tab_cependency_check" id="d2535fb3-4e89-4e6c-b6a5-8ba46af1dc09" IsUserDefined="0" locklevel="0" showlabel="true">
           <labels>
+            <label description="Abhängigkeitsprüfung" languagecode="1031" />
             <label description="Dependency Check" languagecode="1033" />
           </labels>
           <columns>

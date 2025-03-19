@@ -66,36 +66,43 @@
     </LocLabel>
     <LocLabel Id="dgt.dgt_carrier.Button.OpenMakeSolution.LabelText">
       <Titles>
+        <Title description="Powerapps Lösung" languagecode="1031" />
         <Title description="Modern Make Solution" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="dgt.dgt_carrier.Button.OpenMakeSolution.ToolTipDescription">
       <Titles>
+        <Title description="Powerapps Lösung" languagecode="1031" />
         <Title description="Modern Make Solution" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="dgt.dgt_carrier.Button.OpenMakeSolution.ToolTipTitle">
       <Titles>
+        <Title description="Powerapps Lösung" languagecode="1031" />
         <Title description="Modern Make Solution" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="dgt.dgt_carrier.Button.OpenSolutionEditor.Alt">
       <Titles>
+        <Title description="Klassische Lösung" languagecode="1031" />
         <Title description="Classic Solution Editor" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="dgt.dgt_carrier.Button.OpenSolutionEditor.LabelText">
       <Titles>
+        <Title description="Klassische Lösung" languagecode="1031" />
         <Title description="Classic Solution Editor" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="dgt.dgt_carrier.Button.OpenSolutionEditor.ToolTipDescription">
       <Titles>
+        <Title description="Klassische Lösung" languagecode="1031" />
         <Title description="Classic Solution Editor" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="dgt.dgt_carrier.Button.OpenSolutionEditor.ToolTipTitle">
       <Titles>
+        <Title description="Klassische Lösung" languagecode="1031" />
         <Title description="Classic Solution Editor" languagecode="1033" />
       </Titles>
     </LocLabel>

@@ -61,41 +61,49 @@
   <LocLabels>
     <LocLabel Id="dgt.dgt_workbench.Button.OpenMakeSolution.Alt">
       <Titles>
+        <Title description="Powerapps Lösung" languagecode="1031" />
         <Title description="Modern Make Solution" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="dgt.dgt_workbench.Button.OpenMakeSolution.LabelText">
       <Titles>
+        <Title description="Powerapps Lösung" languagecode="1031" />
         <Title description="Modern Make Solution" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="dgt.dgt_workbench.Button.OpenMakeSolution.ToolTipDescription">
       <Titles>
+        <Title description="Powerapps Lösung" languagecode="1031" />
         <Title description="Modern Make Solution" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="dgt.dgt_workbench.Button.OpenMakeSolution.ToolTipTitle">
       <Titles>
+        <Title description="Powerapps Lösung" languagecode="1031" />
         <Title description="Modern Make Solution" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="dgt.dgt_workbench.Button.OpenSolutionEditor.Alt">
       <Titles>
+        <Title description="Klassische Lösung" languagecode="1031" />
         <Title description="Classic Solution Editor" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="dgt.dgt_workbench.Button.OpenSolutionEditor.LabelText">
       <Titles>
+        <Title description="Klassische Lösung" languagecode="1031" />
         <Title description="Classic Solution Editor" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="dgt.dgt_workbench.Button.OpenSolutionEditor.ToolTipDescription">
       <Titles>
+        <Title description="Klassische Lösung" languagecode="1031" />
         <Title description="Classic Solution Editor" languagecode="1033" />
       </Titles>
     </LocLabel>
     <LocLabel Id="dgt.dgt_workbench.Button.OpenSolutionEditor.ToolTipTitle">
       <Titles>
+        <Title description="Klassische Lösung" languagecode="1031" />
         <Title description="Classic Solution Editor" languagecode="1033" />
       </Titles>
     </LocLabel>
