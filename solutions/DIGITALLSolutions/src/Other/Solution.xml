@@ -5,8 +5,8 @@
     <LocalizedNames>
       <LocalizedName description="DIGITALL Solution Concept" languagecode="1033" />
     </LocalizedNames>
-    <Descriptions />
-    <Version>1.1.1</Version>
+    <Descriptions />+
+    <Version>1.1.1</Version>+
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>digitall</UniqueName>

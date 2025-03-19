@@ -11,6 +11,7 @@
       <grid name="resultset" jump="dgt_name" select="1" icon="1" preview="1">
         <row name="result" id="dgt_workbenchid">
           <cell name="dgt_name" width="300" />
+          <cell name="dgt_target_carrier_id" width="300" />
           <cell name="ownerid" width="200" />
           <cell name="dgt_solutionfriendlyname" width="200" />
           <cell name="dgt_solutionuniquename" width="200" />
@@ -34,6 +35,7 @@
           <attribute name="dgt_solutionversion" />
           <attribute name="modifiedon" />
           <order attribute="modifiedon" descending="true" />
+          <attribute name="dgt_target_carrier_id" />
         </entity>
       </fetch>
     </fetchxml>
