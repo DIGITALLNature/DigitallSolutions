@@ -21,7 +21,12 @@ namespace dgt.solutions.Plugins.Helper
         internal IEnumerable<ComponentMoverLogEntry> MoveComponents(Guid originId, string destinationName)
         {
             return MoveComponents(GetSolutionComponents(new List<ConditionExpression>{
-                new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, originId)
+                new ConditionExpression(SolutionComponent.LogicalNames.SolutionId, ConditionOperator.Equal, originId),
+
+                // Ignore app child elements - there should be no need to move them independently
+                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.NotEqual, 10053 /* appelement */),
+                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.NotEqual, 10056 /* appsetting */),
+                new ConditionExpression(SolutionComponent.LogicalNames.ComponentType, ConditionOperator.NotEqual, 10160 /* appaction */),
             }), destinationName);
         }
 
